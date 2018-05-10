@@ -29,8 +29,6 @@
 		5A5896D620A1B8B800D6822F /* LeagueTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A5896D520A1B8B800D6822F /* LeagueTableHeaderView.xib */; };
 		5A5896D820A1B8DD00D6822F /* LeagueTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5896D720A1B8DD00D6822F /* LeagueTableHeaderView.swift */; };
 		5A5896DB20A1DE1F00D6822F /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5896D920A1DE1F00D6822F /* HomePageViewController.swift */; };
-		5A5896DE20A1E2CB00D6822F /* OneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5896DD20A1E2CB00D6822F /* OneViewController.swift */; };
-		5A5896E020A1E2DE00D6822F /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5896DF20A1E2DE00D6822F /* TwoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,8 +56,6 @@
 		5A5896D520A1B8B800D6822F /* LeagueTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueTableHeaderView.xib; sourceTree = "<group>"; };
 		5A5896D720A1B8DD00D6822F /* LeagueTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTableHeaderView.swift; sourceTree = "<group>"; };
 		5A5896D920A1DE1F00D6822F /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
-		5A5896DD20A1E2CB00D6822F /* OneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneViewController.swift; sourceTree = "<group>"; };
-		5A5896DF20A1E2DE00D6822F /* TwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +109,6 @@
 				5A5896BF20A19C0A00D6822F /* HomeViewController.swift */,
 				5A5896C320A1A11C00D6822F /* TeamViewController.swift */,
 				5A5896D920A1DE1F00D6822F /* HomePageViewController.swift */,
-				5A5896DD20A1E2CB00D6822F /* OneViewController.swift */,
-				5A5896DF20A1E2DE00D6822F /* TwoViewController.swift */,
 				5A0A11B720A2FDD100A0E887 /* FullTableViewController.swift */,
 				5A26C7B420A3619500B5AB44 /* ContentViewController.swift */,
 			);
@@ -249,8 +243,6 @@
 				5A5896C720A1A1D400D6822F /* ColorManager.swift in Sources */,
 				5A5896C020A19C0A00D6822F /* HomeViewController.swift in Sources */,
 				5A5896D820A1B8DD00D6822F /* LeagueTableHeaderView.swift in Sources */,
-				5A5896DE20A1E2CB00D6822F /* OneViewController.swift in Sources */,
-				5A5896E020A1E2DE00D6822F /* TwoViewController.swift in Sources */,
 				5A5896C420A1A11C00D6822F /* TeamViewController.swift in Sources */,
 				5A5896CE20A1A28600D6822F /* Constants.swift in Sources */,
 			);

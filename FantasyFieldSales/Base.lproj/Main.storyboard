@@ -92,39 +92,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LpR-G5-K6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2620" y="521"/>
-        </scene>
-        <!--One View Controller-->
-        <scene sceneID="xuS-Kb-voR">
-            <objects>
-                <viewController storyboardIdentifier="OneViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MkS-S2-uLE" customClass="OneViewController" customModule="FantasyFieldSales" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nMz-mo-chW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="fhf-hz-7hU"/>
-                    </view>
-                    <size key="freeformSize" width="375" height="350"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aGQ-PJ-O4N" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3525.5999999999999" y="141.22938530734635"/>
-        </scene>
-        <!--Two View Controller-->
-        <scene sceneID="EPw-b6-yeh">
-            <objects>
-                <viewController storyboardIdentifier="TwoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fgE-iO-k0t" customClass="TwoViewController" customModule="FantasyFieldSales" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ie6-8Q-T5M">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.27484492319999998" blue="0.4997124892" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="Iq5-RX-s5L"/>
-                    </view>
-                    <size key="freeformSize" width="375" height="350"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u5u-rc-rjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2620" y="917"/>
+            <point key="canvasLocation" x="2844" y="173"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="dDU-EM-sHb">
@@ -231,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TL2-3f-CHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2645.5999999999999" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="2844" y="1068"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="am7-WA-JYW">
@@ -251,32 +219,20 @@
             </objects>
             <point key="canvasLocation" x="484" y="832"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="b0K-g4-aXk">
-            <objects>
-                <viewController id="8ko-Fe-fxc" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LPg-t1-itr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="SuL-OI-IPG"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ELN-J1-loj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-        <!--View Controller-->
+        <!--Content View Controller-->
         <scene sceneID="n43-7F-nWM">
             <objects>
-                <viewController id="Jk8-oP-vAW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jk8-oP-vAW" customClass="ContentViewController" customModule="FantasyFieldSales" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7wf-X7-Zhf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="evH-8j-0mJ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpX-pG-i5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="3583" y="315"/>
         </scene>
     </scenes>
 </document>

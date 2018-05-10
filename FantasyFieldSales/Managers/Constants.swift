@@ -10,16 +10,14 @@ import UIKit
 
 class Constants: NSObject {
     struct general {
-        static let appName = "CBRE TaM"
+        static let appName = "Fantansy Field Sales"
     }
     
     // ------------------------------------------------------------------------------------------------------------
     
-    struct headerViewText {
-        static let title = "Guilford Business Park"
-        static let subtitle = "Ground Floor"
-    }
+
     
+    static let backgroundColorContent = [ UIColor.red, UIColor.green]
   
     // ------------------------------------------------------------------------------------------------------------
     
@@ -45,11 +43,7 @@ class Constants: NSObject {
         ,(pos: 20, team: "London North", points: 120)
    
     ]
-    
-   
-    
-    // ------------------------------------------------------------------------------------------------------------
-    
+
    
     // ------------------------------------------------------------------------------------------------------------
     struct font {
@@ -65,22 +59,6 @@ class Constants: NSObject {
         static let mediumFontSize:CGFloat = 17
         static let smallFontSize:CGFloat = 13
     }
-    
-    // ------------------------------------------------------------------------------------------------------------
-    
-    struct text {
-        static let faultButtonTitle = "TAP & HOLD TO CONFIRM IMPACT"
-        
-        static let faultSubmit = "Your ticket has been submitted"
-    }
-    
-    // ------------------------------------------------------------------------------------------------------------
-    
-    struct notification{
-        static let closestBeaconChange = "closestBeaconChange"
-    }
-    
-    // ------------------------------------------------------------------------------------------------------------
     
    
   

@@ -10,9 +10,15 @@ import UIKit
 
 class ContentViewController: UIViewController {
 
+    
+    var bckgrdColor:UIColor?
+    var itemIndex:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let backgroundColor = bckgrdColor {
+            self.view.backgroundColor = backgroundColor
+        }
         // Do any additional setup after loading the view.
     }
 

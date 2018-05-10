@@ -15,11 +15,11 @@ class HomePageViewIndexController: UIViewController {
 
 class HomePageViewController: UIPageViewController {
 
-    var orderedViewControllers: [()->HomePageViewIndexController] = {
-        return [{ UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OneViewController") as! OneViewController },
-                { UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwoViewController") as! TwoViewController  }]
-        
-    }()
+//    var orderedViewControllers: [()->HomePageViewIndexController] = {
+//        return [{ UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OneViewController") as! OneViewController },
+//                { UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwoViewController") as! TwoViewController  }]
+//
+//    }()
 
     
     var currentPage = 0
@@ -50,10 +50,16 @@ class HomePageViewController: UIPageViewController {
         self.delegate = self
         self.dataSource = self
         
-        if let firstViewController = orderedViewControllers.first {
-            setViewControllers([firstViewController()], direction: .forward, animated: true, completion: nil)
+        
+        if Constants.backgroundColorContent.count > 0 {
+            let contentController = getContentViewController(withIndex: 0)
+            let contentControllers = [contentController]
+            
+            setViewControllers(contentControllers as? [UIViewController], direction: .forward, animated: true, completion: nil)
         }
         
+        
+
         configurePageControl()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
@@ -71,7 +77,7 @@ class HomePageViewController: UIPageViewController {
     
     func configurePageControl() {
         self.pageControl = UIPageControl(frame: CGRect(x: 0,y: 50, width: UIScreen.main.bounds.width, height: 50))
-        self.pageControl.numberOfPages = orderedViewControllers.count
+        self.pageControl.numberOfPages = Constants.backgroundColorContent.count
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = .black
         self.pageControl.pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.3)
@@ -87,10 +93,7 @@ class HomePageViewController: UIPageViewController {
             self.pageControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         }
     }
-    
-  
-    
-    
+
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         
         
@@ -114,17 +117,21 @@ class HomePageViewController: UIPageViewController {
    
     
     
-    
-    
-    /*
-    // MARK: - Navigation
+    func getContentViewController(withIndex index:Int) -> ContentViewController? {
+     
+        print("index \(index)")
+            //  let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let contentVC = self.storyboard?.instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
+        
+        
+        let contentVC =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
+        
+            contentVC.itemIndex = index
+            contentVC.bckgrdColor = Constants.backgroundColorContent[index]
+            return contentVC
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+
 
 }
 extension HomePageViewController: UIGestureRecognizerDelegate {
@@ -141,7 +148,7 @@ extension HomePageViewController: UIGestureRecognizerDelegate {
 extension HomePageViewController: UIPageViewControllerDelegate {
 
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return orderedViewControllers.count
+        return Constants.backgroundColorContent.count
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -158,66 +165,36 @@ extension HomePageViewController: UIPageViewControllerDelegate {
 
 extension HomePageViewController: UIPageViewControllerDataSource {
 
-    
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = (viewController as? HomePageViewIndexController)?.index else {
-            return nil
-        }
         
-        let previousIndex = viewControllerIndex - 1
-        guard previousIndex >= 0 else {
-            //return orderedViewControllers.last!()
-            return nil
-            
-        }
-
-        guard orderedViewControllers.count > previousIndex else {
-            return nil
-        }
+        let contentVC = viewController as! ContentViewController
         
-        if !transitionInProgress {
-            let vc = orderedViewControllers[previousIndex]()
-            vc.index = previousIndex
-            return vc
+        if contentVC.itemIndex > 0 {
+            return getContentViewController(withIndex: contentVC.itemIndex - 1)
         }
         return nil
     }
+    
     
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = (viewController as? HomePageViewIndexController)?.index else {
-            return nil
+        
+        
+        let contentVC = viewController as! ContentViewController
+        
+        if contentVC.itemIndex + 1 < Constants.backgroundColorContent.count {
+            return getContentViewController(withIndex: contentVC.itemIndex + 1)
         }
         
-        let nextIndex = viewControllerIndex + 1
-        let orderedViewControllersCount = orderedViewControllers.count
-        
-        // User is on the last view controller and swiped right to loop to
-        // the first view controller.
-        guard orderedViewControllersCount != nextIndex else {
-            //return orderedViewControllers.first!()
-            return nil
-        }
-        
-        guard orderedViewControllersCount != nextIndex else {
-            return nil
-        }
-        
-        if !transitionInProgress {
-            let vc = orderedViewControllers[nextIndex]()
-            vc.index = nextIndex
-            
-            return vc
-        }
         
         return nil
-
+        
     }
     
-    
+   
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return orderedViewControllers.count
+        return Constants.backgroundColorContent.count
     }
     
 
