@@ -47,40 +47,43 @@ class LeagueTableHeaderView: UIView {
     override func layoutSubviews() {
         self.contentView?.frame = bounds
     }
-    
-    
+
     func commonInit(){
 
         let subviewArray = Bundle.main.loadNibNamed("LeagueTableHeaderView", owner: self, options: nil)
         self.addSubview(subviewArray!.first as! UIView)
 
         let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
-
+        
+        
+        let date = Date()
+        monthLabel?.text = date.getMonthName()
+        monthLabel?.font = smallFont
+        monthLabel?.textColor = UIColor.white
+        monthLabel?.textAlignment = .center
+        monthLabel?.backgroundColor = ColorManager.midBlue
+        
+        titleLabel?.text = "LATEST TOP STATS"
+        titleLabel?.font = smallFont
+        titleLabel?.textColor = ColorManager.white
+        titleLabel?.textAlignment = .center
+        titleLabel?.backgroundColor = UIColor.clear
+        
+        titleView?.backgroundColor = ColorManager.midBlue
+        
+        
         positionHeaderLabel?.text = "POS"
         teamHeaderLabel?.text = "TEAM"
         pointsHeaderLabel?.text = "PTS"
         
         for label: UILabel in labels {
             label.font = smallFont
-            label.textColor = ColorManager.darkBlue
+            label.textColor = ColorManager.white
             label.textAlignment = .center
         }
         
-        monthLabel?.font = smallFont
-        monthLabel?.textColor = UIColor.white
-        monthLabel?.textAlignment = .center
-        monthLabel?.backgroundColor = ColorManager.darkBlue
-        
-        let date = Date()
-        monthLabel?.text = date.getMonthName()
-        titleLabel?.text = "LATEST TOP STATS"
-        titleLabel?.font = smallFont
-        titleLabel?.textColor = ColorManager.darkBlue
-        titleLabel?.textAlignment = .center
-        titleLabel?.backgroundColor = UIColor.clear
-        
-        titleView?.backgroundColor = ColorManager.midBlue
-        
+        tableHeaderView?.backgroundColor = ColorManager.midBlue
+       
         teamButton?.setTitle("Team",for: .normal)
         managerButton?.setTitle("Manager",for: .normal)
         memberButton?.setTitle("Team Member",for: .normal)
@@ -96,6 +99,15 @@ class LeagueTableHeaderView: UIView {
             button.setBackgroundImage(backgroundImage, for: .selected)
             
         }
-        
+        //selectTabButton(index:0)
+        ToggleButtons.selectTabButton(buttons: buttons, index: 0)
     }
+    
+    @IBAction func tabButtonTapped(_ sender: UIButton) {
+
+        if let selectedIndex = (sender as AnyObject).tag {
+            ToggleButtons.selectTabButton(buttons: buttons, index: selectedIndex)
+        }
+    }
+    
 }

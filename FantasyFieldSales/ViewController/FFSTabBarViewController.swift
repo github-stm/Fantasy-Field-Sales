@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DTabBarViewController: UIViewController {
+class FFSTabBarViewController: UIViewController {
 
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var homeButton: UIButton!
@@ -71,6 +71,27 @@ class DTabBarViewController: UIViewController {
     }
     
     
+    func selectTabButton(index:Int) {
+        for button: UIButton in buttons {
+            
+            if button.tag == index {
+                button.setTitleColor(ColorManager.white, for: .normal)
+                var backgroundImage = UIImage().imageWithColor(ColorManager.midBlue)
+                button.setBackgroundImage(backgroundImage, for: .normal)
+
+                return
+            }
+           
+            button.setTitleColor(ColorManager.midBlue, for: .normal)
+            var backgroundImage = UIImage().imageWithColor(ColorManager.white)
+            button.setBackgroundImage(backgroundImage, for: .normal)
+            
+        }
+        
+    }
+
+    
+    
     private func add(asChildViewController viewController: UIViewController) {
         // Add Child View Controller
         addChildViewController(viewController)
@@ -104,6 +125,9 @@ class DTabBarViewController: UIViewController {
     @IBAction func tabButtonTapped(_ sender: UIButton) {
         let previousIndex = selectedIndex
         selectedIndex = (sender as AnyObject).tag
+        
+     //   selectTabButton(index:selectedIndex)
+        
         buttons[previousIndex].isSelected = false
         let previousVC = viewControllers[previousIndex]
         
@@ -120,8 +144,9 @@ class DTabBarViewController: UIViewController {
         contentView.addSubview(vc.view)
         
         vc.didMove(toParentViewController: self)
-        
+ 
+       // selectTabButton(index:selectedIndex)
     }
     
-
+   
 }

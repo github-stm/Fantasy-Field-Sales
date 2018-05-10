@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeagueTableHeaderView" customModule="Diageo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeagueTableHeaderView" customModule="FantasyFieldSales" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="DZp-Bk-N4a"/>
                 <outlet property="managerButton" destination="99W-kF-iId" id="x6s-Zx-RMs"/>
@@ -82,14 +82,23 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nT-i0-d25">
                                     <rect key="frame" x="0.0" y="0.0" width="125" height="35"/>
                                     <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="tabButtonTapped:" destination="-1" eventType="touchUpInside" id="z0P-4A-ynF"/>
+                                    </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99W-kF-iId">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99W-kF-iId">
                                     <rect key="frame" x="125" y="0.0" width="125" height="35"/>
                                     <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="tabButtonTapped:" destination="-1" eventType="touchUpInside" id="Lwv-3c-rxI"/>
+                                    </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8c-Gh-BeQ">
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8c-Gh-BeQ">
                                     <rect key="frame" x="250" y="0.0" width="125" height="35"/>
                                     <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="tabButtonTapped:" destination="-1" eventType="touchUpInside" id="1dQ-m7-Rxk"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

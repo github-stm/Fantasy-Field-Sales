@@ -52,20 +52,17 @@ class LeagueTableMoreFooterView: UIView {
         moreButton?.setTitleColor(UIColor.white, for: .normal)
         moreButton?.titleLabel?.font = UIFont(name: Constants.font.regularFont, size: 18)
         moreButton?.layer.cornerRadius = 4
-        var backgroundImage = UIImage().imageWithColor(ColorManager.darkBlue)
+        var backgroundImage = UIImage().imageWithColor(ColorManager.midBlue)
         moreButton?.setBackgroundImage(backgroundImage, for: .normal)
         backgroundImage = UIImage().imageWithColor(ColorManager.midBlue)
         moreButton?.setBackgroundImage(backgroundImage, for: .selected)
   
     }
 
-    
     //------------------------------------------------------------------------------------------------------------
     
     @IBAction func moreButtonTapped(_ sender: AnyObject)
     {
-        
-      
         if let delegate = self.delegate {
             delegate.moreButtonTapped()
             

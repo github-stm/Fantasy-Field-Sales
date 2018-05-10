@@ -97,7 +97,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="dDU-EM-sHb">
             <objects>
-                <viewController storyboardIdentifier="DTabBarViewController" id="vsD-IC-khe" customClass="DTabBarViewController" customModule="FantasyFieldSales" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DTabBarViewController" id="vsD-IC-khe" customClass="FFSTabBarViewController" customModule="FantasyFieldSales" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZXR-xo-ntj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,18 +111,30 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZD-9g-ATB">
                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="50"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="tabButtonTapped:" destination="vsD-IC-khe" eventType="touchUpInside" id="g0i-WY-8NM"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eaa-hF-JuL">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eaa-hF-JuL">
                                                 <rect key="frame" x="94" y="0.0" width="93.5" height="50"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="tabButtonTapped:" destination="vsD-IC-khe" eventType="touchUpInside" id="MQ2-IQ-rVo"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMB-jL-0UL">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMB-jL-0UL">
                                                 <rect key="frame" x="187.5" y="0.0" width="94" height="50"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="tabButtonTapped:" destination="vsD-IC-khe" eventType="touchUpInside" id="fcA-Tx-Bac"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfL-4a-v4x">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfL-4a-v4x">
                                                 <rect key="frame" x="281.5" y="0.0" width="93.5" height="50"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="tabButtonTapped:" destination="vsD-IC-khe" eventType="touchUpInside" id="4ET-WA-Pfc"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -166,6 +178,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MYC-vD-Prr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1213.5999999999999" y="831.63418290854577"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="iSg-RJ-f03">
+            <objects>
+                <viewController id="4wE-OP-shQ" customClass="NewsViewController" customModule="FantasyFieldSales" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dS2-HG-Xxj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wsb-rB-ESa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eiO-ub-lRu">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="220" id="ESg-mi-MJ8"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWn-GQ-ifa">
+                                        <rect key="frame" x="0.0" y="220" width="375" height="120"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFt-Iv-a1h">
+                                                <rect key="frame" x="8" y="8" width="359" height="111"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="tv3-v8-G1J"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eiO-ub-lRu" firstAttribute="leading" secondItem="Wsb-rB-ESa" secondAttribute="leading" id="6IU-C7-2ZV"/>
+                                    <constraint firstAttribute="trailing" secondItem="eiO-ub-lRu" secondAttribute="trailing" id="7pW-82-AnA"/>
+                                    <constraint firstAttribute="bottom" secondItem="RWn-GQ-ifa" secondAttribute="bottom" constant="327" id="DU1-xJ-FMM"/>
+                                    <constraint firstItem="eiO-ub-lRu" firstAttribute="top" secondItem="Wsb-rB-ESa" secondAttribute="top" id="JSV-9k-Jol"/>
+                                    <constraint firstItem="RWn-GQ-ifa" firstAttribute="top" secondItem="eiO-ub-lRu" secondAttribute="bottom" id="TXd-sE-2mD"/>
+                                    <constraint firstAttribute="trailing" secondItem="RWn-GQ-ifa" secondAttribute="trailing" id="Uoi-6z-ei1"/>
+                                    <constraint firstItem="RWn-GQ-ifa" firstAttribute="leading" secondItem="Wsb-rB-ESa" secondAttribute="leading" id="rNc-Z7-efp"/>
+                                    <constraint firstItem="eiO-ub-lRu" firstAttribute="centerX" secondItem="Wsb-rB-ESa" secondAttribute="centerX" id="uRh-4m-6sb"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wsb-rB-ESa" firstAttribute="top" secondItem="dS2-HG-Xxj" secondAttribute="top" id="8R6-w5-fma"/>
+                            <constraint firstItem="Wsb-rB-ESa" firstAttribute="trailing" secondItem="Sd5-1O-1BL" secondAttribute="trailing" id="Dcw-a2-dPI"/>
+                            <constraint firstItem="Wsb-rB-ESa" firstAttribute="bottom" secondItem="Sd5-1O-1BL" secondAttribute="bottom" id="QKd-49-fVy"/>
+                            <constraint firstItem="Wsb-rB-ESa" firstAttribute="leading" secondItem="Sd5-1O-1BL" secondAttribute="leading" id="yFi-6I-A3Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sd5-1O-1BL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="emI-AD-MQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2727.1999999999998" y="698.5007496251875"/>
         </scene>
         <!--Full Table View Controller-->
         <scene sceneID="ZAA-M4-xDg">

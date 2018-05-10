@@ -19,7 +19,7 @@
 		5A5896B420A19AB300D6822F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5896B320A19AB300D6822F /* Assets.xcassets */; };
 		5A5896B720A19AB300D6822F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5896B520A19AB300D6822F /* LaunchScreen.storyboard */; };
 		5A5896C020A19C0A00D6822F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5896BF20A19C0A00D6822F /* HomeViewController.swift */; };
-		5A5896C220A1A06500D6822F /* DTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5896C120A1A06500D6822F /* DTabBarViewController.swift */; };
+		5A5896C220A1A06500D6822F /* FFSTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5896C120A1A06500D6822F /* FFSTabBarViewController.swift */; };
 		5A5896C420A1A11C00D6822F /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5896C320A1A11C00D6822F /* TeamViewController.swift */; };
 		5A5896C720A1A1D400D6822F /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5896C620A1A1D400D6822F /* ColorManager.swift */; };
 		5A5896CA20A1A22200D6822F /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5896C920A1A22200D6822F /* UIImageExtension.swift */; };
@@ -29,6 +29,8 @@
 		5A5896D620A1B8B800D6822F /* LeagueTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A5896D520A1B8B800D6822F /* LeagueTableHeaderView.xib */; };
 		5A5896D820A1B8DD00D6822F /* LeagueTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5896D720A1B8DD00D6822F /* LeagueTableHeaderView.swift */; };
 		5A5896DB20A1DE1F00D6822F /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5896D920A1DE1F00D6822F /* HomePageViewController.swift */; };
+		5A8DA93320A464D100C5D94D /* ToggleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DA93220A464D100C5D94D /* ToggleButtons.swift */; };
+		5A8DA93520A4694000C5D94D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DA93420A4694000C5D94D /* NewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +48,7 @@
 		5A5896B620A19AB300D6822F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A5896B820A19AB300D6822F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A5896BF20A19C0A00D6822F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		5A5896C120A1A06500D6822F /* DTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTabBarViewController.swift; sourceTree = "<group>"; };
+		5A5896C120A1A06500D6822F /* FFSTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSTabBarViewController.swift; sourceTree = "<group>"; };
 		5A5896C320A1A11C00D6822F /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		5A5896C620A1A1D400D6822F /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		5A5896C920A1A22200D6822F /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -56,6 +58,8 @@
 		5A5896D520A1B8B800D6822F /* LeagueTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueTableHeaderView.xib; sourceTree = "<group>"; };
 		5A5896D720A1B8DD00D6822F /* LeagueTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTableHeaderView.swift; sourceTree = "<group>"; };
 		5A5896D920A1DE1F00D6822F /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		5A8DA93220A464D100C5D94D /* ToggleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtons.swift; sourceTree = "<group>"; };
+		5A8DA93420A4694000C5D94D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		5A5896AB20A19AB100D6822F /* FantasyFieldSales */ = {
 			isa = PBXGroup;
 			children = (
+				5A8DA93120A4648A00C5D94D /* UI */,
 				5A5896AC20A19AB100D6822F /* AppDelegate.swift */,
 				5A5896B020A19AB100D6822F /* Main.storyboard */,
 				5A5896B320A19AB300D6822F /* Assets.xcassets */,
@@ -105,12 +110,13 @@
 		5A5896BE20A19BE400D6822F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5A5896C120A1A06500D6822F /* DTabBarViewController.swift */,
+				5A5896C120A1A06500D6822F /* FFSTabBarViewController.swift */,
 				5A5896BF20A19C0A00D6822F /* HomeViewController.swift */,
 				5A5896C320A1A11C00D6822F /* TeamViewController.swift */,
 				5A5896D920A1DE1F00D6822F /* HomePageViewController.swift */,
 				5A0A11B720A2FDD100A0E887 /* FullTableViewController.swift */,
 				5A26C7B420A3619500B5AB44 /* ContentViewController.swift */,
+				5A8DA93420A4694000C5D94D /* NewsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -153,6 +159,14 @@
 				5A26C7B220A34B2C00B5AB44 /* ParallaxHeaderView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5A8DA93120A4648A00C5D94D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5A8DA93220A464D100C5D94D /* ToggleButtons.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,11 +244,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A0A11C220A31A5A00A0E887 /* DateExtension.swift in Sources */,
+				5A8DA93320A464D100C5D94D /* ToggleButtons.swift in Sources */,
 				5A0A11B420A2EAFD00A0E887 /* LeagueTableMoreFooterView.swift in Sources */,
 				5A0A11B820A2FDD100A0E887 /* FullTableViewController.swift in Sources */,
 				5A5896D120A1AE7A00D6822F /* LeagueTableCell.swift in Sources */,
 				5A26C7B520A3619500B5AB44 /* ContentViewController.swift in Sources */,
-				5A5896C220A1A06500D6822F /* DTabBarViewController.swift in Sources */,
+				5A5896C220A1A06500D6822F /* FFSTabBarViewController.swift in Sources */,
 				5A5896DB20A1DE1F00D6822F /* HomePageViewController.swift in Sources */,
 				5A5896CA20A1A22200D6822F /* UIImageExtension.swift in Sources */,
 				5A26C7B320A34B2C00B5AB44 /* ParallaxHeaderView.swift in Sources */,
@@ -243,6 +258,7 @@
 				5A5896C720A1A1D400D6822F /* ColorManager.swift in Sources */,
 				5A5896C020A19C0A00D6822F /* HomeViewController.swift in Sources */,
 				5A5896D820A1B8DD00D6822F /* LeagueTableHeaderView.swift in Sources */,
+				5A8DA93520A4694000C5D94D /* NewsViewController.swift in Sources */,
 				5A5896C420A1A11C00D6822F /* TeamViewController.swift in Sources */,
 				5A5896CE20A1A28600D6822F /* Constants.swift in Sources */,
 			);
