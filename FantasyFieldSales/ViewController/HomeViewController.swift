@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
+
     let leagueTableCellIdentifier = "LeagueTableCell"
 
     var teamList = Constants.teams
@@ -19,11 +19,17 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView?
     
     var pageController = HomePageViewController()
-
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewDidLayoutSubviews() {
         var contentRect = CGRect.zero
         for view in (self.scrollView?.subviews)! {
             contentRect = contentRect.union(view.frame)
+            contentRect.size.height = view.frame.size.height - 65.0
     
         }
         self.scrollView?.contentSize = contentRect.size
@@ -34,8 +40,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         if let frame = pageView?.frame {
             pageController.view.frame = frame
+            pageController.delegateHomePageViewController = self
             pageView?.addSubview(pageController.view)
             pageController.didMove(toParentViewController: self)
+            
 
         }
 
@@ -71,24 +79,24 @@ class HomeViewController: UIViewController {
         performSegue(withIdentifier: "homeFullTable", sender: self)
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+    
+
+
+extension HomeViewController: HomePageViewControllerDelegate {
+    
+    func homeNewsTapped() {
+        performSegue(withIdentifier: "homeNews", sender: self)
+    }
+}
+    
+
 
 extension HomeViewController:UIScrollViewDelegate {
-     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let headerView = self.pageView as! ParallaxHeaderView
-        headerView.scrollViewDidScroll(scrollView: scrollView)
-    }
+//     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let headerView = self.pageView as! ParallaxHeaderView
+//        headerView.scrollViewDidScroll(scrollView: scrollView)
+//    }
 }
 extension HomeViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

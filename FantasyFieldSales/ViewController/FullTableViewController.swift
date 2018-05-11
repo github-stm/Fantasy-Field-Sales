@@ -16,6 +16,11 @@ class FullTableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView?
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

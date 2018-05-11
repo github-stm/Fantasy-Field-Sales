@@ -17,8 +17,6 @@ class ToggleButtons: NSObject {
                 button.setTitleColor(ColorManager.white, for: .normal)
                 let backgroundImage = UIImage().imageWithColor(ColorManager.midBlue)
                 button.setBackgroundImage(backgroundImage, for: .normal)
-                
-                
             } else {
                 button.setTitleColor(ColorManager.midBlue, for: .normal)
                 let backgroundImage = UIImage().imageWithColor(ColorManager.white)

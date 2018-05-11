@@ -8,23 +8,26 @@
 
 import UIKit
 
-class HomePageViewIndexController: UIViewController {
-    var index: Int = 0
+protocol HomePageViewControllerDelegate {
+
+    func homeNewsTapped()
+  
 }
 
 
+
 class HomePageViewController: UIPageViewController {
-
-//    var orderedViewControllers: [()->HomePageViewIndexController] = {
-//        return [{ UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OneViewController") as! OneViewController },
-//                { UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwoViewController") as! TwoViewController  }]
-//
-//    }()
-
     
+    var delegateHomePageViewController: HomePageViewControllerDelegate?
+
     var currentPage = 0
     var pageControl = UIPageControl()
     var transitionInProgress: Bool = false
+    
+    
+    var contentController:ContentViewController?
+    var contentControllers: [ContentViewController]?
+    
 
     override var shouldAutorotate: Bool {
         return true
@@ -52,14 +55,12 @@ class HomePageViewController: UIPageViewController {
         
         
         if Constants.backgroundColorContent.count > 0 {
-            let contentController = getContentViewController(withIndex: 0)
-            let contentControllers = [contentController]
+            contentController = getContentViewController(withIndex: 0)
+            contentControllers = [contentController] as? [ContentViewController]
             
-            setViewControllers(contentControllers as? [UIViewController], direction: .forward, animated: true, completion: nil)
+            setViewControllers(contentControllers, direction: .forward, animated: true, completion: nil)
         }
         
-        
-
         configurePageControl()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
@@ -67,12 +68,10 @@ class HomePageViewController: UIPageViewController {
         self.view.isUserInteractionEnabled = true
         self.view.addGestureRecognizer(tap)
         
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func configurePageControl() {
@@ -97,7 +96,12 @@ class HomePageViewController: UIPageViewController {
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         
         
-        guard let currentViewController = self.viewControllers?.first as? HomePageViewIndexController else {
+        if let delegate = self.delegateHomePageViewController {
+            delegate.homeNewsTapped()
+            
+        }
+        
+        guard let currentViewController = self.viewControllers?.first as? ContentViewController else {
             return
         }
         
@@ -105,11 +109,12 @@ class HomePageViewController: UIPageViewController {
             return
         }
         
+        
         if !transitionInProgress {
             transitionInProgress = true
             self.setViewControllers([nextViewController], direction: .forward, animated: true, completion: {(_ finished: Bool) -> Void in
                 self.transitionInProgress = false
-                self.pageControl.currentPage = currentViewController.index + 1
+                self.pageControl.currentPage = currentViewController.itemIndex + 1
             })
         }
     }
@@ -119,11 +124,6 @@ class HomePageViewController: UIPageViewController {
     
     func getContentViewController(withIndex index:Int) -> ContentViewController? {
      
-        print("index \(index)")
-            //  let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let contentVC = self.storyboard?.instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
-        
-        
         let contentVC =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
         
             contentVC.itemIndex = index
@@ -134,6 +134,9 @@ class HomePageViewController: UIPageViewController {
 
 
 }
+
+
+
 extension HomePageViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         if !transitionInProgress {
@@ -152,12 +155,11 @@ extension HomePageViewController: UIPageViewControllerDelegate {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if let viewController = pageViewController.viewControllers?.first as? HomePageViewIndexController {
-            self.pageControl.currentPage = viewController.index
+        if let viewController = pageViewController.viewControllers?.first as? ContentViewController {
+            self.pageControl.currentPage = viewController.itemIndex
         }
     }
-    
-    
+   
 }
 
 

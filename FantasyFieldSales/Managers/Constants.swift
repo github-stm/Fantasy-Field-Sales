@@ -60,6 +60,12 @@ class Constants: NSObject {
         static let smallFontSize:CGFloat = 13
     }
     
+    
+    struct string {
+        static let newsHeader = "WHSmith 'sorry' for Pinderfields Hospital £7.99 toothpaste"
+        static let newsBody = "WHSmith has admitted it made more than £700 by selling single tubes of toothpaste for £7.99 in a hospital. \n The Pinderfields Hospital branch in Wakefield was caught selling Colgate, normally priced at £2.49, by a visitor. \n The retailer blamed a pricing error and said proceeds from the sales would be donated to St George's Crypt in Leeds. \n In 2015, WHSmith was accused of exploiting hospital customers after the BBC found it was charging less on the high street. \n The retailer said 89 tubes of toothpaste had been sold in the Pinderfields shop while they were priced at £7.99."
+        
+    }
    
   
   
