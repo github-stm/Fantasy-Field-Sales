@@ -49,12 +49,12 @@ class LeagueTableMoreFooterView: UIView {
 
         moreButton?.setTitle("View full table",for: .normal)
 
-        moreButton?.setTitleColor(UIColor.white, for: .normal)
+        moreButton?.setTitleColor(ColorManager.LeagueTable.moreButtonText, for: .normal)
         moreButton?.titleLabel?.font = UIFont(name: Constants.font.regularFont, size: 18)
         moreButton?.layer.cornerRadius = 4
-        var backgroundImage = UIImage().imageWithColor(ColorManager.midBlue)
+        var backgroundImage = UIImage().imageWithColor(ColorManager.LeagueTable.moreButtonBackground)
         moreButton?.setBackgroundImage(backgroundImage, for: .normal)
-        backgroundImage = UIImage().imageWithColor(ColorManager.midBlue)
+        backgroundImage = UIImage().imageWithColor(ColorManager.LeagueTable.moreButtonBackground)
         moreButton?.setBackgroundImage(backgroundImage, for: .selected)
   
     }

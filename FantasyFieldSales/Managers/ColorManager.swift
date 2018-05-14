@@ -8,7 +8,36 @@
 
 import UIKit
 
+// white ffffff
+// black 000000
+// gold BB9959
+
 class ColorManager: UIColor {
+    
+    // ------------------------------------------------------------------------------------------------------------
+    struct LeagueTable {
+        static let titleBackground = UIColor(hexString: "BB9959")
+        static let titleText = UIColor(hexString: "000000")
+        
+        static let tabSelectedBackground = UIColor(hexString: "000000")
+        static let tabSelectedText = UIColor(hexString: "ffffff")
+        
+        static let tabUnselectedBackground = UIColor(hexString: "ffffff")
+        static let tabUnselectedText = UIColor(hexString: "000000")
+        
+        static let rowHeaderTitleBackground = UIColor(hexString: "000000")
+        static let rowHeaderTitleText = UIColor(hexString: "ffffff")
+        
+        static let rowText = UIColor(hexString: "ffffff")
+        static let rowBackgroundEven = UIColor(hexString: "BB9959")
+        static let rowBackgroundOdd = UIColor(hexString: "000000")
+        
+        static let moreButtonBackground =  UIColor(hexString: "000000")
+        static let moreButtonText =  UIColor(hexString: "ffffff")
+        
+    }
+    
+    
     
     static let darkBlue = UIColor(hexString: "00275e")
     static let midBlue = UIColor(hexString: "0c479b")

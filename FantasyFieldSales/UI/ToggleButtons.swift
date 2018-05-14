@@ -10,16 +10,16 @@ import UIKit
 
 class ToggleButtons: NSObject {
 
-   class func selectTabButton(buttons: [UIButton], index:Int) {
+    class func selectTabButton(buttons: [UIButton], index:Int, selectBackgroundColor: UIColor, unselectBackgroundColor: UIColor, textColor: UIColor) {
         for button: UIButton in buttons {
             
             if button.tag == index {
                 button.setTitleColor(ColorManager.white, for: .normal)
-                let backgroundImage = UIImage().imageWithColor(ColorManager.midBlue)
+                let backgroundImage = UIImage().imageWithColor(selectBackgroundColor)
                 button.setBackgroundImage(backgroundImage, for: .normal)
             } else {
                 button.setTitleColor(ColorManager.midBlue, for: .normal)
-                let backgroundImage = UIImage().imageWithColor(ColorManager.white)
+                let backgroundImage = UIImage().imageWithColor(unselectBackgroundColor)
                 button.setBackgroundImage(backgroundImage, for: .normal)
             }
             

@@ -49,7 +49,7 @@ class FFSTableDataSource: NSObject {
     func configureCell(_ cell:LeagueTableCell,  indexPath: IndexPath)
     {
 
-        cell.backgroundColor = indexPath.row % 2 == 0 ? UIColor.gray : UIColor.white
+        cell.backgroundColor = indexPath.row % 2 == 0 ? ColorManager.LeagueTable.rowBackgroundEven : ColorManager.LeagueTable.rowBackgroundOdd
         let team = array[indexPath.row]
         cell.positionLabel?.text = String(team.pos)
         cell.teamLabel?.text = team.team

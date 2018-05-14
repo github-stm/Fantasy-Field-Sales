@@ -18,21 +18,15 @@ class LeagueTableCell: UITableViewCell {
     
     override func awakeFromNib() {
     
-        let largeFont = UIFont(name: Constants.font.regularFont, size: Constants.fontSize.largeFontSize)
-        let font = UIFont(name: Constants.font.regularFont, size: Constants.fontSize.mediumFontSize)
         let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
-        
 
         let selectedBgView:UIView = UIView()
         selectedBgView.backgroundColor = UIColor.gray
         
-      
         for label: UILabel in labels {
             label.font = smallFont
-            label.textColor = ColorManager.darkBlue
+            label.textColor = ColorManager.LeagueTable.rowText
             label.textAlignment = .center
-            
-            
         }
         
         

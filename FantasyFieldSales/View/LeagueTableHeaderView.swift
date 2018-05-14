@@ -65,11 +65,11 @@ class LeagueTableHeaderView: UIView {
         
         titleLabel?.text = "LATEST TOP STATS"
         titleLabel?.font = smallFont
-        titleLabel?.textColor = ColorManager.white
+        titleLabel?.textColor = ColorManager.LeagueTable.titleText
         titleLabel?.textAlignment = .center
         titleLabel?.backgroundColor = UIColor.clear
         
-        titleView?.backgroundColor = ColorManager.midBlue
+        titleView?.backgroundColor = ColorManager.LeagueTable.titleBackground
         
         
         positionHeaderLabel?.text = "POS"
@@ -78,35 +78,31 @@ class LeagueTableHeaderView: UIView {
         
         for label: UILabel in labels {
             label.font = smallFont
-            label.textColor = ColorManager.white
+            label.textColor = ColorManager.LeagueTable.rowHeaderTitleText
             label.textAlignment = .center
         }
         
-        tableHeaderView?.backgroundColor = ColorManager.midBlue
+        tableHeaderView?.backgroundColor = ColorManager.LeagueTable.rowHeaderTitleBackground
        
         teamButton?.setTitle("Team",for: .normal)
         managerButton?.setTitle("Manager",for: .normal)
         memberButton?.setTitle("Team Member",for: .normal)
         
         for button: UIButton in buttons {
-            
-            button.setTitleColor(UIColor.white, for: .normal)
+
             button.titleLabel?.font = UIFont(name: Constants.font.regularFont, size: 16)
-            
-            var backgroundImage = UIImage().imageWithColor(ColorManager.darkBlue)
-            button.setBackgroundImage(backgroundImage, for: .normal)
-            backgroundImage = UIImage().imageWithColor(ColorManager.midBlue)
-            button.setBackgroundImage(backgroundImage, for: .selected)
+
             
         }
-        //selectTabButton(index:0)
-        ToggleButtons.selectTabButton(buttons: buttons, index: 0)
+
+         ToggleButtons.selectTabButton(buttons: buttons, index: 0, selectBackgroundColor: ColorManager.LeagueTable.tabSelectedBackground, unselectBackgroundColor: ColorManager.LeagueTable.tabUnselectedBackground, textColor: ColorManager.LeagueTable.tabSelectedText)
+
     }
     
     @IBAction func tabButtonTapped(_ sender: UIButton) {
 
         if let selectedIndex = (sender as AnyObject).tag {
-            ToggleButtons.selectTabButton(buttons: buttons, index: selectedIndex)
+             ToggleButtons.selectTabButton(buttons: buttons, index: selectedIndex, selectBackgroundColor: ColorManager.LeagueTable.tabSelectedBackground, unselectBackgroundColor: ColorManager.LeagueTable.tabUnselectedBackground, textColor: ColorManager.LeagueTable.tabSelectedText)
         }
     }
     
