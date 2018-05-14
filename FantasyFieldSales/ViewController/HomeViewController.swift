@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var pageView: UIView?
     @IBOutlet weak var scrollView: UIScrollView?
     
-    var dataSource = FFSTableDataSource()
+    var dataSource = FFSTableDataSource(footerType: .ViewFullTable)
     var pageController = HomePageViewController()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +47,9 @@ class HomeViewController: UIViewController {
         dataSource.delegate = self
         self.tableView?.delegate = self.dataSource
         self.tableView?.dataSource = self.dataSource
-        dataSource.footerType = .ViewFullTable
+       // dataSource.footerType = .ViewFullTable
+        
+       // self.tableView?.reloadData()
      
     }
 

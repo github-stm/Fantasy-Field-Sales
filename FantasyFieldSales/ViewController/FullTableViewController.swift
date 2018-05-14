@@ -24,7 +24,7 @@ class FullTableViewController: UIViewController {
         dataSource.delegate = self
         self.tableView?.delegate = self.dataSource
         self.tableView?.dataSource = self.dataSource
-        dataSource.footerType = .NoFooter
+ 
     }
 
     override func didReceiveMemoryWarning() {

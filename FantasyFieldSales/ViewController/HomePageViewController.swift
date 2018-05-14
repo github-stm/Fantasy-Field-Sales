@@ -129,9 +129,7 @@ class HomePageViewController: UIPageViewController {
             contentVC.itemIndex = index
             contentVC.bckgrdColor = Constants.backgroundColorContent[index]
             return contentVC
-
     }
-
 
 }
 

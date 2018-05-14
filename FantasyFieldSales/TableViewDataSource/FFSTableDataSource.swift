@@ -14,18 +14,24 @@ enum FooterType :Int {
     case ViewFullTable
 }
 
-
-
-
 class FFSTableDataSource: NSObject {
     let leagueTableCellIdentifier = "LeagueTableCell"
     
 
     var array = Constants.teams
     var delegate: FFSTableDataSourceDelegate?
-    
     var footerType:FooterType = .NoFooter
     
+    
+    init(footerType: FooterType) {
+        self.footerType = footerType
+        super.init()
+    }
+    
+    convenience override init() {
+        self.init(footerType:.NoFooter) // calls above default value
+    }
+
     func registerCells(forTableView tableView: UITableView) {
 
         tableView.register(UINib(nibName: leagueTableCellIdentifier, bundle: nil), forCellReuseIdentifier: "LeagueTableCell")
@@ -42,8 +48,7 @@ class FFSTableDataSource: NSObject {
     
     func configureCell(_ cell:LeagueTableCell,  indexPath: IndexPath)
     {
-        
-        
+
         cell.backgroundColor = indexPath.row % 2 == 0 ? UIColor.gray : UIColor.white
         let team = array[indexPath.row]
         cell.positionLabel?.text = String(team.pos)
@@ -66,7 +71,6 @@ extension FFSTableDataSource: LeagueTableMoreFooterViewDelegate {
 }
 
 
-// UITableViewDataSource
 extension FFSTableDataSource: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -104,10 +108,7 @@ extension FFSTableDataSource: UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableViewAutomaticDimension
-//    }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
         if let delegate = self.delegate {
@@ -126,9 +127,7 @@ extension FFSTableDataSource: UITableViewDelegate {
             return footerView
         }
     }
-    
 
-    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         if footerType == .NoFooter {

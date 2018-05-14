@@ -18,19 +18,11 @@ class LeagueTableCell: UITableViewCell {
     
     override func awakeFromNib() {
     
-        
-        
-//        let subviewArray = Bundle.main.loadNibNamed("LeagueTableCell", owner: self, options: nil)
-//        self.addSubview(subviewArray!.first as! UIView)
-        
         let largeFont = UIFont(name: Constants.font.regularFont, size: Constants.fontSize.largeFontSize)
         let font = UIFont(name: Constants.font.regularFont, size: Constants.fontSize.mediumFontSize)
         let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
         
-      //  let bgView: UIView = UIView()
-        //self.backgroundColor = ColorManager.lightGrey
 
-        
         let selectedBgView:UIView = UIView()
         selectedBgView.backgroundColor = UIColor.gray
         

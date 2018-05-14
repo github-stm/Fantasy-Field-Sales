@@ -103,6 +103,7 @@
 				5A5896B820A19AB300D6822F /* Info.plist */,
 				5A5896B520A19AB300D6822F /* LaunchScreen.storyboard */,
 				5A5896CF20A1AE2500D6822F /* CustomCell */,
+				5AEF009E20A9DAA6000BEFF0 /* TableViewDataSource */,
 				5A5896D420A1B89200D6822F /* View */,
 				5A5896C820A1A20100D6822F /* Extensions */,
 				5A5896C520A1A19000D6822F /* Managers */,
@@ -162,7 +163,6 @@
 				5A5896D020A1AE7A00D6822F /* LeagueTableCell.swift */,
 				5A0A11B920A300B700A0E887 /* LeagueTableCell.xib */,
 				5A26C7B220A34B2C00B5AB44 /* ParallaxHeaderView.swift */,
-				5A2C716C20A98E7900CD26F0 /* FFSTableDataSource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +173,14 @@
 				5A8DA93220A464D100C5D94D /* ToggleButtons.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		5AEF009E20A9DAA6000BEFF0 /* TableViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				5A2C716C20A98E7900CD26F0 /* FFSTableDataSource.swift */,
+			);
+			path = TableViewDataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
