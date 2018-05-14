@@ -28,7 +28,7 @@ class LeagueTableCell: UITableViewCell {
         let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
         
       //  let bgView: UIView = UIView()
-        self.backgroundColor = ColorManager.lightGrey
+        //self.backgroundColor = ColorManager.lightGrey
 
         
         let selectedBgView:UIView = UIView()
