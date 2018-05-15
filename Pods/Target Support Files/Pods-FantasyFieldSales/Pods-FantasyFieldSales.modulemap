@@ -1,0 +1,6 @@
+framework module Pods_FantasyFieldSales {
+  umbrella header "Pods-FantasyFieldSales-umbrella.h"
+
+  export *
+  module * { export * }
+}
