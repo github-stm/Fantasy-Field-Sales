@@ -8,35 +8,47 @@
 
 import UIKit
 
-// white ffffff
-// black 000000
-// gold BB9959
 
 class ColorManager: UIColor {
     
+    fileprivate static let colorWhite = UIColor(hexString: "ffffff")
+    fileprivate static let colorBlack = UIColor(hexString: "000000")
+    fileprivate static let colorGold = UIColor(hexString: "BB9959")
+    
     // ------------------------------------------------------------------------------------------------------------
     struct LeagueTable {
-        static let titleBackground = UIColor(hexString: "BB9959")
-        static let titleText = UIColor(hexString: "000000")
+        static let titleBackground = colorGold
+        static let titleText = colorBlack
         
-        static let tabSelectedBackground = UIColor(hexString: "000000")
-        static let tabSelectedText = UIColor(hexString: "ffffff")
+        static let tabSelectedBackground = colorBlack
+        static let tabSelectedText = colorWhite
         
-        static let tabUnselectedBackground = UIColor(hexString: "ffffff")
-        static let tabUnselectedText = UIColor(hexString: "000000")
+        static let tabUnselectedBackground = colorWhite
+        static let tabUnselectedText = colorBlack
         
-        static let rowHeaderTitleBackground = UIColor(hexString: "000000")
-        static let rowHeaderTitleText = UIColor(hexString: "ffffff")
+        static let rowHeaderTitleBackground = colorBlack
+        static let rowHeaderTitleText = colorWhite
         
-        static let rowText = UIColor(hexString: "ffffff")
-        static let rowBackgroundEven = UIColor(hexString: "BB9959")
-        static let rowBackgroundOdd = UIColor(hexString: "000000")
+        static let rowText = colorBlack
+        static let rowBackgroundEven = colorGold
+        static let rowBackgroundOdd = colorWhite
         
-        static let moreButtonBackground =  UIColor(hexString: "000000")
-        static let moreButtonText =  UIColor(hexString: "ffffff")
+        static let moreButtonBackground =  colorBlack
+        static let moreButtonText =  colorWhite
+        
         
     }
     
+    
+    
+    struct TabButtons {
+        static let selectedBackground = colorBlack
+        static let unselectedBackground = colorWhite
+        
+        static let selectedText = colorWhite
+        static let unselectedText = colorBlack
+        
+    }
     
     
     static let darkBlue = UIColor(hexString: "00275e")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		188BF671890FD0A0591F49F8 /* Pods_FantasyFieldSales.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B3EF2908C5E0638DE6EA76 /* Pods_FantasyFieldSales.framework */; };
 		5A0A11B420A2EAFD00A0E887 /* LeagueTableMoreFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0A11B320A2EAFD00A0E887 /* LeagueTableMoreFooterView.swift */; };
 		5A0A11B620A2EB0C00A0E887 /* LeagueTableMoreFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A0A11B520A2EB0C00A0E887 /* LeagueTableMoreFooterView.xib */; };
 		5A0A11B820A2FDD100A0E887 /* FullTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0A11B720A2FDD100A0E887 /* FullTableViewController.swift */; };
@@ -34,9 +35,16 @@
 		5A69B30B20A5B1BF003CBB04 /* journey-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A69B30A20A5B1BE003CBB04 /* journey-disabled@2x.png */; };
 		5A8DA93320A464D100C5D94D /* ToggleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DA93220A464D100C5D94D /* ToggleButtons.swift */; };
 		5A8DA93520A4694000C5D94D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DA93420A4694000C5D94D /* NewsViewController.swift */; };
+		5AE1556020AB019700D25C07 /* ScrollTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1555F20AB019700D25C07 /* ScrollTabView.xib */; };
+		5AE1556220AB01B400D25C07 /* ScrollTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1556120AB01B400D25C07 /* ScrollTabView.swift */; };
+		5AE1556720AB01F400D25C07 /* ScrollTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1556520AB01F400D25C07 /* ScrollTabCell.swift */; };
+		5AE1556820AB01F400D25C07 /* ScrollTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1556620AB01F400D25C07 /* ScrollTabCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24563EC146320117FAC8C6BE /* Pods-FantasyFieldSales.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyFieldSales.release.xcconfig"; path = "Pods/Target Support Files/Pods-FantasyFieldSales/Pods-FantasyFieldSales.release.xcconfig"; sourceTree = "<group>"; };
+		46963D6DB0741903ACEA3DE8 /* Pods-FantasyFieldSales.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyFieldSales.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FantasyFieldSales/Pods-FantasyFieldSales.debug.xcconfig"; sourceTree = "<group>"; };
+		50B3EF2908C5E0638DE6EA76 /* Pods_FantasyFieldSales.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FantasyFieldSales.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0A11B320A2EAFD00A0E887 /* LeagueTableMoreFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTableMoreFooterView.swift; sourceTree = "<group>"; };
 		5A0A11B520A2EB0C00A0E887 /* LeagueTableMoreFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueTableMoreFooterView.xib; sourceTree = "<group>"; };
 		5A0A11B720A2FDD100A0E887 /* FullTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullTableViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +74,10 @@
 		5A69B30A20A5B1BE003CBB04 /* journey-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "journey-disabled@2x.png"; path = "../../../100_Wyld_Research/Wyld.LU.iOS.PoC/Wyld.LU.iOS.PoC/Assets.xcassets/HomeTab/journey-disabled.imageset/journey-disabled@2x.png"; sourceTree = "<group>"; };
 		5A8DA93220A464D100C5D94D /* ToggleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtons.swift; sourceTree = "<group>"; };
 		5A8DA93420A4694000C5D94D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		5AE1555F20AB019700D25C07 /* ScrollTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollTabView.xib; sourceTree = "<group>"; };
+		5AE1556120AB01B400D25C07 /* ScrollTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTabView.swift; sourceTree = "<group>"; };
+		5AE1556520AB01F400D25C07 /* ScrollTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTabCell.swift; sourceTree = "<group>"; };
+		5AE1556620AB01F400D25C07 /* ScrollTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollTabCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188BF671890FD0A0591F49F8 /* Pods_FantasyFieldSales.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +97,8 @@
 			children = (
 				5A5896AB20A19AB100D6822F /* FantasyFieldSales */,
 				5A5896AA20A19AB100D6822F /* Products */,
+				A4B73699FB5274774B417F7C /* Pods */,
+				BEA4EF584AC44A4767B9027A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +113,7 @@
 		5A5896AB20A19AB100D6822F /* FantasyFieldSales */ = {
 			isa = PBXGroup;
 			children = (
+				5AE1557D20AB381D00D25C07 /* SupportingFiles */,
 				5A5896AC20A19AB100D6822F /* AppDelegate.swift */,
 				5A5896B020A19AB100D6822F /* Main.storyboard */,
 				5A5896B320A19AB300D6822F /* Assets.xcassets */,
@@ -151,12 +167,8 @@
 		5A5896D420A1B89200D6822F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5A5896D720A1B8DD00D6822F /* LeagueTableHeaderView.swift */,
-				5A5896D520A1B8B800D6822F /* LeagueTableHeaderView.xib */,
-				5A0A11B320A2EAFD00A0E887 /* LeagueTableMoreFooterView.swift */,
-				5A0A11B520A2EB0C00A0E887 /* LeagueTableMoreFooterView.xib */,
-				5A5896D020A1AE7A00D6822F /* LeagueTableCell.swift */,
-				5A0A11B920A300B700A0E887 /* LeagueTableCell.xib */,
+				5AE1556920AB126F00D25C07 /* LeagueTable */,
+				5AE1555E20AB016500D25C07 /* ScrollTabView */,
 				5A26C7B220A34B2C00B5AB44 /* ParallaxHeaderView.swift */,
 			);
 			path = View;
@@ -170,12 +182,60 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		5AE1555E20AB016500D25C07 /* ScrollTabView */ = {
+			isa = PBXGroup;
+			children = (
+				5AE1556120AB01B400D25C07 /* ScrollTabView.swift */,
+				5AE1555F20AB019700D25C07 /* ScrollTabView.xib */,
+				5AE1556520AB01F400D25C07 /* ScrollTabCell.swift */,
+				5AE1556620AB01F400D25C07 /* ScrollTabCell.xib */,
+			);
+			path = ScrollTabView;
+			sourceTree = "<group>";
+		};
+		5AE1556920AB126F00D25C07 /* LeagueTable */ = {
+			isa = PBXGroup;
+			children = (
+				5A5896D720A1B8DD00D6822F /* LeagueTableHeaderView.swift */,
+				5A5896D520A1B8B800D6822F /* LeagueTableHeaderView.xib */,
+				5A0A11B320A2EAFD00A0E887 /* LeagueTableMoreFooterView.swift */,
+				5A0A11B520A2EB0C00A0E887 /* LeagueTableMoreFooterView.xib */,
+				5A5896D020A1AE7A00D6822F /* LeagueTableCell.swift */,
+				5A0A11B920A300B700A0E887 /* LeagueTableCell.xib */,
+			);
+			path = LeagueTable;
+			sourceTree = "<group>";
+		};
+		5AE1557D20AB381D00D25C07 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		5AEF009E20A9DAA6000BEFF0 /* TableViewDataSource */ = {
 			isa = PBXGroup;
 			children = (
 				5A2C716C20A98E7900CD26F0 /* FFSTableDataSource.swift */,
 			);
 			path = TableViewDataSource;
+			sourceTree = "<group>";
+		};
+		A4B73699FB5274774B417F7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46963D6DB0741903ACEA3DE8 /* Pods-FantasyFieldSales.debug.xcconfig */,
+				24563EC146320117FAC8C6BE /* Pods-FantasyFieldSales.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BEA4EF584AC44A4767B9027A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50B3EF2908C5E0638DE6EA76 /* Pods_FantasyFieldSales.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,9 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A5896BB20A19AB300D6822F /* Build configuration list for PBXNativeTarget "FantasyFieldSales" */;
 			buildPhases = (
+				946B486B7E506AEAC3C9F2EC /* [CP] Check Pods Manifest.lock */,
 				5A5896A520A19AB100D6822F /* Sources */,
 				5A5896A620A19AB100D6822F /* Frameworks */,
 				5A5896A720A19AB100D6822F /* Resources */,
+				99A43D7B3973519E47AD6C3A /* [CP] Embed Pods Frameworks */,
+				4E5CFAA14BC8DA478264FE74 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,14 +302,70 @@
 				5A5896B720A19AB300D6822F /* LaunchScreen.storyboard in Resources */,
 				5A5896D620A1B8B800D6822F /* LeagueTableHeaderView.xib in Resources */,
 				5A5896B420A19AB300D6822F /* Assets.xcassets in Resources */,
+				5AE1556020AB019700D25C07 /* ScrollTabView.xib in Resources */,
 				5A69B30B20A5B1BF003CBB04 /* journey-disabled@2x.png in Resources */,
 				5A0A11B620A2EB0C00A0E887 /* LeagueTableMoreFooterView.xib in Resources */,
 				5A5896B220A19AB100D6822F /* Main.storyboard in Resources */,
 				5A0A11BA20A300B700A0E887 /* LeagueTableCell.xib in Resources */,
+				5AE1556820AB01F400D25C07 /* ScrollTabCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E5CFAA14BC8DA478264FE74 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FantasyFieldSales/Pods-FantasyFieldSales-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		946B486B7E506AEAC3C9F2EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FantasyFieldSales-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99A43D7B3973519E47AD6C3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FantasyFieldSales/Pods-FantasyFieldSales-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FantasyFieldSales/Pods-FantasyFieldSales-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5A5896A520A19AB100D6822F /* Sources */ = {
@@ -260,12 +379,14 @@
 				5A5896D120A1AE7A00D6822F /* LeagueTableCell.swift in Sources */,
 				5A2C716D20A98E7900CD26F0 /* FFSTableDataSource.swift in Sources */,
 				5A26C7B520A3619500B5AB44 /* ContentViewController.swift in Sources */,
+				5AE1556220AB01B400D25C07 /* ScrollTabView.swift in Sources */,
 				5A5896DB20A1DE1F00D6822F /* HomePageViewController.swift in Sources */,
 				5A5896CA20A1A22200D6822F /* UIImageExtension.swift in Sources */,
 				5A26C7B320A34B2C00B5AB44 /* ParallaxHeaderView.swift in Sources */,
 				5A69B30920A5A156003CBB04 /* UIViewExtension.swift in Sources */,
 				5A5896CC20A1A24700D6822F /* UIColorExtension.swift in Sources */,
 				5A5896AD20A19AB100D6822F /* AppDelegate.swift in Sources */,
+				5AE1556720AB01F400D25C07 /* ScrollTabCell.swift in Sources */,
 				5A5896C720A1A1D400D6822F /* ColorManager.swift in Sources */,
 				5A5896C020A19C0A00D6822F /* HomeViewController.swift in Sources */,
 				5A5896D820A1B8DD00D6822F /* LeagueTableHeaderView.swift in Sources */,
@@ -414,15 +535,13 @@
 		};
 		5A5896BC20A19AB300D6822F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46963D6DB0741903ACEA3DE8 /* Pods-FantasyFieldSales.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 376PTV42SM;
 				INFOPLIST_FILE = FantasyFieldSales/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cb.Diageo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -432,15 +551,13 @@
 		};
 		5A5896BD20A19AB300D6822F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24563EC146320117FAC8C6BE /* Pods-FantasyFieldSales.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 376PTV42SM;
 				INFOPLIST_FILE = FantasyFieldSales/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cb.Diageo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

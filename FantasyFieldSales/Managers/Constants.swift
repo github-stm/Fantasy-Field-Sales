@@ -19,6 +19,8 @@ class Constants: NSObject {
     
     static let backgroundColorContent = [ UIColor.red, UIColor.green]
   
+    
+    static let teamGroup = ["Test", "Test2", "Test3", "Test", "Test2", "Test3"]
     // ------------------------------------------------------------------------------------------------------------
     
     static let teams = [(pos: 1, team: "London North", points: 120)

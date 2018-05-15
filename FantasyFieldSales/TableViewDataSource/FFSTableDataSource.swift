@@ -70,6 +70,12 @@ extension FFSTableDataSource: LeagueTableMoreFooterViewDelegate {
     }
 }
 
+extension FFSTableDataSource: LeagueTableHeaderViewDelegate {
+    func selectedItem(indexPath: IndexPath){
+          print("FFSTableDataSource indexpath row\(indexPath.row)")
+    }
+
+}
 
 extension FFSTableDataSource: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -98,6 +104,11 @@ extension FFSTableDataSource: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = LeagueTableHeaderView()
+        
+        headerView.delegate = self
+      //  headerView.tabArray = Constants.teamGroup
+        
+        headerView.reloadData(data: Constants.teamGroup)
         return headerView
     }
     

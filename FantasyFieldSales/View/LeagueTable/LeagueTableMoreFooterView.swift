@@ -56,7 +56,7 @@ class LeagueTableMoreFooterView: UIView {
         moreButton?.setBackgroundImage(backgroundImage, for: .normal)
         backgroundImage = UIImage().imageWithColor(ColorManager.LeagueTable.moreButtonBackground)
         moreButton?.setBackgroundImage(backgroundImage, for: .selected)
-  
+        
     }
 
     //------------------------------------------------------------------------------------------------------------

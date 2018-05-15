@@ -8,16 +8,26 @@
 
 import UIKit
 
+
+protocol LeagueTableHeaderViewDelegate {
+    func selectedItem(indexPath: IndexPath)
+}
+
+
+
+
 class LeagueTableHeaderView: UIView {
+    
+    
+    var delegate: LeagueTableHeaderViewDelegate?
     
     @IBOutlet weak fileprivate var contentView: UIView?
 
     @IBOutlet var labels: [UILabel]!
     @IBOutlet var buttons: [UIButton]!
     
-    
     @IBOutlet weak var titleView: UIView?
-    @IBOutlet weak var tabView: UIView?
+    @IBOutlet weak var tabView: ScrollTabView?
     @IBOutlet weak var tableHeaderView: UIView?
 
     @IBOutlet weak var teamButton: UIButton?
@@ -30,6 +40,8 @@ class LeagueTableHeaderView: UIView {
     @IBOutlet weak var positionHeaderLabel: UILabel?
     @IBOutlet weak var teamHeaderLabel: UILabel?
     @IBOutlet weak var pointsHeaderLabel: UILabel?
+    
+    var tabArray:[String]? = []
     
     
     override init(frame: CGRect) {
@@ -52,6 +64,12 @@ class LeagueTableHeaderView: UIView {
 
         let subviewArray = Bundle.main.loadNibNamed("LeagueTableHeaderView", owner: self, options: nil)
         self.addSubview(subviewArray!.first as! UIView)
+        
+        tabView?.delegate = self
+//        tabView?.collectionArray = Constants.teamGroup
+//        tabView?.collectionView?.reloadData()
+        
+        
 
         let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
         
@@ -84,26 +102,29 @@ class LeagueTableHeaderView: UIView {
         
         tableHeaderView?.backgroundColor = ColorManager.LeagueTable.rowHeaderTitleBackground
        
-        teamButton?.setTitle("Team",for: .normal)
-        managerButton?.setTitle("Manager",for: .normal)
-        memberButton?.setTitle("Team Member",for: .normal)
+
+    }
+    
+    func reloadData(data:[String]){
+        tabView?.collectionArray = data
+        tabView?.collectionView?.reloadData()
+    }
+
+}
+
+
+
+extension LeagueTableHeaderView :ScrollTabViewDelegate {
+    func selectedItem(indexPath: IndexPath) {
         
-        for button: UIButton in buttons {
-
-            button.titleLabel?.font = UIFont(name: Constants.font.regularFont, size: 16)
-
+        if let delegate = self.delegate {
+            delegate.selectedItem(indexPath: indexPath)
+            print("header view indexpath row\(indexPath.row)")
             
         }
-
-         ToggleButtons.selectTabButton(buttons: buttons, index: 0, selectBackgroundColor: ColorManager.LeagueTable.tabSelectedBackground, unselectBackgroundColor: ColorManager.LeagueTable.tabUnselectedBackground, textColor: ColorManager.LeagueTable.tabSelectedText)
-
+        
+        print("2 header view indexpath row\(indexPath.row)")
     }
-    
-    @IBAction func tabButtonTapped(_ sender: UIButton) {
-
-        if let selectedIndex = (sender as AnyObject).tag {
-             ToggleButtons.selectTabButton(buttons: buttons, index: selectedIndex, selectBackgroundColor: ColorManager.LeagueTable.tabSelectedBackground, unselectBackgroundColor: ColorManager.LeagueTable.tabUnselectedBackground, textColor: ColorManager.LeagueTable.tabSelectedText)
-        }
-    }
-    
 }
+
+

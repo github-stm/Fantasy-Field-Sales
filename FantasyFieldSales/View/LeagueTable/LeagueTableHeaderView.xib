@@ -13,28 +13,22 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeagueTableHeaderView" customModule="FantasyFieldSales" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="DZp-Bk-N4a"/>
-                <outlet property="managerButton" destination="99W-kF-iId" id="x6s-Zx-RMs"/>
-                <outlet property="memberButton" destination="X8c-Gh-BeQ" id="3MN-yu-H5L"/>
                 <outlet property="monthLabel" destination="ftj-QP-A98" id="bvo-U0-s09"/>
                 <outlet property="pointsHeaderLabel" destination="qhc-d7-rUY" id="81d-Dy-xcO"/>
                 <outlet property="positionHeaderLabel" destination="y0D-fV-VtK" id="fEg-Rt-DRB"/>
                 <outlet property="tabView" destination="i5h-10-I09" id="dZW-bI-Rg8"/>
                 <outlet property="tableHeaderView" destination="QT5-Vb-oBp" id="Mcb-rT-2ql"/>
-                <outlet property="teamButton" destination="0nT-i0-d25" id="b91-0j-7e2"/>
                 <outlet property="teamHeaderLabel" destination="VeO-uh-HeA" id="l4a-XO-HUG"/>
                 <outlet property="titleLabel" destination="kSg-cc-qs5" id="VW0-Xg-JQg"/>
                 <outlet property="titleView" destination="VK7-cw-5jw" id="z9D-LO-CRo"/>
                 <outletCollection property="labels" destination="y0D-fV-VtK" collectionClass="NSMutableArray" id="RPy-oq-gHQ"/>
                 <outletCollection property="labels" destination="VeO-uh-HeA" collectionClass="NSMutableArray" id="rhW-7V-ukQ"/>
                 <outletCollection property="labels" destination="qhc-d7-rUY" collectionClass="NSMutableArray" id="oDi-dH-Hiv"/>
-                <outletCollection property="buttons" destination="0nT-i0-d25" collectionClass="NSMutableArray" id="r5h-0l-7iC"/>
-                <outletCollection property="buttons" destination="99W-kF-iId" collectionClass="NSMutableArray" id="EeA-a5-OtS"/>
-                <outletCollection property="buttons" destination="X8c-Gh-BeQ" collectionClass="NSMutableArray" id="F9Q-kq-kqu"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VK7-cw-5jw">
@@ -73,47 +67,15 @@
                         <constraint firstAttribute="trailing" secondItem="ftj-QP-A98" secondAttribute="trailing" id="xGm-xe-FjF"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5h-10-I09">
-                    <rect key="frame" x="0.0" y="35" width="375" height="35"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VbW-Z0-m5H">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nT-i0-d25">
-                                    <rect key="frame" x="0.0" y="0.0" width="125" height="35"/>
-                                    <state key="normal" title="Button"/>
-                                    <connections>
-                                        <action selector="tabButtonTapped:" destination="-1" eventType="touchUpInside" id="z0P-4A-ynF"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99W-kF-iId">
-                                    <rect key="frame" x="125" y="0.0" width="125" height="35"/>
-                                    <state key="normal" title="Button"/>
-                                    <connections>
-                                        <action selector="tabButtonTapped:" destination="-1" eventType="touchUpInside" id="Lwv-3c-rxI"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8c-Gh-BeQ">
-                                    <rect key="frame" x="250" y="0.0" width="125" height="35"/>
-                                    <state key="normal" title="Button"/>
-                                    <connections>
-                                        <action selector="tabButtonTapped:" destination="-1" eventType="touchUpInside" id="1dQ-m7-Rxk"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                        </stackView>
-                    </subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5h-10-I09" customClass="ScrollTabView" customModule="FantasyFieldSales" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="35" width="375" height="40"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="35" id="5ej-C1-uNt"/>
-                        <constraint firstAttribute="bottom" secondItem="VbW-Z0-m5H" secondAttribute="bottom" id="Hpt-R6-jtD"/>
-                        <constraint firstItem="VbW-Z0-m5H" firstAttribute="leading" secondItem="i5h-10-I09" secondAttribute="leading" id="NTU-yc-ajz"/>
-                        <constraint firstAttribute="trailing" secondItem="VbW-Z0-m5H" secondAttribute="trailing" id="Uwb-hh-ARj"/>
-                        <constraint firstItem="VbW-Z0-m5H" firstAttribute="top" secondItem="i5h-10-I09" secondAttribute="top" id="mky-Ji-F8z"/>
+                        <constraint firstAttribute="height" constant="40" id="5ej-C1-uNt"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-Vb-oBp">
-                    <rect key="frame" x="0.0" y="70" width="375" height="35"/>
+                    <rect key="frame" x="0.0" y="75" width="375" height="35"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0D-fV-VtK">
                             <rect key="frame" x="0.0" y="7.5" width="50" height="20.5"/>

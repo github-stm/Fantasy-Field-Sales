@@ -47,6 +47,8 @@ class HomeViewController: UIViewController {
         dataSource.delegate = self
         self.tableView?.delegate = self.dataSource
         self.tableView?.dataSource = self.dataSource
+        
+        
        // dataSource.footerType = .ViewFullTable
         
        // self.tableView?.reloadData()
