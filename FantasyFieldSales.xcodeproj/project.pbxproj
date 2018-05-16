@@ -33,12 +33,18 @@
 		5A62482520A9EA5800829DEB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A62482420A9EA5800829DEB /* ColorExtension.swift */; };
 		5A69B30920A5A156003CBB04 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A69B30820A5A156003CBB04 /* UIViewExtension.swift */; };
 		5A69B30B20A5B1BF003CBB04 /* journey-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A69B30A20A5B1BE003CBB04 /* journey-disabled@2x.png */; };
+		5A6B7A3C20AC449000E154EF /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B7A3B20AC449000E154EF /* ContactsViewController.swift */; };
+		5A6B7A3E20AC734200E154EF /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B7A3D20AC734200E154EF /* MoreViewController.swift */; };
+		5A6B7A4620AC74A600E154EF /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B7A4420AC74A600E154EF /* MoreCell.swift */; };
+		5A6B7A4720AC74A600E154EF /* MoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A6B7A4520AC74A600E154EF /* MoreCell.xib */; };
+		5A6B7A4A20AC905400E154EF /* DSSCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B7A4920AC905400E154EF /* DSSCollectionViewFlowLayout.swift */; };
 		5A8DA93320A464D100C5D94D /* ToggleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DA93220A464D100C5D94D /* ToggleButtons.swift */; };
 		5A8DA93520A4694000C5D94D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DA93420A4694000C5D94D /* NewsViewController.swift */; };
 		5AE1556020AB019700D25C07 /* ScrollTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1555F20AB019700D25C07 /* ScrollTabView.xib */; };
 		5AE1556220AB01B400D25C07 /* ScrollTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1556120AB01B400D25C07 /* ScrollTabView.swift */; };
 		5AE1556720AB01F400D25C07 /* ScrollTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1556520AB01F400D25C07 /* ScrollTabCell.swift */; };
 		5AE1556820AB01F400D25C07 /* ScrollTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1556620AB01F400D25C07 /* ScrollTabCell.xib */; };
+		5AE1558820AB3BC200D25C07 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1558720AB3BC200D25C07 /* ChartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,12 +78,18 @@
 		5A62482420A9EA5800829DEB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5A69B30820A5A156003CBB04 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		5A69B30A20A5B1BE003CBB04 /* journey-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "journey-disabled@2x.png"; path = "../../../100_Wyld_Research/Wyld.LU.iOS.PoC/Wyld.LU.iOS.PoC/Assets.xcassets/HomeTab/journey-disabled.imageset/journey-disabled@2x.png"; sourceTree = "<group>"; };
+		5A6B7A3B20AC449000E154EF /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		5A6B7A3D20AC734200E154EF /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		5A6B7A4420AC74A600E154EF /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
+		5A6B7A4520AC74A600E154EF /* MoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreCell.xib; sourceTree = "<group>"; };
+		5A6B7A4920AC905400E154EF /* DSSCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		5A8DA93220A464D100C5D94D /* ToggleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtons.swift; sourceTree = "<group>"; };
 		5A8DA93420A4694000C5D94D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		5AE1555F20AB019700D25C07 /* ScrollTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollTabView.xib; sourceTree = "<group>"; };
 		5AE1556120AB01B400D25C07 /* ScrollTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTabView.swift; sourceTree = "<group>"; };
 		5AE1556520AB01F400D25C07 /* ScrollTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTabCell.swift; sourceTree = "<group>"; };
 		5AE1556620AB01F400D25C07 /* ScrollTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollTabCell.xib; sourceTree = "<group>"; };
+		5AE1558720AB3BC200D25C07 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +125,7 @@
 		5A5896AB20A19AB100D6822F /* FantasyFieldSales */ = {
 			isa = PBXGroup;
 			children = (
+				5A6B7A4820AC903900E154EF /* Subclass */,
 				5AE1557D20AB381D00D25C07 /* SupportingFiles */,
 				5A5896AC20A19AB100D6822F /* AppDelegate.swift */,
 				5A5896B020A19AB100D6822F /* Main.storyboard */,
@@ -139,6 +152,9 @@
 				5A8DA93420A4694000C5D94D /* NewsViewController.swift */,
 				5A0A11B720A2FDD100A0E887 /* FullTableViewController.swift */,
 				5A26C7B420A3619500B5AB44 /* ContentViewController.swift */,
+				5AE1558720AB3BC200D25C07 /* ChartViewController.swift */,
+				5A6B7A3B20AC449000E154EF /* ContactsViewController.swift */,
+				5A6B7A3D20AC734200E154EF /* MoreViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -167,11 +183,29 @@
 		5A5896D420A1B89200D6822F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5A6B7A3F20AC746500E154EF /* More */,
 				5AE1556920AB126F00D25C07 /* LeagueTable */,
 				5AE1555E20AB016500D25C07 /* ScrollTabView */,
 				5A26C7B220A34B2C00B5AB44 /* ParallaxHeaderView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5A6B7A3F20AC746500E154EF /* More */ = {
+			isa = PBXGroup;
+			children = (
+				5A6B7A4420AC74A600E154EF /* MoreCell.swift */,
+				5A6B7A4520AC74A600E154EF /* MoreCell.xib */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		5A6B7A4820AC903900E154EF /* Subclass */ = {
+			isa = PBXGroup;
+			children = (
+				5A6B7A4920AC905400E154EF /* DSSCollectionViewFlowLayout.swift */,
+			);
+			path = Subclass;
 			sourceTree = "<group>";
 		};
 		5A8DA93120A4648A00C5D94D /* UI */ = {
@@ -305,6 +339,7 @@
 				5AE1556020AB019700D25C07 /* ScrollTabView.xib in Resources */,
 				5A69B30B20A5B1BF003CBB04 /* journey-disabled@2x.png in Resources */,
 				5A0A11B620A2EB0C00A0E887 /* LeagueTableMoreFooterView.xib in Resources */,
+				5A6B7A4720AC74A600E154EF /* MoreCell.xib in Resources */,
 				5A5896B220A19AB100D6822F /* Main.storyboard in Resources */,
 				5A0A11BA20A300B700A0E887 /* LeagueTableCell.xib in Resources */,
 				5AE1556820AB01F400D25C07 /* ScrollTabCell.xib in Resources */,
@@ -373,9 +408,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A0A11C220A31A5A00A0E887 /* DateExtension.swift in Sources */,
+				5AE1558820AB3BC200D25C07 /* ChartViewController.swift in Sources */,
 				5A8DA93320A464D100C5D94D /* ToggleButtons.swift in Sources */,
+				5A6B7A4A20AC905400E154EF /* DSSCollectionViewFlowLayout.swift in Sources */,
 				5A0A11B420A2EAFD00A0E887 /* LeagueTableMoreFooterView.swift in Sources */,
 				5A0A11B820A2FDD100A0E887 /* FullTableViewController.swift in Sources */,
+				5A6B7A3E20AC734200E154EF /* MoreViewController.swift in Sources */,
+				5A6B7A3C20AC449000E154EF /* ContactsViewController.swift in Sources */,
 				5A5896D120A1AE7A00D6822F /* LeagueTableCell.swift in Sources */,
 				5A2C716D20A98E7900CD26F0 /* FFSTableDataSource.swift in Sources */,
 				5A26C7B520A3619500B5AB44 /* ContentViewController.swift in Sources */,
@@ -389,6 +428,7 @@
 				5AE1556720AB01F400D25C07 /* ScrollTabCell.swift in Sources */,
 				5A5896C720A1A1D400D6822F /* ColorManager.swift in Sources */,
 				5A5896C020A19C0A00D6822F /* HomeViewController.swift in Sources */,
+				5A6B7A4620AC74A600E154EF /* MoreCell.swift in Sources */,
 				5A5896D820A1B8DD00D6822F /* LeagueTableHeaderView.swift in Sources */,
 				5A8DA93520A4694000C5D94D /* NewsViewController.swift in Sources */,
 				5A5896C420A1A11C00D6822F /* TeamViewController.swift in Sources */,
@@ -541,7 +581,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 376PTV42SM;
 				INFOPLIST_FILE = FantasyFieldSales/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cb.Diageo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -557,7 +600,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 376PTV42SM;
 				INFOPLIST_FILE = FantasyFieldSales/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cb.Diageo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

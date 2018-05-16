@@ -1,21 +1,24 @@
 //
-//  LeagueTableCell.swift
-//  Diageo
+//  MoreCell.swift
+//  FantasyFieldSales
 //
-//  Created by Clive Brown on 08/05/2018.
+//  Created by Cee Bee on 16/05/2018.
 //  Copyright © 2018 CeeBee. All rights reserved.
 //
 
 import UIKit
 
-class LeagueTableCell: UITableViewCell {
+class MoreCell: UICollectionViewCell {
     
     @IBOutlet var labels: [UILabel]!
     
-    @IBOutlet weak var positionLabel: UILabel?
-    @IBOutlet weak var teamLabel: UILabel?
-    @IBOutlet weak var pointsLabel: UILabel?
     
+
+    @IBOutlet weak var topView: UIView?
+    @IBOutlet weak var bottomView: UIView?
+    
+    @IBOutlet weak var topLabel: UILabel?
+    @IBOutlet weak var bottomLabel: UILabel?
     
     override var isSelected: Bool {
         didSet {
@@ -26,23 +29,22 @@ class LeagueTableCell: UITableViewCell {
     
     
     override func awakeFromNib() {
-    
-        let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
+        super.awakeFromNib()
 
-//        let selectedBgView:UIView = UIView()
-//        selectedBgView.backgroundColor = UIColor.gray
+        let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
         
         for label: UILabel in labels {
             label.font = smallFont
             label.textColor = ColorManager.LeagueTable.rowText
             label.textAlignment = .center
+            label.backgroundColor = UIColor.clear
         }
         
         
+        topView?.backgroundColor = UIColor.red
+        bottomView?.backgroundColor = UIColor.blue
+
+        
     }
-    
-    
-  
-    
 
 }
