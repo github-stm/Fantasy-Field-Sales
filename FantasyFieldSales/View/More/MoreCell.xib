@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="150" height="148"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blv-Tn-43d">
-                                <rect key="frame" x="8" y="8" width="134" height="132"/>
+                                <rect key="frame" x="54" y="64.5" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -33,17 +32,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="Blv-Tn-43d" secondAttribute="bottom" id="C6d-xv-mxh"/>
-                            <constraint firstItem="Blv-Tn-43d" firstAttribute="leading" secondItem="TCa-FT-dUI" secondAttribute="leadingMargin" id="Htf-h8-gvq"/>
-                            <constraint firstItem="Blv-Tn-43d" firstAttribute="top" secondItem="TCa-FT-dUI" secondAttribute="topMargin" id="N3Y-yj-gxt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Blv-Tn-43d" secondAttribute="trailing" id="TVZ-HQ-IF3"/>
+                            <constraint firstItem="Blv-Tn-43d" firstAttribute="centerY" secondItem="TCa-FT-dUI" secondAttribute="centerY" id="13M-1j-vde"/>
+                            <constraint firstItem="Blv-Tn-43d" firstAttribute="centerX" secondItem="TCa-FT-dUI" secondAttribute="centerX" id="hp9-0B-Z9f"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7QF-z0-bDL">
                         <rect key="frame" x="0.0" y="148" width="150" height="73"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNv-DM-nAK">
-                                <rect key="frame" x="8" y="8" width="134" height="57"/>
+                                <rect key="frame" x="54" y="26" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,10 +48,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="SNv-DM-nAK" secondAttribute="trailing" id="6rO-cB-4bn"/>
-                            <constraint firstItem="SNv-DM-nAK" firstAttribute="leading" secondItem="7QF-z0-bDL" secondAttribute="leadingMargin" id="AsC-T7-Gn5"/>
-                            <constraint firstItem="SNv-DM-nAK" firstAttribute="top" secondItem="7QF-z0-bDL" secondAttribute="topMargin" id="FVM-ob-Me5"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="SNv-DM-nAK" secondAttribute="bottom" id="uR9-Xa-QQe"/>
+                            <constraint firstItem="SNv-DM-nAK" firstAttribute="centerY" secondItem="7QF-z0-bDL" secondAttribute="centerY" id="7Yc-83-KZw"/>
+                            <constraint firstItem="SNv-DM-nAK" firstAttribute="centerX" secondItem="7QF-z0-bDL" secondAttribute="centerX" id="kDZ-1N-E46"/>
                         </constraints>
                     </view>
                 </subviews>

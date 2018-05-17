@@ -38,11 +38,13 @@ class MoreCell: UICollectionViewCell {
             label.textColor = ColorManager.LeagueTable.rowText
             label.textAlignment = .center
             label.backgroundColor = UIColor.clear
+            label.isUserInteractionEnabled = false
         }
         
-        
         topView?.backgroundColor = UIColor.red
+        topView?.isUserInteractionEnabled = false
         bottomView?.backgroundColor = UIColor.blue
+        bottomView?.isUserInteractionEnabled = false
 
         
     }
