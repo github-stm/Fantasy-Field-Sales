@@ -37,7 +37,7 @@
 		5A6B7A3E20AC734200E154EF /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B7A3D20AC734200E154EF /* MoreViewController.swift */; };
 		5A6B7A4620AC74A600E154EF /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B7A4420AC74A600E154EF /* MoreCell.swift */; };
 		5A6B7A4720AC74A600E154EF /* MoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A6B7A4520AC74A600E154EF /* MoreCell.xib */; };
-		5A6B7A4A20AC905400E154EF /* DSSCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B7A4920AC905400E154EF /* DSSCollectionViewFlowLayout.swift */; };
+		5A7ABC9620AD7FB90011987B /* MoreCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7ABC9520AD7FB90011987B /* MoreCollectionViewLayout.swift */; };
 		5A8DA93320A464D100C5D94D /* ToggleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DA93220A464D100C5D94D /* ToggleButtons.swift */; };
 		5A8DA93520A4694000C5D94D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DA93420A4694000C5D94D /* NewsViewController.swift */; };
 		5AE1556020AB019700D25C07 /* ScrollTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1555F20AB019700D25C07 /* ScrollTabView.xib */; };
@@ -82,7 +82,7 @@
 		5A6B7A3D20AC734200E154EF /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		5A6B7A4420AC74A600E154EF /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
 		5A6B7A4520AC74A600E154EF /* MoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreCell.xib; sourceTree = "<group>"; };
-		5A6B7A4920AC905400E154EF /* DSSCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		5A7ABC9520AD7FB90011987B /* MoreCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCollectionViewLayout.swift; sourceTree = "<group>"; };
 		5A8DA93220A464D100C5D94D /* ToggleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtons.swift; sourceTree = "<group>"; };
 		5A8DA93420A4694000C5D94D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		5AE1555F20AB019700D25C07 /* ScrollTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollTabView.xib; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		5A5896AB20A19AB100D6822F /* FantasyFieldSales */ = {
 			isa = PBXGroup;
 			children = (
-				5A6B7A4820AC903900E154EF /* Subclass */,
+				5A7ABC9420AD7F7E0011987B /* Layout */,
 				5AE1557D20AB381D00D25C07 /* SupportingFiles */,
 				5A5896AC20A19AB100D6822F /* AppDelegate.swift */,
 				5A5896B020A19AB100D6822F /* Main.storyboard */,
@@ -200,12 +200,12 @@
 			path = More;
 			sourceTree = "<group>";
 		};
-		5A6B7A4820AC903900E154EF /* Subclass */ = {
+		5A7ABC9420AD7F7E0011987B /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				5A6B7A4920AC905400E154EF /* DSSCollectionViewFlowLayout.swift */,
+				5A7ABC9520AD7FB90011987B /* MoreCollectionViewLayout.swift */,
 			);
-			path = Subclass;
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		5A8DA93120A4648A00C5D94D /* UI */ = {
@@ -410,7 +410,6 @@
 				5A0A11C220A31A5A00A0E887 /* DateExtension.swift in Sources */,
 				5AE1558820AB3BC200D25C07 /* ChartViewController.swift in Sources */,
 				5A8DA93320A464D100C5D94D /* ToggleButtons.swift in Sources */,
-				5A6B7A4A20AC905400E154EF /* DSSCollectionViewFlowLayout.swift in Sources */,
 				5A0A11B420A2EAFD00A0E887 /* LeagueTableMoreFooterView.swift in Sources */,
 				5A0A11B820A2FDD100A0E887 /* FullTableViewController.swift in Sources */,
 				5A6B7A3E20AC734200E154EF /* MoreViewController.swift in Sources */,
@@ -424,6 +423,7 @@
 				5A26C7B320A34B2C00B5AB44 /* ParallaxHeaderView.swift in Sources */,
 				5A69B30920A5A156003CBB04 /* UIViewExtension.swift in Sources */,
 				5A5896CC20A1A24700D6822F /* UIColorExtension.swift in Sources */,
+				5A7ABC9620AD7FB90011987B /* MoreCollectionViewLayout.swift in Sources */,
 				5A5896AD20A19AB100D6822F /* AppDelegate.swift in Sources */,
 				5AE1556720AB01F400D25C07 /* ScrollTabCell.swift in Sources */,
 				5A5896C720A1A1D400D6822F /* ColorManager.swift in Sources */,
