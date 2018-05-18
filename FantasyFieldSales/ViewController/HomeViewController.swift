@@ -21,6 +21,10 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        
+        let alert = MenuAlert(menuPosition: .Right)
+        alert.show(animated: true)
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,6 +51,9 @@ class HomeViewController: UIViewController {
         dataSource.delegate = self
         self.tableView?.delegate = self.dataSource
         self.tableView?.dataSource = self.dataSource
+        
+        
+        
         
         
        // dataSource.footerType = .ViewFullTable

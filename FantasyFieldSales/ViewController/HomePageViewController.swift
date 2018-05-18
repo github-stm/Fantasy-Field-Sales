@@ -52,8 +52,7 @@ class HomePageViewController: UIPageViewController {
 
         self.delegate = self
         self.dataSource = self
-        
-        
+
         if Constants.backgroundColorContent.count > 0 {
             contentController = getContentViewController(withIndex: 0)
             contentControllers = [contentController] as? [ContentViewController]

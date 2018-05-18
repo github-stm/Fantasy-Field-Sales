@@ -43,7 +43,7 @@ class LeagueTableHeaderView: UIView {
     
     var tabArray:[String]? = []
     
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -66,28 +66,23 @@ class LeagueTableHeaderView: UIView {
         self.addSubview(subviewArray!.first as! UIView)
         
         tabView?.delegate = self
-//        tabView?.collectionArray = Constants.teamGroup
-//        tabView?.collectionView?.reloadData()
-        
-        
 
         let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
-        
-        
+
         let date = Date()
         monthLabel?.text = date.getMonthName()
         monthLabel?.font = smallFont
-        monthLabel?.textColor = UIColor.white
+        monthLabel?.textColor = ColorManager.TableTitle.monthText
         monthLabel?.textAlignment = .center
-        monthLabel?.backgroundColor = ColorManager.midBlue
+        monthLabel?.backgroundColor = ColorManager.TableTitle.monthBackground
         
         titleLabel?.text = "LATEST TOP STATS"
         titleLabel?.font = smallFont
-        titleLabel?.textColor = ColorManager.LeagueTable.titleText
+        titleLabel?.textColor = ColorManager.TableTitle.text
         titleLabel?.textAlignment = .center
         titleLabel?.backgroundColor = UIColor.clear
         
-        titleView?.backgroundColor = ColorManager.LeagueTable.titleBackground
+        titleView?.backgroundColor = ColorManager.TableTitle.background
         
         
         positionHeaderLabel?.text = "POS"
@@ -108,6 +103,9 @@ class LeagueTableHeaderView: UIView {
     func reloadData(data:[String]){
         tabView?.collectionArray = data
         tabView?.collectionView?.reloadData()
+        
+        let indexPath:IndexPath = IndexPath(row: 0, section: 0)
+        tabView?.collectionView?.selectItem(at:indexPath, animated: false, scrollPosition: .left)
     }
 
 }

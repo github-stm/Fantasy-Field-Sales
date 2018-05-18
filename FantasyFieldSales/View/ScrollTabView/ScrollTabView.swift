@@ -39,6 +39,7 @@ class ScrollTabView: UIView {
         self.contentView?.frame = bounds
     }
     
+    
     func commonInit(){
         
         let subviewArray = Bundle.main.loadNibNamed("ScrollTabView", owner: self, options: nil)
@@ -125,20 +126,15 @@ extension ScrollTabView: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         if let count = collectionArray?.count {
             return count
         }
-        
         return 0
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScrollTabCell", for: indexPath) as! ScrollTabCell
-        
         self.configureCollectionCell(cell, indexPath:indexPath)
-        
         return cell
     }
     
@@ -146,16 +142,12 @@ extension ScrollTabView: UICollectionViewDataSource{
     
     func configureCollectionCell(_ cell:ScrollTabCell,  indexPath: IndexPath)
     {
-        
         cell.titleLabel?.text = collectionArray?[indexPath.row]
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let delegate = self.delegate {
             delegate.selectedItem(indexPath: indexPath)
-            
         }
     }
 

@@ -36,6 +36,11 @@ class MoreViewController: UIViewController {
         
        // self.collectionView?.register(UINib(nibName: "MoreCell", bundle: nil), forCellWithReuseIdentifier: "MoreCell")
         collectionView?.backgroundColor = UIColor.clear
+        
+ 
+        
+        let alert = CustomAlert(title: "Hello there!! 👋🏻👋🏻", image: UIImage(named: "starOn")!)
+        alert.show(animated: true)
 
     }
 

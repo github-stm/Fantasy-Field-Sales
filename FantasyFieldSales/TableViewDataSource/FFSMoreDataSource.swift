@@ -23,11 +23,11 @@ class FFSMoreDataSource: NSObject {
     
     var array = Constants.teamGroup
     var delegate: FFSMoreDataSourceDelegate?
-    var footerType:FooterType = .NoFooter
+  //  var footerType:FooterType = .NoFooter
     
     
     init(footerType: FooterType) {
-        self.footerType = footerType
+      //  self.footerType = footerType
         super.init()
     }
     
@@ -53,12 +53,9 @@ class FFSMoreDataSource: NSObject {
     
     func configureCell(_ cell:MoreCell,  indexPath: IndexPath)
     {
-        
         let ticket = array[indexPath.row]
         cell.topLabel?.text = ticket
         cell.bottomLabel?.text = ticket
-        
-        
     }
     
     

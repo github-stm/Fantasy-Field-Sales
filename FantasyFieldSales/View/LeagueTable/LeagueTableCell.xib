@@ -11,13 +11,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeagueTableCell" rowHeight="30" id="EGS-F6-Y8c" customClass="LeagueTableCell" customModule="Diageo" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeagueTableCell" rowHeight="30" id="EGS-F6-Y8c" customClass="LeagueTableCell" customModule="FantasyFieldSales" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EGS-F6-Y8c" id="sta-yl-2Q5">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Gp-XO-Yv5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gln-Wq-azc">
                         <rect key="frame" x="0.0" y="4.5" width="50" height="21"/>
                         <constraints>
@@ -58,19 +62,24 @@
                 <constraints>
                     <constraint firstItem="gln-Wq-azc" firstAttribute="leading" secondItem="sta-yl-2Q5" secondAttribute="leading" id="Eit-v7-lE0"/>
                     <constraint firstAttribute="bottom" secondItem="mp8-uB-tyl" secondAttribute="bottom" id="IRt-VP-ZWS"/>
+                    <constraint firstItem="6Gp-XO-Yv5" firstAttribute="top" secondItem="sta-yl-2Q5" secondAttribute="top" id="KWS-4N-hFx"/>
                     <constraint firstItem="bH0-5s-yJI" firstAttribute="leading" secondItem="LZS-oh-kzE" secondAttribute="trailing" id="TdF-BS-ybe"/>
                     <constraint firstItem="LZS-oh-kzE" firstAttribute="leading" secondItem="gln-Wq-azc" secondAttribute="trailing" id="WwK-ve-QhM"/>
                     <constraint firstAttribute="trailing" secondItem="bH0-5s-yJI" secondAttribute="trailing" id="XZX-xd-NOS"/>
                     <constraint firstItem="mp8-uB-tyl" firstAttribute="leading" secondItem="sta-yl-2Q5" secondAttribute="leading" id="bgW-eZ-BTv"/>
                     <constraint firstItem="LZS-oh-kzE" firstAttribute="centerY" secondItem="sta-yl-2Q5" secondAttribute="centerY" id="fAz-jx-f5M"/>
+                    <constraint firstAttribute="bottom" secondItem="6Gp-XO-Yv5" secondAttribute="bottom" id="hOn-dQ-kTh"/>
                     <constraint firstItem="bH0-5s-yJI" firstAttribute="centerY" secondItem="sta-yl-2Q5" secondAttribute="centerY" id="iqK-Pc-vCV"/>
+                    <constraint firstItem="6Gp-XO-Yv5" firstAttribute="leading" secondItem="sta-yl-2Q5" secondAttribute="leading" id="lCX-xA-eBR"/>
                     <constraint firstItem="gln-Wq-azc" firstAttribute="centerY" secondItem="sta-yl-2Q5" secondAttribute="centerY" id="pUS-nk-aHm"/>
                     <constraint firstAttribute="trailing" secondItem="mp8-uB-tyl" secondAttribute="trailing" id="tyu-Jx-CzV"/>
+                    <constraint firstAttribute="trailing" secondItem="6Gp-XO-Yv5" secondAttribute="trailing" id="w1E-PK-Auw"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="pointsLabel" destination="bH0-5s-yJI" id="6i8-Xs-KwZ"/>
                 <outlet property="positionLabel" destination="gln-Wq-azc" id="Ao4-IZ-kZ9"/>
+                <outlet property="subBackgroundView" destination="6Gp-XO-Yv5" id="ukd-cb-XdU"/>
                 <outlet property="teamLabel" destination="LZS-oh-kzE" id="d5B-XN-9Yc"/>
                 <outletCollection property="labels" destination="bH0-5s-yJI" collectionClass="NSMutableArray" id="te0-w5-7Td"/>
                 <outletCollection property="labels" destination="LZS-oh-kzE" collectionClass="NSMutableArray" id="jpS-7c-Q1d"/>

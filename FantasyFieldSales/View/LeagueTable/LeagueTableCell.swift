@@ -16,21 +16,20 @@ class LeagueTableCell: UITableViewCell {
     @IBOutlet weak var teamLabel: UILabel?
     @IBOutlet weak var pointsLabel: UILabel?
     
+    @IBOutlet weak var subBackgroundView: UIView?
     
-    override var isSelected: Bool {
+    
+    override var isHighlighted: Bool {
         didSet {
-            self.backgroundColor = isSelected ? ColorManager.TabButtons.selectedBackground : ColorManager.TabButtons.unselectedBackground
-//            self.titleLabel?.textColor = isSelected ? ColorManager.TabButtons.selectedText : ColorManager.TabButtons.unselectedText
+            self.subBackgroundView?.backgroundColor = isHighlighted ? ColorManager.LeagueTable.selectedBackground : UIColor.clear
         }
     }
+   
     
     
     override func awakeFromNib() {
     
         let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
-
-//        let selectedBgView:UIView = UIView()
-//        selectedBgView.backgroundColor = UIColor.gray
         
         for label: UILabel in labels {
             label.font = smallFont
@@ -38,11 +37,7 @@ class LeagueTableCell: UITableViewCell {
             label.textAlignment = .center
         }
         
-        
+        subBackgroundView?.backgroundColor = UIColor.clear
     }
-    
-    
-  
-    
 
 }

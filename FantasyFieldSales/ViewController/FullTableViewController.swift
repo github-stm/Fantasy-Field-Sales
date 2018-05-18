@@ -25,6 +25,9 @@ class FullTableViewController: UIViewController, UIPickerViewDelegate, CNContact
         dataSource.delegate = self
         self.tableView?.delegate = self.dataSource
         self.tableView?.dataSource = self.dataSource
+        
+    
+      //  iconCollectionView.selectItemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0), animated: false, scrollPosition: .None)
  
     }
 

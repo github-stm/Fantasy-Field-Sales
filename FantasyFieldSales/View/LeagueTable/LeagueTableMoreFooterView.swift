@@ -51,7 +51,10 @@ class LeagueTableMoreFooterView: UIView {
 
         moreButton?.setTitleColor(ColorManager.LeagueTable.moreButtonText, for: .normal)
         moreButton?.titleLabel?.font = UIFont(name: Constants.font.regularFont, size: 18)
-        moreButton?.layer.cornerRadius = 4
+        moreButton?.layer.cornerRadius = 5
+        moreButton?.layer.borderWidth = 1
+
+        moreButton?.layer.borderColor = ColorManager.LeagueTable.moreBorder.cgColor
         var backgroundImage = UIImage().imageWithColor(ColorManager.LeagueTable.moreButtonBackground)
         moreButton?.setBackgroundImage(backgroundImage, for: .normal)
         backgroundImage = UIImage().imageWithColor(ColorManager.LeagueTable.moreButtonBackground)

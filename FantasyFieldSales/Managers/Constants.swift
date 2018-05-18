@@ -8,6 +8,21 @@
 
 import UIKit
 
+
+enum MenuPosition :Int {
+    case Right
+    case Center
+    case Left
+}
+
+
+enum FooterType :Int {
+    case NoFooter
+    case ViewFullTable
+}
+
+
+
 class Constants: NSObject {
     struct general {
         static let appName = "Fantansy Field Sales"
@@ -47,6 +62,12 @@ class Constants: NSObject {
     ]
 
    
+    
+    struct menu {
+        static let width:CGFloat = 200
+    }
+    
+    
     // ------------------------------------------------------------------------------------------------------------
     struct font {
         static let boldFont = "GillSans-Bold"

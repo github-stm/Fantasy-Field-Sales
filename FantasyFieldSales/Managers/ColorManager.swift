@@ -14,31 +14,28 @@ class ColorManager: UIColor {
     fileprivate static let colorWhite = UIColor(hexString: "ffffff")
     fileprivate static let colorBlack = UIColor(hexString: "000000")
     fileprivate static let colorGold = UIColor(hexString: "BB9959")
+    fileprivate static let colorLightGrey = UIColor(hexString: "D3D5D4")
+    
     
     // ------------------------------------------------------------------------------------------------------------
     struct LeagueTable {
-        static let titleBackground = colorGold
-        static let titleText = colorBlack
-        
-        static let tabSelectedBackground = colorBlack
-        static let tabSelectedText = colorWhite
-        
-        static let tabUnselectedBackground = colorWhite
-        static let tabUnselectedText = colorBlack
+//        static let titleBackground = colorGold
+//        static let titleText = colorBlack
         
         static let rowHeaderTitleBackground = colorBlack
         static let rowHeaderTitleText = colorWhite
         
         static let rowText = colorBlack
-        static let rowBackgroundEven = colorGold
+        static let rowBackgroundEven = colorLightGrey
         static let rowBackgroundOdd = colorWhite
         
-        static let moreButtonBackground =  colorBlack
-        static let moreButtonText =  colorWhite
+        static let moreButtonBackground =  colorWhite
+        static let moreButtonText =  colorBlack
+        static let moreBorder = colorBlack
         
-        
+        static let selectedBackground = colorGold
+ 
     }
-    
     
     
     struct TabButtons {
@@ -50,7 +47,17 @@ class ColorManager: UIColor {
         
     }
     
-    
+    struct TableTitle {
+        
+        static let background = colorBlack
+        static let text = colorWhite
+        
+        static let monthBackground = colorGold
+        static let monthText = colorWhite
+        
+        
+    }
+   
     static let darkBlue = UIColor(hexString: "00275e")
     static let midBlue = UIColor(hexString: "0c479b")
     static let lightBlue = UIColor(hexString: "64ABE9")

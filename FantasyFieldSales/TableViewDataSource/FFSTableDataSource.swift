@@ -9,10 +9,6 @@
 import UIKit
 
 
-enum FooterType :Int {
-    case NoFooter
-    case ViewFullTable
-}
 
 class FFSTableDataSource: NSObject {
     let leagueTableCellIdentifier = "LeagueTableCell"
