@@ -28,7 +28,7 @@ class NewsViewController: UIViewController {
         let headerFont = UIFont(name: Constants.font.boldFont, size:  Constants.fontSize.largeFontSize)
         let bodyFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.mediumFontSize)
         
-        headerView?.backgroundColor = ColorManager.midBlue
+        headerView?.backgroundColor = ColorManager.TableTitle.background
      
         headerLabel?.font = headerFont
         headerLabel?.textColor = ColorManager.white
@@ -41,7 +41,7 @@ class NewsViewController: UIViewController {
 
         bodyView?.backgroundColor = ColorManager.white
         bodyLabel?.font = bodyFont
-        bodyLabel?.textColor = ColorManager.midBlue
+        bodyLabel?.textColor = ColorManager.TableTitle.text
         bodyLabel?.textAlignment = .left
         bodyLabel?.text = Constants.string.newsHeader
         bodyLabel?.numberOfLines = 0

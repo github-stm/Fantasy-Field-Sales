@@ -8,13 +8,6 @@
 
 import UIKit
 
-
-/*
- let alert = CustomAlert(title: "Hello there!! 👋🏻👋🏻", image: UIImage(named: "img")!)
- alert.show(animated: true)
- */
-
-
 class MenuAlert: UIView, Modal {
 
     var backgroundView = UIView()
@@ -27,7 +20,6 @@ class MenuAlert: UIView, Modal {
     
     var menuPos:MenuPosition?
 
-    
     convenience init(menuPosition: MenuPosition) {
         self.init(frame: UIScreen.main.bounds)
         self.menuPos = menuPosition
@@ -47,11 +39,11 @@ class MenuAlert: UIView, Modal {
     func initialize(){
         
         
-       // tableView = UITableView(frame: CGRect.zero)
+        guard let menuPos = self.menuPos  else {
+            return
+        }
         
-        let rowHeight:CGFloat = 30
-        
-        let tableHeight: CGFloat =  CGFloat(menuList.count) * rowHeight
+        let tableHeight: CGFloat =  CGFloat(menuList.count) * Constants.menu.cellHeight
         tableView = UITableView(frame: CGRect(x: 0, y: 0, width: Constants.menu.width, height: tableHeight))
 
         dataSource.delegate = self
@@ -67,21 +59,8 @@ class MenuAlert: UIView, Modal {
         addSubview(backgroundView)
         
         dialogView.addSubview(tableView)
-        
-        
-        let padding:CGFloat = 30
-        var positionX:CGFloat = padding
-        
-        switch (menuPos) {
-        case .Left?:
-            positionX = padding
-        case .Center?:
-            positionX = (UIScreen.main.bounds.size.width - Constants.menu.width)/2
-        default:
-            positionX = UIScreen.main.bounds.size.width -  Constants.menu.width - padding
-        }
 
-        dialogView.frame.origin = CGPoint(x: positionX, y: 30)
+        dialogView.frame.origin = CGPoint(x: getPositionX(menuPos: menuPos), y: 30)
         dialogView.frame.size = CGSize(width: Constants.menu.width, height: tableHeight)
         dialogView.backgroundColor = UIColor.white
         dialogView.layer.cornerRadius = 6
@@ -91,6 +70,19 @@ class MenuAlert: UIView, Modal {
     
     @objc func didTappedOnBackgroundView(){
         dismiss(animated: true)
+    }
+    
+    
+    fileprivate func getPositionX(menuPos:MenuPosition) -> CGFloat {
+        let padding:CGFloat = Constants.menu.alertPadding
+        switch (menuPos) {
+            case .Left:
+                return  padding
+            case .Center:
+                return (UIScreen.main.bounds.size.width - Constants.menu.width)/2
+            default:
+                return UIScreen.main.bounds.size.width -  Constants.menu.width - padding
+        }
     }
 
 }

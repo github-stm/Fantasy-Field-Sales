@@ -14,11 +14,11 @@ class ToggleButtons: NSObject {
         for button: UIButton in buttons {
             
             if button.tag == index {
-                button.setTitleColor(ColorManager.white, for: .normal)
+                button.setTitleColor(ColorManager.TabButtons.selectedText, for: .normal)
                 let backgroundImage = UIImage().imageWithColor(selectBackgroundColor)
                 button.setBackgroundImage(backgroundImage, for: .normal)
             } else {
-                button.setTitleColor(ColorManager.midBlue, for: .normal)
+                button.setTitleColor(ColorManager.TabButtons.unselectedText, for: .normal)
                 let backgroundImage = UIImage().imageWithColor(unselectBackgroundColor)
                 button.setBackgroundImage(backgroundImage, for: .normal)
             }

@@ -65,6 +65,8 @@ class Constants: NSObject {
     
     struct menu {
         static let width:CGFloat = 200
+        static let cellHeight:CGFloat = 30
+        static let alertPadding:CGFloat = 30
     }
     
     
