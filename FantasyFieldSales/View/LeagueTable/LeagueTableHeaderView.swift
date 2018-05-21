@@ -69,6 +69,7 @@ class LeagueTableHeaderView: UIView {
 
         let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
 
+        
         let date = Date()
         monthLabel?.text = date.getMonthName()
         monthLabel?.font = smallFont
