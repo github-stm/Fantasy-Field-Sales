@@ -42,7 +42,7 @@ class FullTableViewController: UIViewController, UIPickerViewDelegate, CNContact
 
 extension FullTableViewController: FFSTableDataSourceDelegate {
     
-    func tableView(tableView: UITableView,  indexPath: IndexPath) {
+    func selectedItem(tableView: UITableView,  indexPath: IndexPath) {
         print("\(indexPath.row)")
         
         if indexPath.row < 5 {

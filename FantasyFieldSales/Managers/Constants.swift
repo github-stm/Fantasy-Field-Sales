@@ -35,7 +35,7 @@ class Constants: NSObject {
     static let backgroundColorContent = [ UIColor.red, UIColor.green]
   
     
-    static let teamGroup = ["Test", "Test2", "Test3", "Test", "Test2", "Test3"]
+    static let teamGroup = ["City", "Regional", "Quality", "Test", "Test2", "Test3"]
     // ------------------------------------------------------------------------------------------------------------
     
     static let teams = [(pos: 1, team: "London North", points: 120)
@@ -62,6 +62,26 @@ class Constants: NSObject {
     ]
 
    
+    static let distributionExecutive = [(name: "Vacant", region: "Aberdeen Dundee")
+        ,(name: "Vacant", region: "Oxford Reading")
+        ,(name: "Francis Cronin", region: "Plymouth/Exeter")
+        ,(name: "Kate O’Bryne", region: "Cornwall")
+        ,(name: "Richard Cochrane", region: "BlackpoolPreston")
+        ,(name: "Robert Holden", region: "Norfolk")
+        ,(name: "Delun Jones", region: "Reading")
+        ,(name: "Matthew Riddell", region: "Lincoln")
+        ,(name: "Jaswinder Sohal", region: "Oxford")
+        ,(name: "Kenny Walker", region: "Northampton")
+        ,(name: "Shaun Lodge", region: "Chester")
+        ,(name: "John Scullion", region: "Ayr")
+        ,(name: "Jade Porter", region: "N. Scotland")
+    ]
+
+    
+    
+
+    
+    
     
     struct menu {
         static let width:CGFloat = 200

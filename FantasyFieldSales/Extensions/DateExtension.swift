@@ -17,6 +17,25 @@ extension Date {
         return strMonth
     }
     
+    func getDateName(format:String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        let strMonth = dateFormatter.string(from: self).uppercased()
+        return strMonth
+    }
+    
+    
+    func monthBetweenDates(endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([Calendar.Component.month], from: self, to: endDate)
+        return components.month!
+    }
+    
+    
+   
+    
+    
+    
     
 }
 

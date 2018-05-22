@@ -7,27 +7,56 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 
 class FFSTableDataSource: NSObject {
     let leagueTableCellIdentifier = "LeagueTableCell"
     
+    let realm = try! Realm()
+    lazy var teamData: Results<TeamData> = { self.realm.objects(TeamData.self) }()
+    
 
-    var array = Constants.teams
     var delegate: FFSTableDataSourceDelegate?
     var footerType:FooterType = .NoFooter
     
     
     init(footerType: FooterType) {
         self.footerType = footerType
+        
         super.init()
+        self.populateDefaultCategories()
     }
     
     convenience override init() {
         self.init(footerType:.NoFooter) // calls above default value
+        populateDefaultCategories()
     }
 
+    
+    func populateDefaultCategories() {
+        
+        if teamData.count == 0 { // 1
+            
+            try! realm.write() { // 2
+
+                let defaultTeamData = Constants.teams
+                
+                for teamData in defaultTeamData { // 4
+                    let newTeamData = TeamData()
+                    newTeamData.name = teamData.team
+                    newTeamData.id = teamData.pos
+                    newTeamData.points = teamData.points
+                    newTeamData.position = teamData.pos
+                    self.realm.add(newTeamData)
+                  
+                }
+            }
+            
+            teamData = realm.objects(TeamData.self) // 5
+        }
+    }
+    
     func registerCells(forTableView tableView: UITableView) {
 
         tableView.register(UINib(nibName: leagueTableCellIdentifier, bundle: nil), forCellReuseIdentifier: "LeagueTableCell")
@@ -46,9 +75,12 @@ class FFSTableDataSource: NSObject {
     {
 
         cell.backgroundColor = indexPath.row % 2 == 0 ? ColorManager.LeagueTable.rowBackgroundEven : ColorManager.LeagueTable.rowBackgroundOdd
-        let team = array[indexPath.row]
-        cell.positionLabel?.text = String(team.pos)
-        cell.teamLabel?.text = team.team
+        
+        let team = teamData[indexPath.row]
+
+       // let team = array[indexPath.row]
+        cell.positionLabel?.text = String(team.position)
+        cell.teamLabel?.text = team.name
         cell.pointsLabel?.text = String(team.points)
     }
     
@@ -78,9 +110,11 @@ extension FFSTableDataSource: UITableViewDataSource {
         return 1
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if footerType == .NoFooter {
-            return array.count
+          //  return array.count
+            return teamData.count
         } else {
             return 3
         }
@@ -119,7 +153,7 @@ extension FFSTableDataSource: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
         if let delegate = self.delegate {
-            delegate.tableView(tableView: tableView, indexPath: indexPath)
+            delegate.selectedItem(tableView: tableView, indexPath: indexPath)
         }
     }
     
@@ -142,14 +176,13 @@ extension FFSTableDataSource: UITableViewDelegate {
         } else {
             return 75
         }
-        
-   
+
     }
 }
 
 
 
 @objc protocol FFSTableDataSourceDelegate: class {
-    func tableView(tableView: UITableView,  indexPath: IndexPath)
+    func selectedItem(tableView: UITableView,  indexPath: IndexPath)
     @objc optional func moreButtonTapped()
 }

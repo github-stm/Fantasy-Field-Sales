@@ -12,6 +12,7 @@ target 'FantasyFieldSales' do
     pod 'AlamofireObjectMapper', '~> 4.0'
     pod 'Dip'
     pod 'RealmSwift'
+    pod 'JTAppleCalendar', '~> 7.0'
 end
 
 post_install do |installer|

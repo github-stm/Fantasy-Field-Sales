@@ -64,7 +64,7 @@ class HomeViewController: UIViewController {
     
 extension HomeViewController: FFSTableDataSourceDelegate {
     
-    func tableView(tableView: UITableView,  indexPath: IndexPath) {
+    func selectedItem(tableView: UITableView,  indexPath: IndexPath) {
         print("\(indexPath.row)")
     }
     

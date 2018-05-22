@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarBar" customModule="FantasyFieldSales" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="gqQ-yc-XXQ" id="QWg-wc-hfF"/>
+                <outlet property="dateLabel" destination="6kH-6C-qns" id="pDT-cd-L3n"/>
+                <outlet property="dropdownImageView" destination="EAQ-lB-u8M" id="DMS-PR-IeY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqQ-yc-XXQ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kH-6C-qns">
+                            <rect key="frame" x="33" y="7" width="80" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="6Og-en-iNF"/>
+                                <constraint firstAttribute="width" constant="80" id="EzX-DX-apk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-lB-u8M">
+                            <rect key="frame" x="123" y="5" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="czI-bX-Onc"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="oZY-zp-84E"/>
+                                <constraint firstAttribute="width" constant="25" id="rqY-cq-vdh"/>
+                                <constraint firstAttribute="height" constant="25" id="t1Q-I6-HOs"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="6kH-6C-qns" firstAttribute="leading" secondItem="gqQ-yc-XXQ" secondAttribute="leading" constant="33" id="4zD-av-jet"/>
+                        <constraint firstItem="EAQ-lB-u8M" firstAttribute="leading" secondItem="6kH-6C-qns" secondAttribute="trailing" constant="10" id="Svl-hL-YkL"/>
+                        <constraint firstItem="EAQ-lB-u8M" firstAttribute="centerY" secondItem="gqQ-yc-XXQ" secondAttribute="centerY" id="epW-Su-qkX"/>
+                        <constraint firstItem="6kH-6C-qns" firstAttribute="centerY" secondItem="gqQ-yc-XXQ" secondAttribute="centerY" id="mhp-Td-mQ6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gqQ-yc-XXQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="LPB-c3-jna"/>
+                <constraint firstItem="gqQ-yc-XXQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="NDY-g5-Cx7"/>
+                <constraint firstItem="gqQ-yc-XXQ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="R9j-re-XMC"/>
+                <constraint firstItem="gqQ-yc-XXQ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="REQ-bI-1bX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="-262.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow" width="19" height="15"/>
+    </resources>
+</document>

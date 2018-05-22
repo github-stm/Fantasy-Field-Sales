@@ -1,0 +1,115 @@
+//
+//  CalendarBar.swift
+//  FantasyFieldSales
+//
+//  Created by Cee Bee on 22/05/2018.
+//  Copyright © 2018 CeeBee. All rights reserved.
+//
+
+import UIKit
+
+
+
+
+class CalendarBar: UIView {
+
+    
+    var delegate: LeagueTableHeaderViewDelegate?
+    
+    @IBOutlet weak fileprivate var contentView: UIView?
+    
+    
+    @IBOutlet weak var dateLabel: UILabel?
+    @IBOutlet weak var dropdownImageView: UIImageView?
+
+    
+    var isDown = true
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    
+    //needed to set frame of xib  to correct size in swift 3
+    override func layoutSubviews() {
+        self.contentView?.frame = bounds
+    }
+    
+    
+    // function which is triggered when handleTap is called
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        print("Hello World")
+        nearbyStationsAnimateDropDownList(isDown)
+        
+        let alert = MonthYearAlert(startMonth: 1, startYear: 2017)
+        alert.show(animated: true)
+        
+    }
+    
+
+    
+    func commonInit(){
+        
+        
+        let subviewArray = Bundle.main.loadNibNamed("CalendarBar", owner: self, options: nil)
+        self.addSubview(subviewArray!.first as! UIView)
+        
+        
+        dropdownImageView?.contentMode = .center
+        
+        let spacing:CGFloat = 3
+      dropdownImageView?.image = UIImage(named: "arrow")?.imageWithInsets(insets: UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing))
+        
+        
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+
+        self.contentView?.isUserInteractionEnabled = true
+        self.contentView?.addGestureRecognizer(tap)
+        dropdownImageView?.contentMode = .scaleAspectFill
+
+        self.contentView?.backgroundColor = UIColor.black
+        
+        let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
+        
+        
+        let date = Date()
+        dateLabel?.text = date.getMonthName()
+        dateLabel?.font = smallFont
+        dateLabel?.textColor = ColorManager.TableTitle.monthText
+        dateLabel?.textAlignment = .center
+        dateLabel?.backgroundColor = ColorManager.TableTitle.monthBackground
+
+        
+    }
+    
+    
+    //------------------------------------------------------------------------------------------------------------
+    
+   
+    
+ 
+    func nearbyStationsAnimateDropDownList(_ isDown:Bool){
+        DispatchQueue.main.async {
+            
+            UIView.animate(withDuration: 0.6, delay: 0.3, options: UIViewAnimationOptions(), animations: {
+                self.dropdownImageView?.transform = !isDown ? CGAffineTransform.identity : CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+               
+                self.isDown = !isDown
+            }, completion: { finished in
+                
+               
+            })
+        }
+    }
+
+}
+
+
+
