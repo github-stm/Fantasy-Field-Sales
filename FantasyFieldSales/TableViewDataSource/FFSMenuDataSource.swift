@@ -2,7 +2,7 @@
 //  FFSMenuDataSource.swift
 //  FantasyFieldSales
 //
-//  Created by Cee Bee on 18/05/2018.
+//  Created by Clive Brown on 18/05/2018.
 //  Copyright © 2018 CeeBee. All rights reserved.
 //
 

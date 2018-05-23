@@ -2,7 +2,7 @@
 //  CalendarBar.swift
 //  FantasyFieldSales
 //
-//  Created by Cee Bee on 22/05/2018.
+//  Created by Clive Brown on 22/05/2018.
 //  Copyright © 2018 CeeBee. All rights reserved.
 //
 
@@ -44,10 +44,7 @@ class CalendarBar: UIView {
     
     // function which is triggered when handleTap is called
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        print("Hello World")
-        nearbyStationsAnimateDropDownList(isDown)
-        
-        let alert = MonthYearAlert(startMonth: 1, startYear: 2017)
+        let alert = MonthYearAlert(startMonth: 12, startYear: 2017)
         alert.show(animated: true)
         
     }
@@ -56,7 +53,6 @@ class CalendarBar: UIView {
     
     func commonInit(){
         
-        
         let subviewArray = Bundle.main.loadNibNamed("CalendarBar", owner: self, options: nil)
         self.addSubview(subviewArray!.first as! UIView)
         
@@ -64,10 +60,8 @@ class CalendarBar: UIView {
         dropdownImageView?.contentMode = .center
         
         let spacing:CGFloat = 3
-      dropdownImageView?.image = UIImage(named: "arrow")?.imageWithInsets(insets: UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing))
-        
-        
-        
+        dropdownImageView?.image = UIImage(named: "arrow")?.imageWithInsets(insets: UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing))
+
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
 
         self.contentView?.isUserInteractionEnabled = true
@@ -89,25 +83,7 @@ class CalendarBar: UIView {
         
     }
     
-    
-    //------------------------------------------------------------------------------------------------------------
-    
-   
-    
- 
-    func nearbyStationsAnimateDropDownList(_ isDown:Bool){
-        DispatchQueue.main.async {
-            
-            UIView.animate(withDuration: 0.6, delay: 0.3, options: UIViewAnimationOptions(), animations: {
-                self.dropdownImageView?.transform = !isDown ? CGAffineTransform.identity : CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-               
-                self.isDown = !isDown
-            }, completion: { finished in
-                
-               
-            })
-        }
-    }
+  
 
 }
 

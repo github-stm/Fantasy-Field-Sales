@@ -2,7 +2,7 @@
 //  MoreViewController.swift
 //  FantasyFieldSales
 //
-//  Created by Cee Bee on 16/05/2018.
+//  Created by Clive Brown on 16/05/2018.
 //  Copyright © 2018 CeeBee. All rights reserved.
 //
 

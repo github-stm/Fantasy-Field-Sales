@@ -2,7 +2,7 @@
 //  CustomAlert.swift
 //  FantasyFieldSales
 //
-//  Created by Cee Bee on 17/05/2018.
+//  Created by Clive Brown on 17/05/2018.
 //  Copyright © 2018 CeeBee. All rights reserved.
 //
 
