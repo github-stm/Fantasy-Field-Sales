@@ -45,7 +45,6 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
     }
     
     func commonSetup() {
-        // population years
 
         var monthYear: [String] = []
         var month = 0
@@ -53,10 +52,9 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         if let startYear = self.startYear, let startMonth = self.startMonth {
             if  let startDate = Calendar.current.date(from: DateComponents(year: startYear, month: startMonth, day: 15)) {
                 let monthCount = startDate.monthBetweenDates( endDate: Date())
-                print("month count \(monthCount)")
                 for _ in 0...monthCount {
                     let newDate = Calendar.current.date(byAdding: .month, value: month, to: startDate)
-                    monthYear.append((newDate?.getDateName(format: "MMMM yyyy"))!)
+                    monthYear.append((newDate?.getDateName(format: Constants.dateFormat.monthYear))!)
                     
                     month += 1
                 }
@@ -71,9 +69,7 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
             self.selectRow(self.period.count - 1, inComponent: 0, animated: false)
             
         }
-     
-        
-        
+
     }
     
     // Mark: UIPicker Delegate / Data Source

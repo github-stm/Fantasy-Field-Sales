@@ -36,7 +36,6 @@
 		5A5896DB20A1DE1F00D6822F /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5896D920A1DE1F00D6822F /* HomePageViewController.swift */; };
 		5A62482520A9EA5800829DEB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A62482420A9EA5800829DEB /* ColorExtension.swift */; };
 		5A69B30920A5A156003CBB04 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A69B30820A5A156003CBB04 /* UIViewExtension.swift */; };
-		5A69B30B20A5B1BF003CBB04 /* journey-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A69B30A20A5B1BE003CBB04 /* journey-disabled@2x.png */; };
 		5A6B7A3C20AC449000E154EF /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B7A3B20AC449000E154EF /* ContactsViewController.swift */; };
 		5A6B7A3E20AC734200E154EF /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B7A3D20AC734200E154EF /* MoreViewController.swift */; };
 		5A6B7A4620AC74A600E154EF /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B7A4420AC74A600E154EF /* MoreCell.swift */; };
@@ -48,6 +47,10 @@
 		5A7FD4C520B472A500A7D64E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FD4C420B472A500A7D64E /* StringExtension.swift */; };
 		5A8DA93320A464D100C5D94D /* ToggleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DA93220A464D100C5D94D /* ToggleButtons.swift */; };
 		5A8DA93520A4694000C5D94D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DA93420A4694000C5D94D /* NewsViewController.swift */; };
+		5AA1D13820B5ABB000B2B63E /* TabDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1D13720B5ABB000B2B63E /* TabDialog.swift */; };
+		5AA1D13A20B5ABC200B2B63E /* TabDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AA1D13920B5ABC200B2B63E /* TabDialog.xib */; };
+		5AA1D13C20B5B29200B2B63E /* UIViewGestureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1D13B20B5B29200B2B63E /* UIViewGestureExtensions.swift */; };
+		5AA1D13E20B5BFB700B2B63E /* TabDialogAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1D13D20B5BFB700B2B63E /* TabDialogAlert.swift */; };
 		5AB4ED4620B30E6200608DA1 /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB4ED4520B30E6200608DA1 /* TeamData.swift */; };
 		5AC86FAF20B410CB00D3BA0B /* CalendarBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC86FAE20B410CB00D3BA0B /* CalendarBar.swift */; };
 		5AC86FB120B410E000D3BA0B /* CalendarBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AC86FB020B410E000D3BA0B /* CalendarBar.xib */; };
@@ -95,7 +98,6 @@
 		5A5896D920A1DE1F00D6822F /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		5A62482420A9EA5800829DEB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5A69B30820A5A156003CBB04 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		5A69B30A20A5B1BE003CBB04 /* journey-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "journey-disabled@2x.png"; path = "../../../100_Wyld_Research/Wyld.LU.iOS.PoC/Wyld.LU.iOS.PoC/Assets.xcassets/HomeTab/journey-disabled.imageset/journey-disabled@2x.png"; sourceTree = "<group>"; };
 		5A6B7A3B20AC449000E154EF /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		5A6B7A3D20AC734200E154EF /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		5A6B7A4420AC74A600E154EF /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
@@ -107,6 +109,10 @@
 		5A7FD4C420B472A500A7D64E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5A8DA93220A464D100C5D94D /* ToggleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtons.swift; sourceTree = "<group>"; };
 		5A8DA93420A4694000C5D94D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		5AA1D13720B5ABB000B2B63E /* TabDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDialog.swift; sourceTree = "<group>"; };
+		5AA1D13920B5ABC200B2B63E /* TabDialog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabDialog.xib; sourceTree = "<group>"; };
+		5AA1D13B20B5B29200B2B63E /* UIViewGestureExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewGestureExtensions.swift; sourceTree = "<group>"; };
+		5AA1D13D20B5BFB700B2B63E /* TabDialogAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDialogAlert.swift; sourceTree = "<group>"; };
 		5AB4ED4520B30E6200608DA1 /* TeamData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
 		5AC86FAE20B410CB00D3BA0B /* CalendarBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBar.swift; sourceTree = "<group>"; };
 		5AC86FB020B410E000D3BA0B /* CalendarBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarBar.xib; sourceTree = "<group>"; };
@@ -167,7 +173,6 @@
 				5A5896AC20A19AB100D6822F /* AppDelegate.swift */,
 				5A5896B020A19AB100D6822F /* Main.storyboard */,
 				5A5896B320A19AB300D6822F /* Assets.xcassets */,
-				5A69B30A20A5B1BE003CBB04 /* journey-disabled@2x.png */,
 				5A5896B820A19AB300D6822F /* Info.plist */,
 				5A5896B520A19AB300D6822F /* LaunchScreen.storyboard */,
 				5AE1557D20AB381D00D25C07 /* SupportingFiles */,
@@ -218,6 +223,7 @@
 				5A62482420A9EA5800829DEB /* ColorExtension.swift */,
 				5A7ABC9B20ADBE610011987B /* ModalViewExtension.swift */,
 				5A7FD4C420B472A500A7D64E /* StringExtension.swift */,
+				5AA1D13B20B5B29200B2B63E /* UIViewGestureExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -225,6 +231,7 @@
 		5A5896D420A1B89200D6822F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5AA1D13620B5AB0300B2B63E /* TabDialog */,
 				5AC86FAD20B410A000D3BA0B /* Calendar */,
 				5A4D10D720AED8A9007B7879 /* Menu */,
 				5A7ABC9A20ADBDF30011987B /* Alert */,
@@ -259,6 +266,7 @@
 				5A7ABC9D20ADBF210011987B /* CustomAlert.swift */,
 				5AC86FB920B4367200D3BA0B /* MonthYearAlert.swift */,
 				5A4D10DC20AEDDD8007B7879 /* MenuAlert.swift */,
+				5AA1D13D20B5BFB700B2B63E /* TabDialogAlert.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -269,6 +277,15 @@
 				5A8DA93220A464D100C5D94D /* ToggleButtons.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		5AA1D13620B5AB0300B2B63E /* TabDialog */ = {
+			isa = PBXGroup;
+			children = (
+				5AA1D13720B5ABB000B2B63E /* TabDialog.swift */,
+				5AA1D13920B5ABC200B2B63E /* TabDialog.xib */,
+			);
+			path = TabDialog;
 			sourceTree = "<group>";
 		};
 		5AB4ED4320B30D8700608DA1 /* Realm */ = {
@@ -426,8 +443,8 @@
 				5A5896D620A1B8B800D6822F /* LeagueTableHeaderView.xib in Resources */,
 				5A5896B420A19AB300D6822F /* Assets.xcassets in Resources */,
 				5AE1556020AB019700D25C07 /* ScrollTabView.xib in Resources */,
-				5A69B30B20A5B1BF003CBB04 /* journey-disabled@2x.png in Resources */,
 				5A4D10DB20AED8BD007B7879 /* MenuCell.xib in Resources */,
+				5AA1D13A20B5ABC200B2B63E /* TabDialog.xib in Resources */,
 				5A0A11B620A2EB0C00A0E887 /* LeagueTableMoreFooterView.xib in Resources */,
 				5A6B7A4720AC74A600E154EF /* MoreCell.xib in Resources */,
 				5A5896B220A19AB100D6822F /* Main.storyboard in Resources */,
@@ -512,6 +529,7 @@
 				5A2C716D20A98E7900CD26F0 /* FFSTableDataSource.swift in Sources */,
 				5A26C7B520A3619500B5AB44 /* ContentViewController.swift in Sources */,
 				5AE1556220AB01B400D25C07 /* ScrollTabView.swift in Sources */,
+				5AA1D13C20B5B29200B2B63E /* UIViewGestureExtensions.swift in Sources */,
 				5A5896DB20A1DE1F00D6822F /* HomePageViewController.swift in Sources */,
 				5A5896CA20A1A22200D6822F /* UIImageExtension.swift in Sources */,
 				5A26C7B320A34B2C00B5AB44 /* ParallaxHeaderView.swift in Sources */,
@@ -526,10 +544,12 @@
 				5A5896C720A1A1D400D6822F /* ColorManager.swift in Sources */,
 				5A5896C020A19C0A00D6822F /* HomeViewController.swift in Sources */,
 				5A6B7A4620AC74A600E154EF /* MoreCell.swift in Sources */,
+				5AA1D13E20B5BFB700B2B63E /* TabDialogAlert.swift in Sources */,
 				5A5896D820A1B8DD00D6822F /* LeagueTableHeaderView.swift in Sources */,
 				5A8DA93520A4694000C5D94D /* NewsViewController.swift in Sources */,
 				5A5896C420A1A11C00D6822F /* TeamViewController.swift in Sources */,
 				5AB4ED4620B30E6200608DA1 /* TeamData.swift in Sources */,
+				5AA1D13820B5ABB000B2B63E /* TabDialog.swift in Sources */,
 				5A5896CE20A1A28600D6822F /* Constants.swift in Sources */,
 				5A4D10DA20AED8BD007B7879 /* MenuCell.swift in Sources */,
 				5AC86FAF20B410CB00D3BA0B /* CalendarBar.swift in Sources */,

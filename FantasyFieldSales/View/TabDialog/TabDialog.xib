@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabDialog" customModule="FantasyFieldSales" customModuleProvider="target">
+            <connections>
+                <outlet property="aButton" destination="YNl-Je-9bc" id="Brn-Lj-gHg"/>
+                <outlet property="bButton" destination="HwW-x3-cPS" id="tOL-AL-fCR"/>
+                <outlet property="closeButton" destination="ajO-M3-nHB" id="olo-XP-rEO"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="vAy-0r-khx"/>
+                <outlet property="infoLabel" destination="CBO-a2-wbV" id="ys4-0L-JFR"/>
+                <outlet property="infoView" destination="flu-K4-geL" id="5Uc-29-T4s"/>
+                <outlet property="titleLabel" destination="mT8-lm-5k2" id="Osx-YP-6Ao"/>
+                <outletCollection property="buttons" destination="YNl-Je-9bc" collectionClass="NSMutableArray" id="4wE-Yg-uMf"/>
+                <outletCollection property="buttons" destination="HwW-x3-cPS" collectionClass="NSMutableArray" id="vJV-NX-Kb3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmg-Ch-IcE">
+                    <rect key="frame" x="35" y="35" width="180" height="130"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flu-K4-geL">
+                            <rect key="frame" x="0.0" y="35" width="180" height="95"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="t1u-HJ-90v">
+                                    <rect key="frame" x="68.5" y="17" width="42" height="61"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mT8-lm-5k2">
+                                            <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBO-a2-wbV">
+                                            <rect key="frame" x="0.0" y="40.5" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="t1u-HJ-90v" firstAttribute="centerY" secondItem="flu-K4-geL" secondAttribute="centerY" id="Ted-El-807"/>
+                                <constraint firstItem="t1u-HJ-90v" firstAttribute="centerX" secondItem="flu-K4-geL" secondAttribute="centerX" id="q3J-kT-a04"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" constant="100" id="rG9-0E-Jeg"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="K7g-9b-s4M">
+                            <rect key="frame" x="0.0" y="0.0" width="180" height="35"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNl-Je-9bc">
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="35"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HwW-x3-cPS">
+                                    <rect key="frame" x="90" y="0.0" width="90" height="35"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="Lfn-MS-iTw"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="K7g-9b-s4M" firstAttribute="leading" secondItem="bmg-Ch-IcE" secondAttribute="leading" id="3Jn-mo-kGC"/>
+                        <constraint firstItem="K7g-9b-s4M" firstAttribute="top" secondItem="bmg-Ch-IcE" secondAttribute="top" id="A9o-ZL-H7i"/>
+                        <constraint firstItem="flu-K4-geL" firstAttribute="top" secondItem="K7g-9b-s4M" secondAttribute="bottom" id="UAB-YC-C18"/>
+                        <constraint firstItem="flu-K4-geL" firstAttribute="leading" secondItem="bmg-Ch-IcE" secondAttribute="leading" id="mNR-Fd-bXj"/>
+                        <constraint firstAttribute="bottom" secondItem="flu-K4-geL" secondAttribute="bottom" id="nqd-sK-MQR"/>
+                        <constraint firstAttribute="trailing" secondItem="K7g-9b-s4M" secondAttribute="trailing" id="qNU-uw-WE5"/>
+                        <constraint firstAttribute="trailing" secondItem="flu-K4-geL" secondAttribute="trailing" id="sTd-ou-p2d"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajO-M3-nHB">
+                    <rect key="frame" x="220" y="8" width="22" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="22" id="8oH-W8-WgB"/>
+                        <constraint firstAttribute="height" constant="22" id="KGf-im-VNs"/>
+                    </constraints>
+                    <state key="normal" title="X"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bmg-Ch-IcE" secondAttribute="bottom" constant="35" id="2ka-6W-WOq"/>
+                <constraint firstItem="ajO-M3-nHB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="V3f-RZ-Zoo"/>
+                <constraint firstItem="bmg-Ch-IcE" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="35" id="eDM-ZO-eVQ"/>
+                <constraint firstItem="bmg-Ch-IcE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="35" id="lsc-ka-I0z"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ajO-M3-nHB" secondAttribute="trailing" constant="8" id="uHI-K2-tmv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bmg-Ch-IcE" secondAttribute="trailing" constant="35" id="vy4-aC-7BC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-30.5" y="-198.5"/>
+        </view>
+    </objects>
+</document>

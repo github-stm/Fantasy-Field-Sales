@@ -80,7 +80,10 @@ class Constants: NSObject {
     
     
 
-    
+    struct dateFormat {
+        static let monthYear = "MMMM yyyy"
+        static let shortMonth = "MMM"
+    }
     
     
     struct menu {
@@ -91,10 +94,13 @@ class Constants: NSObject {
     
     
     // ------------------------------------------------------------------------------------------------------------
+    
+
     struct font {
         static let boldFont = "GillSans-Bold"
         static let regularFont =  "GillSans"
         static let lightFont =  "GillSans-Light"
+        static let semiBoldFont =  "GillSans-SemiBold"
     }
     
     // ------------------------------------------------------------------------------------------------------------

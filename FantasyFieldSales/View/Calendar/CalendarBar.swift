@@ -14,7 +14,7 @@ import UIKit
 class CalendarBar: UIView {
 
     
-    var delegate: LeagueTableHeaderViewDelegate?
+  //  var delegate: LeagueTableHeaderViewDelegate?
     
     @IBOutlet weak fileprivate var contentView: UIView?
     

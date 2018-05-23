@@ -21,6 +21,9 @@ class TestViewController: UIViewController {
          var date = "2001-05"
        
         print("dates \(stringToDate(date)!)")
+        
+        let alert = TabDialogAlert()
+        alert.show(animated: true)
 
     }
 
