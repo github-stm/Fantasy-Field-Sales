@@ -24,9 +24,7 @@ class LeagueTableCell: UITableViewCell {
             self.subBackgroundView?.backgroundColor = isHighlighted ? ColorManager.LeagueTable.selectedBackground : UIColor.clear
         }
     }
-   
-    
-    
+
     override func awakeFromNib() {
     
         let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)

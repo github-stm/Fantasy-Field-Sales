@@ -60,6 +60,29 @@ class ColorManager: UIColor {
         static let monthBackground = colorGold
         static let monthText = colorWhite
     }
+    
+    struct TabDialog {
+        
+        static let background = colorMidGrey
+        static let infoBackground = colorWhite
+        
+        static let tabSelectedBackground = colorGold
+        static let tabUnselectedBackground = colorWhite
+        
+        static let tabSelectedText = colorWhite
+        static let tabUnselectedText = colorGold
+        
+        static let titleText = colorGold
+        static let infoText = colorGold
+    }
    
+    
+    struct MonthYear {
+        
+        static let background = colorGold
+        static let text = colorWhite
+        
+        
+    }
 
 }

@@ -13,30 +13,33 @@ class TabDialogAlert: UIView, Modal {
     var backgroundView = UIView()
     var dialogView = UIView()
     var tabDialog: TabDialog?
+
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame: UIScreen.main.bounds)
         initialize()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-        initialize()
     }
     
     
     func initialize(){
-        
-        let height: CGFloat =  300
+
         let padding:CGFloat = 30
-        
-       //  let width:CGFloat = 300
-        
+        let subViewPadding: CGFloat = 35
         let width = UIScreen.main.bounds.size.width - (padding * 2)
-        tabDialog = TabDialog(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        tabDialog?.frame.size = CGSize(width: width, height: height)
-       // tabDialog?.delegatePickerView = self
         
+        self.layer.cornerRadius = 10.0
+
+        //Need to set initial width so the calculation for dialog height is accurate
+        tabDialog = TabDialog(frame:CGRect(x: 0, y: 0, width: width, height: 150))
+
+        let height: CGFloat = (subViewPadding * 2) + (tabDialog!.aButton?.frame.size.height)! + (tabDialog!.titleLabel?.frame.size.height)! + (tabDialog!.infoLabel?.frame.size.height)! + 24.0
+
+        tabDialog?.frame.size = CGSize(width: width, height: height)
+
         dialogView.clipsToBounds = true
         
         backgroundView.frame = frame

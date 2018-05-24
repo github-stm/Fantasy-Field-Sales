@@ -485,19 +485,34 @@
                                     <constraint firstAttribute="height" constant="35" id="0ix-JW-g6y"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BlI-iW-IGt">
+                                <rect key="frame" x="0.0" y="63" width="375" height="604"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xVx-Ob-suS" id="CvG-g9-nDy"/>
+                                    <outlet property="delegate" destination="xVx-Ob-suS" id="YDK-qT-euH"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="M7i-5t-Vl6" firstAttribute="top" secondItem="lpi-nh-R2i" secondAttribute="top" id="8qq-Rd-sCB"/>
                             <constraint firstItem="M7i-5t-Vl6" firstAttribute="trailing" secondItem="lpi-nh-R2i" secondAttribute="trailing" id="IWr-wY-e2D"/>
+                            <constraint firstItem="BlI-iW-IGt" firstAttribute="leading" secondItem="lpi-nh-R2i" secondAttribute="leading" id="KaR-dd-Z2j"/>
+                            <constraint firstItem="BlI-iW-IGt" firstAttribute="bottom" secondItem="lpi-nh-R2i" secondAttribute="bottom" id="N6q-yz-H7B"/>
+                            <constraint firstItem="BlI-iW-IGt" firstAttribute="top" secondItem="M7i-5t-Vl6" secondAttribute="bottom" constant="8" id="lVf-aj-0IF"/>
                             <constraint firstItem="M7i-5t-Vl6" firstAttribute="leading" secondItem="lpi-nh-R2i" secondAttribute="leading" id="oIe-Fk-Oed"/>
+                            <constraint firstItem="BlI-iW-IGt" firstAttribute="trailing" secondItem="lpi-nh-R2i" secondAttribute="trailing" id="x9H-wY-oqB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lpi-nh-R2i"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="BlI-iW-IGt" id="c2k-XU-iME"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbB-Fd-Xb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-879" y="-357"/>
+            <point key="canvasLocation" x="-879.20000000000005" y="-357.57121439280365"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GT1-rh-KFo">

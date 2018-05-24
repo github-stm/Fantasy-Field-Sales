@@ -20,7 +20,10 @@ class TabDialog: UIView {
     @IBOutlet weak var infoLabel: UILabel?
     @IBOutlet weak var infoView: UIView?
 
-    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+       buttonSelected(index: sender.tag)
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -31,20 +34,24 @@ class TabDialog: UIView {
         commonInit()
     }
     
-    
     //needed to set frame of xib  to correct size in swift 3
     override func layoutSubviews() {
         self.contentView?.frame = bounds
     }
-    
     
     func commonInit(){
         
         let subviewArray = Bundle.main.loadNibNamed("TabDialog", owner: self, options: nil)
         self.addSubview(subviewArray!.first as! UIView)
         
-        contentView?.backgroundColor = UIColor.clear
+        self.layoutIfNeeded()
+        
+
+        contentView?.backgroundColor =  ColorManager.TabDialog.background
+        
         let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
+        let boldFont = UIFont(name: Constants.font.boldFont, size:  Constants.fontSize.smallFontSize)
+        
         
         for button: UIButton in buttons {
             button.titleLabel?.font = smallFont
@@ -53,10 +60,33 @@ class TabDialog: UIView {
         }
         
         aButton?.setTitle("Button A",for: .normal)
-        let backgroundImage = UIImage().imageWithColor(ColorManager.LeagueTable.moreButtonText)
-        aButton?.setBackgroundImage(backgroundImage, for: .normal)
         bButton?.setTitle("Button B",for: .normal)
         
+        buttonSelected(index: 0)
+
+        titleLabel?.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel?.text = Constants.string.newsHeader
+        titleLabel?.lineBreakMode = .byWordWrapping
+        titleLabel?.numberOfLines = 0
+        titleLabel?.font = boldFont
+        titleLabel?.textColor =  ColorManager.TabDialog.titleText
+        titleLabel?.sizeToFit()
+        
+        infoLabel?.translatesAutoresizingMaskIntoConstraints = false
+        infoLabel?.text = Constants.string.newsBody
+        infoLabel?.lineBreakMode = .byWordWrapping
+        infoLabel?.numberOfLines = 0
+        infoLabel?.font = smallFont
+        infoLabel?.textColor = ColorManager.TabDialog.infoText
+        infoLabel?.sizeToFit()
+
     }
+    
+    
+    func buttonSelected(index:Int) {
+        
+        ToggleButtons.selectTabButton(buttons: buttons, index: index, selectBackgroundColor: ColorManager.TabDialog.tabSelectedBackground, unselectBackgroundColor: ColorManager.TabDialog.tabUnselectedBackground, selectedTextColor: ColorManager.TabDialog.tabSelectedText, unselectedTextColor: ColorManager.TabDialog.tabUnselectedText)
+    }
+    
 
 }

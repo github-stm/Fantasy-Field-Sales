@@ -67,20 +67,23 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
             self.dataSource = self
 
             self.selectRow(self.period.count - 1, inComponent: 0, animated: false)
-            
+            self.backgroundColor = ColorManager.MonthYear.background
+
         }
 
     }
     
     // Mark: UIPicker Delegate / Data Source
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return period[row]
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: period[row], attributes: [NSAttributedStringKey.foregroundColor : ColorManager.MonthYear.text])
+        return attributedString
     }
+
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return period.count
@@ -89,10 +92,10 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
-        let selectedPeriod  = self.pickerView(self, titleForRow: self.selectedRow(inComponent: 0), forComponent: 0)
+        let selectedPeriod  = self.pickerView(self, attributedTitleForRow: self.selectedRow(inComponent: 0), forComponent: 0)
 
         if let delegate = self.delegatePickerView {
-            delegate.selectedRow(row: row, rowTitle: selectedPeriod!)
+            delegate.selectedRow(row: row, rowTitle: selectedPeriod!.string)
         }
 
     }

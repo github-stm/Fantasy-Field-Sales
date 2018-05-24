@@ -8,57 +8,38 @@
 
 import UIKit
 
+
+extension TestViewController: FFSDefaultDataSourceDelegate {
+    
+    func selectedItem(tableView: UITableView,  indexPath: IndexPath) {
+        print("test")
+    }
+}
+
+
 class TestViewController: UIViewController {
-    
-    let formatter = DateFormatter()
-    
-    var pickerView: MonthYearPickerView?
+
+    fileprivate var dataSource = FFSDefaultDataSource()
+    @IBOutlet weak var tableView: UITableView?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-         var date = "2001-05"
-       
-        print("dates \(stringToDate(date)!)")
-        
+
         let alert = TabDialogAlert()
         alert.show(animated: true)
-
-    }
-
-    
-    
-   
-    
-    func stringToDate(_ date: String) -> Date? {
-        let df = DateFormatter()
-        df.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale?
-        df.dateFormat = "yyyy-MM"
-        df.date(from: date)
         
-        return df.date(from: date)
+        dataSource.delegate = self
+        self.tableView?.delegate = self.dataSource
+        self.tableView?.dataSource = self.dataSource
+
     }
-    
-    
-    
-    
-    func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([Calendar.Component.month], from: startDate, to: endDate)
-        return components.month ?? 0
-    }
-    
-    
+
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-
-    
-
 
 }
 
