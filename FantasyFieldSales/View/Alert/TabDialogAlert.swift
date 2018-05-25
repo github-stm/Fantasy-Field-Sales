@@ -45,7 +45,14 @@ class TabDialogAlert: UIView, Modal {
         backgroundView.frame = frame
         backgroundView.backgroundColor = UIColor.black
         backgroundView.alpha = 0.6
-        backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
+//        backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
+//
+        
+        backgroundView.addTapGestureRecognizer {
+            self.dismiss(animated: true)
+        }
+        
+        
         addSubview(backgroundView)
         
         dialogView.addSubview(tabDialog!)

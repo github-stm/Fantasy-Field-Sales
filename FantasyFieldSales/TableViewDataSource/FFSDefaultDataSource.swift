@@ -19,17 +19,17 @@ import RealmSwift
 
 class FFSDefaultDataSource: NSObject {
     fileprivate let cellIdentifier = "DefaultCell"
+    fileprivate let rowHeight:CGFloat = 66
 
     var delegate: FFSDefaultDataSourceDelegate?
-    var dataArray = Constants.distributionExecutive
+    fileprivate var dataArray = Constants.distributionExecutive
 
 
-    func registerCells(forTableView tableView: UITableView) {
-        
+    fileprivate func registerCells(forTableView tableView: UITableView) {
         tableView.register(UINib(nibName: "DefaultCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
     
-    func loadCell(atIndexPath indexPath: IndexPath, forTableView tableView: UITableView) -> UITableViewCell {
+    fileprivate func loadCell(atIndexPath indexPath: IndexPath, forTableView tableView: UITableView) -> UITableViewCell {
         
         registerCells(forTableView: tableView)
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DefaultCell
@@ -38,7 +38,7 @@ class FFSDefaultDataSource: NSObject {
         return cell
     }
     
-    func configureCell(_ cell:DefaultCell,  indexPath: IndexPath)
+    fileprivate func configureCell(_ cell:DefaultCell,  indexPath: IndexPath)
     {
         
         cell.backgroundColor = indexPath.row % 2 == 0 ? ColorManager.LeagueTable.rowBackgroundEven : ColorManager.LeagueTable.rowBackgroundOdd
@@ -66,7 +66,7 @@ extension FFSDefaultDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 66
+        return rowHeight
     }
     
 }

@@ -18,31 +18,15 @@ import UIKit
 
 class FFSMoreDataSource: NSObject {
 
-    //let leagueTableCellIdentifier = "LeagueTableCell"
-    
-    
-    var array = Constants.teamGroup
+    fileprivate var array = Constants.teamGroup
     var delegate: FFSMoreDataSourceDelegate?
-  //  var footerType:FooterType = .NoFooter
-    
-    
-    init(footerType: FooterType) {
-      //  self.footerType = footerType
-        super.init()
-    }
-    
-    convenience override init() {
-        self.init(footerType:.NoFooter) // calls above default value
-    }
-    
-    func registerCells(forCollectionView collectionView: UICollectionView) {
-        
+
+    fileprivate func registerCells(forCollectionView collectionView: UICollectionView) {
         collectionView.register(UINib(nibName: "MoreCell", bundle: nil), forCellWithReuseIdentifier: "MoreCell")
-//        collectionView?.backgroundColor = UIColor.clear
 
     }
     
-    func loadCell(atIndexPath indexPath: IndexPath, forCollectionView collectionView: UICollectionView) -> UICollectionViewCell {
+    fileprivate func loadCell(atIndexPath indexPath: IndexPath, forCollectionView collectionView: UICollectionView) -> UICollectionViewCell {
         
         registerCells(forCollectionView: collectionView)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoreCell", for: indexPath) as! MoreCell
@@ -51,7 +35,7 @@ class FFSMoreDataSource: NSObject {
     }
     
     
-    func configureCell(_ cell:MoreCell,  indexPath: IndexPath)
+    fileprivate func configureCell(_ cell:MoreCell,  indexPath: IndexPath)
     {
         let ticket = array[indexPath.row]
         cell.topLabel?.text = ticket

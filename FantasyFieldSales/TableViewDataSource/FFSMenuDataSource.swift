@@ -87,6 +87,8 @@ extension FFSMenuDataSource: UITableViewDataSource {
     }
     
 }
+
+
 // UITableViewDelegate
 extension FFSMenuDataSource: UITableViewDelegate {
     
@@ -103,19 +105,6 @@ extension FFSMenuDataSource: UITableViewDelegate {
         }
     }
     
-    
-   
-    
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//
-//        if footerType == .NoFooter {
-//            return 0
-//        } else {
-//            return 75
-//        }
-//
-//
-//    }
 }
 
 

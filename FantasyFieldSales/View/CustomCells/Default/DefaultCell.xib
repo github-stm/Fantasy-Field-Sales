@@ -21,16 +21,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nmy-5z-aOe">
-                        <rect key="frame" x="16" y="9" width="260" height="46"/>
+                        <rect key="frame" x="16" y="9" width="265" height="46"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6L-dN-mU8">
-                                <rect key="frame" x="0.0" y="0.0" width="260" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="265" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsC-YY-yDv">
-                                <rect key="frame" x="0.0" y="25.5" width="260" height="20.5"/>
+                                <rect key="frame" x="0.0" y="25.5" width="265" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,10 +41,10 @@
                         </constraints>
                     </stackView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_settings" translatesAutoresizingMaskIntoConstraints="NO" id="64r-GI-0lJ">
-                        <rect key="frame" x="284" y="22" width="20" height="20"/>
+                        <rect key="frame" x="289" y="22" width="15" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="5dm-qd-m65"/>
-                            <constraint firstAttribute="width" constant="20" id="JHK-jV-k7n"/>
+                            <constraint firstAttribute="width" constant="15" id="JHK-jV-k7n"/>
                         </constraints>
                     </imageView>
                 </subviews>

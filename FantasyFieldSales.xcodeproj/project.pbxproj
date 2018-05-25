@@ -47,6 +47,7 @@
 		5A7FD4C520B472A500A7D64E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FD4C420B472A500A7D64E /* StringExtension.swift */; };
 		5A8DA93320A464D100C5D94D /* ToggleButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DA93220A464D100C5D94D /* ToggleButtons.swift */; };
 		5A8DA93520A4694000C5D94D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8DA93420A4694000C5D94D /* NewsViewController.swift */; };
+		5A8F915120B84D0A00CC22F3 /* UIViewGestureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8F915020B84D0A00CC22F3 /* UIViewGestureExtension.swift */; };
 		5AA1D13820B5ABB000B2B63E /* TabDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1D13720B5ABB000B2B63E /* TabDialog.swift */; };
 		5AA1D13A20B5ABC200B2B63E /* TabDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AA1D13920B5ABC200B2B63E /* TabDialog.xib */; };
 		5AA1D13C20B5B29200B2B63E /* UIViewGestureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1D13B20B5B29200B2B63E /* UIViewGestureExtensions.swift */; };
@@ -112,6 +113,7 @@
 		5A7FD4C420B472A500A7D64E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5A8DA93220A464D100C5D94D /* ToggleButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtons.swift; sourceTree = "<group>"; };
 		5A8DA93420A4694000C5D94D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		5A8F915020B84D0A00CC22F3 /* UIViewGestureExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewGestureExtension.swift; sourceTree = "<group>"; };
 		5AA1D13720B5ABB000B2B63E /* TabDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDialog.swift; sourceTree = "<group>"; };
 		5AA1D13920B5ABC200B2B63E /* TabDialog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabDialog.xib; sourceTree = "<group>"; };
 		5AA1D13B20B5B29200B2B63E /* UIViewGestureExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewGestureExtensions.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				5A7ABC9B20ADBE610011987B /* ModalViewExtension.swift */,
 				5A7FD4C420B472A500A7D64E /* StringExtension.swift */,
 				5AA1D13B20B5B29200B2B63E /* UIViewGestureExtensions.swift */,
+				5A8F915020B84D0A00CC22F3 /* UIViewGestureExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A0A11C220A31A5A00A0E887 /* DateExtension.swift in Sources */,
+				5A8F915120B84D0A00CC22F3 /* UIViewGestureExtension.swift in Sources */,
 				5AE1558820AB3BC200D25C07 /* ChartViewController.swift in Sources */,
 				5A8DA93320A464D100C5D94D /* ToggleButtons.swift in Sources */,
 				5A0A11B420A2EAFD00A0E887 /* LeagueTableMoreFooterView.swift in Sources */,
