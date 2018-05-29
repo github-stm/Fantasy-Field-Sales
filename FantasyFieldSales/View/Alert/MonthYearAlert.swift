@@ -43,10 +43,20 @@ class MonthYearAlert: UIView, Modal {
     func initialize(){
 
         let tableHeight: CGFloat =  216
-        let padding:CGFloat = 50
-
-        pickerView = MonthYearPickerView(frame: CGRect.zero, startMonth:self.startMonth , startYear:self.startYear)
+        let padding:CGFloat = 20
+        let width = UIScreen.main.bounds.size.width - (padding * 2)
+        
+        //Need to set initial width so the calculation for dialog height is accurate
+        pickerView = MonthYearPickerView(frame: CGRect(x: 0, y: 0, width: width, height: 150), startMonth:self.startMonth , startYear:self.startYear)
         pickerView?.delegatePickerView = self
+        
+        
+        pickerView?.onDateSelected = { (month: Int, year: Int) in
+            let string = String(format: "%02d/%d", month, year)
+            NSLog(string) // should show something like 05/2015
+        }
+        
+        
 
         dialogView.clipsToBounds = true
 

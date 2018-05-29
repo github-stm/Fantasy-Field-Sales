@@ -23,11 +23,13 @@ class LeagueTableMoreFooterView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        initalizeSubviews()
         commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        initalizeSubviews()
         commonInit()
     }
     
@@ -37,12 +39,15 @@ class LeagueTableMoreFooterView: UIView {
         self.contentView?.frame = bounds
     }
     
+    func initalizeSubviews() {
+        let subviewArray = Bundle.main.loadNibNamed("LeagueTableMoreFooterView", owner: self, options: nil)
+        self.addSubview(subviewArray!.first as! UIView)
+    }
+    
+    
     
     func commonInit(){
 
-        let subviewArray = Bundle.main.loadNibNamed("LeagueTableMoreFooterView", owner: self, options: nil)
-        self.addSubview(subviewArray!.first as! UIView)
-        
         contentView?.backgroundColor = UIColor.clear
         
         let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)

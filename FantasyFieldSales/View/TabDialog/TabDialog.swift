@@ -26,11 +26,13 @@ class TabDialog: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        initalizeSubviews()
         commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        initalizeSubviews()
         commonInit()
     }
     
@@ -39,13 +41,14 @@ class TabDialog: UIView {
         self.contentView?.frame = bounds
     }
     
-    func commonInit(){
-        
+    
+    func initalizeSubviews() {
         let subviewArray = Bundle.main.loadNibNamed("TabDialog", owner: self, options: nil)
         self.addSubview(subviewArray!.first as! UIView)
-        
         self.layoutIfNeeded()
-        
+    }
+    
+    func commonInit(){
 
         contentView?.backgroundColor =  ColorManager.TabDialog.background
         

@@ -27,11 +27,13 @@ class CalendarBar: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        initalizeSubviews()
         commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        initalizeSubviews()
         commonInit()
     }
     
@@ -39,6 +41,11 @@ class CalendarBar: UIView {
     //needed to set frame of xib  to correct size in swift 3
     override func layoutSubviews() {
         self.contentView?.frame = bounds
+    }
+    
+    func initalizeSubviews() {
+        let subviewArray = Bundle.main.loadNibNamed("CalendarBar", owner: self, options: nil)
+        self.addSubview(subviewArray!.first as! UIView)
     }
     
     
@@ -52,11 +59,7 @@ class CalendarBar: UIView {
 
     
     func commonInit(){
-        
-        let subviewArray = Bundle.main.loadNibNamed("CalendarBar", owner: self, options: nil)
-        self.addSubview(subviewArray!.first as! UIView)
-        
-        
+
         dropdownImageView?.contentMode = .center
         
         let spacing:CGFloat = 3
@@ -72,7 +75,6 @@ class CalendarBar: UIView {
         
         let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
         
-        
         let date = Date()
         dateLabel?.text = date.getMonthName()
         dateLabel?.font = smallFont
@@ -80,7 +82,6 @@ class CalendarBar: UIView {
         dateLabel?.textAlignment = .center
         dateLabel?.backgroundColor = ColorManager.TableTitle.monthBackground
 
-        
     }
     
   

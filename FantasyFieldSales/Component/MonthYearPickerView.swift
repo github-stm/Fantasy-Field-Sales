@@ -14,21 +14,46 @@ protocol MonthYearPickerViewDelegate {
     func selectedRow(row:Int, rowTitle:String)
 }
 
-class MonthYearPickerView: UIPickerView {
+class MonthYearPickerView: UIView {
+ //   var backgroundView: UIView
     
+   // var dialogView: UIView
     var delegatePickerView: MonthYearPickerViewDelegate?
     
-    var period: [String]!
-  //  var years: [Int]!
+    @IBOutlet var buttons: [UIButton]!
     
-    var startMonth: Int?
-    var startYear: Int?
+    @IBOutlet weak var okButton: UIButton?
+    @IBOutlet weak var cancelButton: UIButton?
+    @IBOutlet weak var pickerView: UIPickerView?
+    
+
+
+    var months: [String]!
+    var years: [Int]!
+    
+    var startMonth:Int?
+    var startYear:Int?
+    
+    var month = Calendar.current.component(.month, from: Date()) {
+        didSet {
+            pickerView?.selectRow(month-1, inComponent: 0, animated: false)
+        }
+    }
+    
+    var year = Calendar.current.component(.year, from: Date()) {
+        didSet {
+            pickerView?.selectRow(years.index(of: year)!, inComponent: 1, animated: true)
+        }
+    }
+    
+    var onDateSelected: ((_ month: Int, _ year: Int) -> Void)?
 
     
     convenience init(frame: CGRect, startMonth:Int, startYear:Int) {
         self.init(frame: frame)
         self.startMonth = startMonth
         self.startYear = startYear
+        initalizeSubviews()
         self.commonSetup()
         
     }
@@ -36,76 +61,99 @@ class MonthYearPickerView: UIPickerView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        initalizeSubviews()
         self.commonSetup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        initalizeSubviews()
         self.commonSetup()
     }
     
+    
+    
+    func initalizeSubviews() {
+        let subviewArray = Bundle.main.loadNibNamed("MonthYearPickerView", owner: self, options: nil)
+        self.addSubview(subviewArray!.first as! UIView)
+    }
+    
+    
     func commonSetup() {
 
-        var monthYear: [String] = []
-        var month = 0
-     
-        if let startYear = self.startYear, let startMonth = self.startMonth {
-            if  let startDate = Calendar.current.date(from: DateComponents(year: startYear, month: startMonth, day: 15)) {
-                let monthCount = startDate.monthBetweenDates( endDate: Date())
-                for _ in 0...monthCount {
-                    let newDate = Calendar.current.date(byAdding: .month, value: month, to: startDate)
-                    if let date = newDate?.getDateName(format: Constants.dateFormat.monthYear) {
-                        monthYear.append(date)
-                        month += 1
-                    }
-                }
-                self.period = monthYear
-            }
-            
-            self.delegate = self
-            self.dataSource = self
-            
-            if self.period.count > 0 {
-                self.selectRow(self.period.count - 1, inComponent: 0, animated: false)
-                self.backgroundColor = ColorManager.MonthYear.background
+        // population years
+        var years: [Int] = []
+        if years.count == 0 {
+            var year = NSCalendar(identifier: NSCalendar.Identifier.gregorian)!.component(.year, from: NSDate() as Date)
+            for _ in 1...15 {
+                years.append(year)
+                year += 1
             }
         }
+        self.years = years
+        
+        // population months with localized names
+        var months: [String] = []
+        var month = 0
+        for _ in 1...12 {
+            months.append(DateFormatter().monthSymbols[month].capitalized)
+            month += 1
+        }
+        self.months = months
+        
+        self.pickerView?.dataSource = self
+        self.pickerView?.delegate = self
+        
+        let currentMonth = NSCalendar(identifier: NSCalendar.Identifier.gregorian)!.component(.month, from: NSDate() as Date)
+        pickerView?.selectRow(currentMonth - 1, inComponent: 0, animated: false)
     }
-
+    
+   
+    
 }
 
  // Mark: UIPicker Delegate
 
 extension  MonthYearPickerView:  UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        let selectedPeriod  = self.pickerView(self, attributedTitleForRow: self.selectedRow(inComponent: 0), forComponent: 0)
-        
-        if let delegate = self.delegatePickerView, let period = selectedPeriod
-        {
-            delegate.selectedRow(row: row, rowTitle: period.string)
+        let month = pickerView.selectedRow(inComponent: 0)+1
+        let year = years[pickerView.selectedRow(inComponent: 1)]
+        if let block = onDateSelected {
+            block(month, year)
         }
         
-        
-    }
-}
+        self.month = month
+        self.year = year
+    }}
 
 
  // Mark: UIPicker  Data Source
 
 extension  MonthYearPickerView: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
-
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let attributedString = NSAttributedString(string: period[row], attributes: [NSAttributedStringKey.foregroundColor : ColorManager.MonthYear.text])
-        return attributedString
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch component {
+        case 0:
+            return months[row]
+        case 1:
+            return "\(years[row])"
+        default:
+            return nil
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return period.count
-        
+        switch component {
+        case 0:
+            return months.count
+        case 1:
+            return years.count
+        default:
+            return 0
+        }
     }
 }
 

@@ -15,6 +15,7 @@
 		5A0A11C220A31A5A00A0E887 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0A11C120A31A5A00A0E887 /* DateExtension.swift */; };
 		5A26C7B320A34B2C00B5AB44 /* ParallaxHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26C7B220A34B2C00B5AB44 /* ParallaxHeaderView.swift */; };
 		5A26C7B520A3619500B5AB44 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26C7B420A3619500B5AB44 /* ContentViewController.swift */; };
+		5A2C6E7E20BD919E00FE3595 /* MonthYearPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A2C6E7D20BD919E00FE3595 /* MonthYearPickerView.xib */; };
 		5A2C716D20A98E7900CD26F0 /* FFSTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C716C20A98E7900CD26F0 /* FFSTableDataSource.swift */; };
 		5A4D10D620AED813007B7879 /* FFSMenuDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D10D520AED813007B7879 /* FFSMenuDataSource.swift */; };
 		5A4D10DA20AED8BD007B7879 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D10D820AED8BD007B7879 /* MenuCell.swift */; };
@@ -79,6 +80,7 @@
 		5A0A11C120A31A5A00A0E887 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		5A26C7B220A34B2C00B5AB44 /* ParallaxHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderView.swift; sourceTree = "<group>"; };
 		5A26C7B420A3619500B5AB44 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		5A2C6E7D20BD919E00FE3595 /* MonthYearPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthYearPickerView.xib; sourceTree = "<group>"; };
 		5A2C716C20A98E7900CD26F0 /* FFSTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSTableDataSource.swift; sourceTree = "<group>"; };
 		5A4D10D520AED813007B7879 /* FFSMenuDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSMenuDataSource.swift; sourceTree = "<group>"; };
 		5A4D10D820AED8BD007B7879 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -250,6 +252,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5A60235520BD8457006230A2 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
 		5A6B7A3F20AC746500E154EF /* More */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,7 +365,9 @@
 		5AC86FB620B4310100D3BA0B /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				5A60235520BD8457006230A2 /* DatePicker */,
 				5AC86FB720B4312100D3BA0B /* MonthYearPickerView.swift */,
+				5A2C6E7D20BD919E00FE3595 /* MonthYearPickerView.xib */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -473,6 +484,7 @@
 				5AE1556020AB019700D25C07 /* ScrollTabView.xib in Resources */,
 				5A4D10DB20AED8BD007B7879 /* MenuCell.xib in Resources */,
 				5AA1D13A20B5ABC200B2B63E /* TabDialog.xib in Resources */,
+				5A2C6E7E20BD919E00FE3595 /* MonthYearPickerView.xib in Resources */,
 				5A0A11B620A2EB0C00A0E887 /* LeagueTableMoreFooterView.xib in Resources */,
 				5A6B7A4720AC74A600E154EF /* MoreCell.xib in Resources */,
 				5A5896B220A19AB100D6822F /* Main.storyboard in Resources */,

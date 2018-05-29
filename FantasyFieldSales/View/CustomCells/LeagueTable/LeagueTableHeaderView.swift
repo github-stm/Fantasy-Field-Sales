@@ -46,11 +46,13 @@ class LeagueTableHeaderView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        initalizeSubviews()
         commonInit()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        initalizeSubviews()
         commonInit()
     }
     
@@ -60,12 +62,16 @@ class LeagueTableHeaderView: UIView {
         self.contentView?.frame = bounds
     }
 
-    func commonInit(){
-
+    
+    func initalizeSubviews() {
         let subviewArray = Bundle.main.loadNibNamed("LeagueTableHeaderView", owner: self, options: nil)
         self.addSubview(subviewArray!.first as! UIView)
-        
         tabView?.delegate = self
+    }
+    
+    func commonInit(){
+
+
 
         let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
 

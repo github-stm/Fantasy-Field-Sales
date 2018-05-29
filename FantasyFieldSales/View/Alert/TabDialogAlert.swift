@@ -51,8 +51,7 @@ class TabDialogAlert: UIView, Modal {
         backgroundView.addTapGestureRecognizer {
             self.dismiss(animated: true)
         }
-        
-        
+
         addSubview(backgroundView)
         
         dialogView.addSubview(tabDialog!)

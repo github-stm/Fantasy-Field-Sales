@@ -25,9 +25,10 @@ class TestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+/*
         let alert = TabDialogAlert()
         alert.show(animated: true)
+        */
         
         dataSource.delegate = self
         self.tableView?.delegate = self.dataSource
