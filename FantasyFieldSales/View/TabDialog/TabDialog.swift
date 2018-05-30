@@ -52,12 +52,12 @@ class TabDialog: UIView {
 
         contentView?.backgroundColor =  ColorManager.TabDialog.background
         
-        let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
+        let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
         let boldFont = UIFont(name: Constants.font.boldFont, size:  Constants.fontSize.smallFontSize)
         
         
         for button: UIButton in buttons {
-            button.titleLabel?.font = smallFont
+            button.titleLabel?.font = font
             button.titleLabel?.textColor = ColorManager.LeagueTable.rowHeaderTitleText
             button.titleLabel?.textAlignment = .center
         }
@@ -79,7 +79,7 @@ class TabDialog: UIView {
         infoLabel?.text = Constants.string.newsBody
         infoLabel?.lineBreakMode = .byWordWrapping
         infoLabel?.numberOfLines = 0
-        infoLabel?.font = smallFont
+        infoLabel?.font = font
         infoLabel?.textColor = ColorManager.TabDialog.infoText
         infoLabel?.sizeToFit()
 

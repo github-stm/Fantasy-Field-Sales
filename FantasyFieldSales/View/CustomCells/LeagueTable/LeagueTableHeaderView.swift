@@ -66,24 +66,18 @@ class LeagueTableHeaderView: UIView {
     func initalizeSubviews() {
         let subviewArray = Bundle.main.loadNibNamed("LeagueTableHeaderView", owner: self, options: nil)
         self.addSubview(subviewArray!.first as! UIView)
-       // tabView?.delegate = self
     }
     
     func commonInit(){
 
+        let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
 
-
-        let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
-
-        
-        let date = Date()
-     
         positionHeaderLabel?.text = "POS"
         teamHeaderLabel?.text = "TEAM"
         pointsHeaderLabel?.text = "PTS"
         
         for label: UILabel in labels {
-            label.font = smallFont
+            label.font = font
             label.textColor = ColorManager.LeagueTable.rowHeaderTitleText
             label.textAlignment = .center
         }

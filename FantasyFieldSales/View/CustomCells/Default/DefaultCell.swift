@@ -17,7 +17,7 @@ class DefaultCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
+        let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
         let boldFont = UIFont(name: Constants.font.boldFont, size:  Constants.fontSize.smallFontSize)
         
         titleLabel?.font = boldFont
@@ -25,7 +25,7 @@ class DefaultCell: UITableViewCell {
         titleLabel?.textAlignment = .left
         titleLabel?.backgroundColor = UIColor.clear
         
-        subTitleLabel?.font = smallFont
+        subTitleLabel?.font = font
         subTitleLabel?.textColor = ColorManager.LeagueTable.rowText
         subTitleLabel?.textAlignment = .left
         subTitleLabel?.backgroundColor = UIColor.clear

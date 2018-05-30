@@ -17,9 +17,9 @@ class MenuCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
+        let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
  
-        titleLabel?.font = smallFont
+        titleLabel?.font = font
         titleLabel?.textColor = ColorManager.LeagueTable.rowText
         titleLabel?.textAlignment = .center
 

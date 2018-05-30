@@ -50,12 +50,12 @@ class LeagueTableMoreFooterView: UIView {
 
         contentView?.backgroundColor = UIColor.clear
         
-        let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
+        let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
 
         moreButton?.setTitle("View full table",for: .normal)
 
         moreButton?.setTitleColor(ColorManager.LeagueTable.moreButtonText, for: .normal)
-        moreButton?.titleLabel?.font = UIFont(name: Constants.font.regularFont, size: 18)
+        moreButton?.titleLabel?.font = font
         moreButton?.layer.cornerRadius = 5
         moreButton?.layer.borderWidth = 1
 

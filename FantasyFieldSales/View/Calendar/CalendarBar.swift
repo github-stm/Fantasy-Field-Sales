@@ -73,11 +73,11 @@ class CalendarBar: UIView {
 
         self.contentView?.backgroundColor = UIColor.black
         
-        let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
+        let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
         
         let date = Date()
         dateLabel?.text = date.getMonthName()
-        dateLabel?.font = smallFont
+        dateLabel?.font = font
         dateLabel?.textColor = ColorManager.TableTitle.monthText
         dateLabel?.textAlignment = .center
         dateLabel?.backgroundColor = ColorManager.TableTitle.monthBackground

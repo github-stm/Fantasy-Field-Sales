@@ -26,6 +26,13 @@ class ColorManager: UIColor {
     fileprivate static let colorBronze = UIColor(hexString: "CD7F32")
     
     
+    struct NavBar {
+        static let background = colorBlack
+        static let text = colorWhite
+        
+
+    }
+    
     
 
     // ------------------------------------------------------------------------------------------------------------

@@ -27,10 +27,10 @@ class LeagueTableCell: UITableViewCell {
 
     override func awakeFromNib() {
     
-        let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
+        let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
         
         for label: UILabel in labels {
-            label.font = smallFont
+            label.font = font
             label.textColor = ColorManager.LeagueTable.rowText
             label.textAlignment = .center
         }

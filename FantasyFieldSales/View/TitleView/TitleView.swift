@@ -10,14 +10,9 @@ import UIKit
 
 class TitleView: UIView {
 
- //   var delegate: ScrollTabViewDelegate?
-    
-    
-  //  @IBOutlet var buttons: [UIButton]!
     @IBOutlet var labels: [UILabel]!
 
     @IBOutlet weak var contentView: UIView?
-    
     @IBOutlet weak var leftView: UIView?
     @IBOutlet weak var centerView: UIView?
     @IBOutlet weak var rightView: UIView?
@@ -53,24 +48,20 @@ class TitleView: UIView {
     
     
     func commonInit(){
-        let smallFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
-        
-//        titleLabel?.font = smallFont
-//        titleLabel?.textColor = ColorManager.TableTitle.text
-//        titleLabel?.textAlignment = .center
-//        titleLabel?.backgroundColor = UIColor.clear
+        let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
         
         self.backgroundColor = ColorManager.TableTitle.background
-        
-        
+
         for label: UILabel in labels {
-            label.font = smallFont
+            label.font = font
             label.textColor = ColorManager.LeagueTable.rowText
             label.textAlignment = .center
             label.backgroundColor = UIColor.clear
             label.isUserInteractionEnabled = false
         }
         
+        leftView?.isHidden = true
+        rightView?.isHidden = true
         leftView?.backgroundColor = UIColor.red
         leftView?.isUserInteractionEnabled = false
         rightView?.backgroundColor = UIColor.blue
