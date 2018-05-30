@@ -11,22 +11,22 @@ import UIKit
     
     
 protocol MonthYearPickerViewDelegate {
-    func selectedRow(row:Int, rowTitle:String)
+  //  func selectedRow(row:Int, rowTitle:String)
+    func okButtonTapped()
+    func cancelButtonTapped()
 }
 
 class MonthYearPickerView: UIView {
- //   var backgroundView: UIView
-    
-   // var dialogView: UIView
+
     var delegatePickerView: MonthYearPickerViewDelegate?
     
+    @IBOutlet weak fileprivate var contentView: UIView?
     @IBOutlet var buttons: [UIButton]!
     
     @IBOutlet weak var okButton: UIButton?
     @IBOutlet weak var cancelButton: UIButton?
     @IBOutlet weak var pickerView: UIPickerView?
-    
-
+    @IBOutlet weak var buttonView: UIView?
 
     var months: [String]!
     var years: [Int]!
@@ -34,28 +34,13 @@ class MonthYearPickerView: UIView {
     var startMonth:Int?
     var startYear:Int?
     
-    var month = Calendar.current.component(.month, from: Date()) {
-        didSet {
-            pickerView?.selectRow(month-1, inComponent: 0, animated: false)
-        }
-    }
-    
-    var year = Calendar.current.component(.year, from: Date()) {
-        didSet {
-            pickerView?.selectRow(years.index(of: year)!, inComponent: 1, animated: true)
-        }
-    }
-    
-    var onDateSelected: ((_ month: Int, _ year: Int) -> Void)?
-
+    var month:Int?
+    var year:Int?
     
     convenience init(frame: CGRect, startMonth:Int, startYear:Int) {
         self.init(frame: frame)
         self.startMonth = startMonth
         self.startYear = startYear
-        initalizeSubviews()
-        self.commonSetup()
-        
     }
     
     
@@ -72,6 +57,12 @@ class MonthYearPickerView: UIView {
     }
     
     
+    //needed to set frame of xib  to correct size in swift 3
+    override func layoutSubviews() {
+        self.contentView?.frame = bounds
+    }
+
+    
     
     func initalizeSubviews() {
         let subviewArray = Bundle.main.loadNibNamed("MonthYearPickerView", owner: self, options: nil)
@@ -80,6 +71,22 @@ class MonthYearPickerView: UIView {
     
     
     func commonSetup() {
+        
+        let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
+        
+        buttonView?.backgroundColor = ColorManager.Calendar.buttonView
+        for button: UIButton in buttons {
+            button.titleLabel?.font = font
+            button.titleLabel?.textAlignment = .center
+            button.layer.borderColor = ColorManager.CallToActionButton.border.cgColor
+            
+            button.layer.borderWidth = 2.0
+            button.setBackgroundImage(UIImage().imageWithColor(ColorManager.CallToActionButton.backgroundNormal), for: .normal)
+            button.setBackgroundImage(UIImage().imageWithColor(ColorManager.CallToActionButton.backgroundHighlight), for: .highlighted)
+            button.setTitleColor(ColorManager.CallToActionButton.textNormal, for: .normal)
+            button.setTitleColor(ColorManager.CallToActionButton.textHighlight, for: .highlighted)
+            
+        }
 
         // population years
         var years: [Int] = []
@@ -94,37 +101,51 @@ class MonthYearPickerView: UIView {
         
         // population months with localized names
         var months: [String] = []
-        var month = 0
+        var mth = 0
         for _ in 1...12 {
-            months.append(DateFormatter().monthSymbols[month].capitalized)
-            month += 1
+            months.append(DateFormatter().monthSymbols[mth].capitalized)
+            mth += 1
         }
         self.months = months
         
         self.pickerView?.dataSource = self
         self.pickerView?.delegate = self
         
-        let currentMonth = NSCalendar(identifier: NSCalendar.Identifier.gregorian)!.component(.month, from: NSDate() as Date)
-        pickerView?.selectRow(currentMonth - 1, inComponent: 0, animated: false)
+        month = NSCalendar(identifier: NSCalendar.Identifier.gregorian)!.component(.month, from: NSDate() as Date)
+        year = NSCalendar(identifier: NSCalendar.Identifier.gregorian)!.component(.year, from: NSDate() as Date)
+        pickerView?.selectRow(month! - 1, inComponent: 0, animated: false)
+
     }
     
-   
+    @IBAction func okButtonTapped(_ sender: AnyObject)
+    {
+        if let delegate = self.delegatePickerView {
+            if let year = self.year, let month = self.month, let date = Calendar.current.date(from: DateComponents(year: year, month: month, day: 15)) {
+                 delegate.okButtonTapped()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.Notification.dateSelectedNotification), object: nil, userInfo: ["date": date])
+            }
+        }
+    }
+    
+    
+    @IBAction func cancelButtonTapped(_ sender: AnyObject)
+    {
+        if let delegate = self.delegatePickerView {
+            delegate.cancelButtonTapped()
+        }
+    }
     
 }
 
  // Mark: UIPicker Delegate
 
 extension  MonthYearPickerView:  UIPickerViewDelegate {
+
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let month = pickerView.selectedRow(inComponent: 0)+1
-        let year = years[pickerView.selectedRow(inComponent: 1)]
-        if let block = onDateSelected {
-            block(month, year)
-        }
-        
-        self.month = month
-        self.year = year
-    }}
+        self.month = pickerView.selectedRow(inComponent: 0)+1
+        self.year = years[pickerView.selectedRow(inComponent: 1)]
+    }
+}
 
 
  // Mark: UIPicker  Data Source

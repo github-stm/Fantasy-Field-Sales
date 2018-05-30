@@ -8,15 +8,26 @@
 
 import UIKit
 
+
+
 extension MonthYearAlert: MonthYearPickerViewDelegate {
-    func selectedRow(row:Int, rowTitle:String) {
-        print("row \(row)  title \(rowTitle)")
-        // rowTitle.stringToDate(format: Constants.dateFormat.monthYear))!)
+    
+//    func selectedRow(row:Int, rowTitle:String) {
+//        print("row \(row)  title \(rowTitle)")
+//        // rowTitle.stringToDate(format: Constants.dateFormat.monthYear))!)
+//    }
+
+    func okButtonTapped() {
+       didTappedOnBackgroundView()
+    }
+    
+    func cancelButtonTapped() {
+        didTappedOnBackgroundView()
     }
 }
 
 class MonthYearAlert: UIView, Modal {
-    
+
     var backgroundView = UIView()
     var dialogView = UIView()
     var pickerView: MonthYearPickerView?
@@ -42,20 +53,20 @@ class MonthYearAlert: UIView, Modal {
     
     func initialize(){
 
-        let tableHeight: CGFloat =  216
+        let tableHeight: CGFloat =  330
         let padding:CGFloat = 20
         let width = UIScreen.main.bounds.size.width - (padding * 2)
         
         //Need to set initial width so the calculation for dialog height is accurate
-        pickerView = MonthYearPickerView(frame: CGRect(x: 0, y: 0, width: width, height: 150), startMonth:self.startMonth , startYear:self.startYear)
+        pickerView = MonthYearPickerView(frame: CGRect(x: 0, y: 0, width: width, height: 330), startMonth:self.startMonth , startYear:self.startYear)
         pickerView?.delegatePickerView = self
         
         
-        pickerView?.onDateSelected = { (month: Int, year: Int) in
-            let string = String(format: "%02d/%d", month, year)
-            NSLog(string) // should show something like 05/2015
-        }
-        
+//        pickerView?.onDateSelected = { (month: Int, year: Int) in
+//            let string = String(format: "%02d/%d", month, year)
+//            NSLog(string) // should show something like 05/2015
+//        }
+//
         
         dialogView.clipsToBounds = true
 

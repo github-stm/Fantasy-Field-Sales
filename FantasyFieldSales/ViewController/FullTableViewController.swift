@@ -15,6 +15,23 @@ class FullTableViewController: UIViewController, UIPickerViewDelegate, CNContact
     
     @IBOutlet weak var tableView: UITableView?
     
+    // ------------------------------------------------------------------------------------------------------------
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+
+        NotificationCenter.default.addObserver(self, selector:#selector(FullTableViewController.dateSelected(_:)), name: NSNotification.Name(rawValue: Constants.Notification.dateSelectedNotification), object: nil)
+    }
+    
+    
+    @objc func dateSelected(_ notification: Notification){
+        if let info = notification.userInfo, let infoDescription = info["date"] as? Date {
+            print(infoDescription)
+        }
+    }
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
     }
@@ -36,6 +53,14 @@ class FullTableViewController: UIViewController, UIPickerViewDelegate, CNContact
         // Dispose of any resources that can be recreated.
     }
 
+    
+    // A deinitializer is called immediately before a class instance is deallocated.
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    
 
 }
 

@@ -78,10 +78,23 @@ class Constants: NSObject {
     ]
 
     
+    struct Notification
+    {
+        static let dateSelectedNotification = "DateSelectedNotification"
+
+        
+    }
+    
+    
+    
+    struct CallToActionButton {
+        static let borderWidth:CGFloat = 2
+    }
+    
     struct leagueTable {
         static let headerHeight:CGFloat = 45
         static let footerHeight:CGFloat = 75
-        static let rowHeight:CGFloat = 30
+        static let rowHeight:CGFloat = 75
 
     }
 

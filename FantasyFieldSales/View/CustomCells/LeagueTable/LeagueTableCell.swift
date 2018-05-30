@@ -13,7 +13,8 @@ class LeagueTableCell: UITableViewCell {
     @IBOutlet var labels: [UILabel]!
     
     @IBOutlet weak var positionLabel: UILabel?
-    @IBOutlet weak var teamLabel: UILabel?
+    @IBOutlet weak var mainTitleLabel: UILabel?
+    @IBOutlet weak var subtitleLabel: UILabel?
     @IBOutlet weak var pointsLabel: UILabel?
     
     @IBOutlet weak var subBackgroundView: UIView?

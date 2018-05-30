@@ -33,7 +33,21 @@ class ColorManager: UIColor {
 
     }
     
+    struct Calendar  {
+        static let buttonView = colorGold
+        static let background = colorGold
+        static let text = colorWhite
+    }
     
+    struct CallToActionButton {
+       // static let borderWidth:CGFloat = 2
+       
+        static let border = colorWhite
+        static let backgroundNormal = UIColor.clear
+        static let textNormal = colorWhite
+        static let backgroundHighlight = colorWhite
+        static let textHighlight = colorGold
+    }
 
     // ------------------------------------------------------------------------------------------------------------
     struct LeagueTable {

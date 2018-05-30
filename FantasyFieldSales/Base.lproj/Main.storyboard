@@ -214,20 +214,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bot-0G-mJP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="1UP-i1-CwY" id="kk7-6C-1q3"/>
                                     <outlet property="delegate" destination="1UP-i1-CwY" id="7HH-Gy-bok"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8o-sr-Hla" customClass="CalendarBar" customModule="FantasyFieldSales" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="VMZ-AB-ynb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bot-0G-mJP" firstAttribute="leading" secondItem="vXs-i9-hA2" secondAttribute="leading" id="4lI-kL-bCq"/>
+                            <constraint firstItem="f8o-sr-Hla" firstAttribute="leading" secondItem="vXs-i9-hA2" secondAttribute="leading" id="BKM-Qh-m3L"/>
+                            <constraint firstItem="f8o-sr-Hla" firstAttribute="trailing" secondItem="vXs-i9-hA2" secondAttribute="trailing" id="D22-3o-3cl"/>
+                            <constraint firstItem="bot-0G-mJP" firstAttribute="top" secondItem="f8o-sr-Hla" secondAttribute="bottom" id="Hyp-8A-6ls"/>
+                            <constraint firstItem="f8o-sr-Hla" firstAttribute="top" secondItem="vXs-i9-hA2" secondAttribute="top" id="N9E-C1-vty"/>
                             <constraint firstItem="bot-0G-mJP" firstAttribute="trailing" secondItem="vXs-i9-hA2" secondAttribute="trailing" id="P6i-U8-Mz9"/>
                             <constraint firstItem="bot-0G-mJP" firstAttribute="bottom" secondItem="vXs-i9-hA2" secondAttribute="bottom" id="R5U-kP-uRy"/>
-                            <constraint firstItem="bot-0G-mJP" firstAttribute="top" secondItem="b7Q-yp-Pxg" secondAttribute="top" id="so6-nk-4RH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vXs-i9-hA2"/>
                     </view>

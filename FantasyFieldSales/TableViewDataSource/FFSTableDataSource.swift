@@ -83,7 +83,8 @@ class FFSTableDataSource: NSObject {
 
        // let team = array[indexPath.row]
         cell.positionLabel?.text = String(team.position)
-        cell.teamLabel?.text = team.name
+        cell.mainTitleLabel?.text = team.name
+        cell.subtitleLabel?.text = team.name
         cell.pointsLabel?.text = String(team.points)
     }
     
@@ -136,9 +137,6 @@ extension FFSTableDataSource: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = LeagueTableHeaderView()
-        
-//        headerView.delegate = self
-//        headerView.reloadData(data: Constants.teamGroup)
         return headerView
     }
     

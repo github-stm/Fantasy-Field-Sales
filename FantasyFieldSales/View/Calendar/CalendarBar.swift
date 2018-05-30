@@ -71,16 +71,16 @@ class CalendarBar: UIView {
         self.contentView?.addGestureRecognizer(tap)
         dropdownImageView?.contentMode = .scaleAspectFill
 
-        self.contentView?.backgroundColor = UIColor.black
+        self.contentView?.backgroundColor = ColorManager.Calendar.background
         
-        let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
+        let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.mediumFontSize)
         
         let date = Date()
         dateLabel?.text = date.getMonthName()
         dateLabel?.font = font
-        dateLabel?.textColor = ColorManager.TableTitle.monthText
+        dateLabel?.textColor = ColorManager.Calendar.text
         dateLabel?.textAlignment = .center
-        dateLabel?.backgroundColor = ColorManager.TableTitle.monthBackground
+        dateLabel?.backgroundColor = UIColor.clear
 
     }
     

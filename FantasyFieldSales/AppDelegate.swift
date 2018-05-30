@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UIApplication.shared.statusBarStyle = .lightContent
 
-//        //listFonts()
+        listFonts()
         return true
     }
 

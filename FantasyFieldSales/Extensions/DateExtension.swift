@@ -12,7 +12,7 @@ extension Date {
     
     func getMonthName() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM"
+        dateFormatter.dateFormat = "MMM yyyy"
         let strMonth = dateFormatter.string(from: self).uppercased()
         return strMonth
     }
