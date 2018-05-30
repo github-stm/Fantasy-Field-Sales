@@ -16,6 +16,8 @@
 		5A26C7B320A34B2C00B5AB44 /* ParallaxHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26C7B220A34B2C00B5AB44 /* ParallaxHeaderView.swift */; };
 		5A26C7B520A3619500B5AB44 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26C7B420A3619500B5AB44 /* ContentViewController.swift */; };
 		5A2C6E7E20BD919E00FE3595 /* MonthYearPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A2C6E7D20BD919E00FE3595 /* MonthYearPickerView.xib */; };
+		5A2C6E8120BDADCE00FE3595 /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A2C6E8020BDADCE00FE3595 /* TitleView.xib */; };
+		5A2C6E8320BDADDF00FE3595 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C6E8220BDADDF00FE3595 /* TitleView.swift */; };
 		5A2C716D20A98E7900CD26F0 /* FFSTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C716C20A98E7900CD26F0 /* FFSTableDataSource.swift */; };
 		5A4D10D620AED813007B7879 /* FFSMenuDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D10D520AED813007B7879 /* FFSMenuDataSource.swift */; };
 		5A4D10DA20AED8BD007B7879 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D10D820AED8BD007B7879 /* MenuCell.swift */; };
@@ -81,6 +83,8 @@
 		5A26C7B220A34B2C00B5AB44 /* ParallaxHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderView.swift; sourceTree = "<group>"; };
 		5A26C7B420A3619500B5AB44 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		5A2C6E7D20BD919E00FE3595 /* MonthYearPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthYearPickerView.xib; sourceTree = "<group>"; };
+		5A2C6E8020BDADCE00FE3595 /* TitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
+		5A2C6E8220BDADDF00FE3595 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		5A2C716C20A98E7900CD26F0 /* FFSTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSTableDataSource.swift; sourceTree = "<group>"; };
 		5A4D10D520AED813007B7879 /* FFSMenuDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSMenuDataSource.swift; sourceTree = "<group>"; };
 		5A4D10D820AED8BD007B7879 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -148,6 +152,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A2C6E7F20BDAD8B00FE3595 /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				5A2C6E8220BDADDF00FE3595 /* TitleView.swift */,
+				5A2C6E8020BDADCE00FE3595 /* TitleView.xib */,
+			);
+			path = TitleView;
+			sourceTree = "<group>";
+		};
 		5A4D10D720AED8A9007B7879 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,11 +255,12 @@
 		5A5896D420A1B89200D6822F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5A2C6E7F20BDAD8B00FE3595 /* TitleView */,
 				5AC7D2BF20B6BED100124A5D /* CustomCells */,
+				5AE1555E20AB016500D25C07 /* ScrollTabView */,
 				5AA1D13620B5AB0300B2B63E /* TabDialog */,
 				5AC86FAD20B410A000D3BA0B /* Calendar */,
 				5A7ABC9A20ADBDF30011987B /* Alert */,
-				5AE1555E20AB016500D25C07 /* ScrollTabView */,
 				5A26C7B220A34B2C00B5AB44 /* ParallaxHeaderView.swift */,
 			);
 			path = View;
@@ -486,6 +500,7 @@
 				5AA1D13A20B5ABC200B2B63E /* TabDialog.xib in Resources */,
 				5A2C6E7E20BD919E00FE3595 /* MonthYearPickerView.xib in Resources */,
 				5A0A11B620A2EB0C00A0E887 /* LeagueTableMoreFooterView.xib in Resources */,
+				5A2C6E8120BDADCE00FE3595 /* TitleView.xib in Resources */,
 				5A6B7A4720AC74A600E154EF /* MoreCell.xib in Resources */,
 				5A5896B220A19AB100D6822F /* Main.storyboard in Resources */,
 				5A0A11BA20A300B700A0E887 /* LeagueTableCell.xib in Resources */,
@@ -570,6 +585,7 @@
 				5A7FD4C520B472A500A7D64E /* StringExtension.swift in Sources */,
 				5A2C716D20A98E7900CD26F0 /* FFSTableDataSource.swift in Sources */,
 				5AC7D2C420B6BF7B00124A5D /* DefaultCell.swift in Sources */,
+				5A2C6E8320BDADDF00FE3595 /* TitleView.swift in Sources */,
 				5A26C7B520A3619500B5AB44 /* ContentViewController.swift in Sources */,
 				5AE1556220AB01B400D25C07 /* ScrollTabView.swift in Sources */,
 				5AA1D13C20B5B29200B2B63E /* UIViewGestureExtensions.swift in Sources */,

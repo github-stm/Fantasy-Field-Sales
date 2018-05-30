@@ -78,6 +78,16 @@ class ScrollTabView: UIView {
         }
     }
     
+    
+    func reloadData(data:[String]){
+        collectionArray = data
+        collectionView?.reloadData()
+
+        let indexPath:IndexPath = IndexPath(row: 0, section: 0)
+        collectionView?.selectItem(at:indexPath, animated: false, scrollPosition: .left)
+    }
+
+    
 }
 
 

@@ -57,7 +57,6 @@ class MonthYearAlert: UIView, Modal {
         }
         
         
-
         dialogView.clipsToBounds = true
 
         backgroundView.frame = frame

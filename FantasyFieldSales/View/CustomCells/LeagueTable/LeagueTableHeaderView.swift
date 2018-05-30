@@ -24,18 +24,18 @@ class LeagueTableHeaderView: UIView {
     @IBOutlet weak fileprivate var contentView: UIView?
 
     @IBOutlet var labels: [UILabel]!
-    @IBOutlet var buttons: [UIButton]!
+  //  @IBOutlet var buttons: [UIButton]!
     
-    @IBOutlet weak var titleView: UIView?
-    @IBOutlet weak var tabView: ScrollTabView?
+//    @IBOutlet weak var titleView: UIView?
+//    @IBOutlet weak var tabView: ScrollTabView?
     @IBOutlet weak var tableHeaderView: UIView?
 
-    @IBOutlet weak var teamButton: UIButton?
-    @IBOutlet weak var managerButton: UIButton?
-    @IBOutlet weak var memberButton: UIButton?
-    
-    @IBOutlet weak var titleLabel: UILabel?
-    @IBOutlet weak var monthLabel: UILabel?
+//    @IBOutlet weak var teamButton: UIButton?
+//    @IBOutlet weak var managerButton: UIButton?
+//    @IBOutlet weak var memberButton: UIButton?
+//
+//    @IBOutlet weak var titleLabel: UILabel?
+//    @IBOutlet weak var monthLabel: UILabel?
     
     @IBOutlet weak var positionHeaderLabel: UILabel?
     @IBOutlet weak var teamHeaderLabel: UILabel?
@@ -66,7 +66,7 @@ class LeagueTableHeaderView: UIView {
     func initalizeSubviews() {
         let subviewArray = Bundle.main.loadNibNamed("LeagueTableHeaderView", owner: self, options: nil)
         self.addSubview(subviewArray!.first as! UIView)
-        tabView?.delegate = self
+       // tabView?.delegate = self
     }
     
     func commonInit(){
@@ -77,21 +77,7 @@ class LeagueTableHeaderView: UIView {
 
         
         let date = Date()
-        monthLabel?.text = date.getMonthName()
-        monthLabel?.font = smallFont
-        monthLabel?.textColor = ColorManager.TableTitle.monthText
-        monthLabel?.textAlignment = .center
-        monthLabel?.backgroundColor = ColorManager.TableTitle.monthBackground
-        
-        titleLabel?.text = "LATEST TOP STATS"
-        titleLabel?.font = smallFont
-        titleLabel?.textColor = ColorManager.TableTitle.text
-        titleLabel?.textAlignment = .center
-        titleLabel?.backgroundColor = UIColor.clear
-        
-        titleView?.backgroundColor = ColorManager.TableTitle.background
-        
-        
+     
         positionHeaderLabel?.text = "POS"
         teamHeaderLabel?.text = "TEAM"
         pointsHeaderLabel?.text = "PTS"
@@ -103,33 +89,10 @@ class LeagueTableHeaderView: UIView {
         }
         
         tableHeaderView?.backgroundColor = ColorManager.LeagueTable.rowHeaderTitleBackground
-       
 
     }
-    
-    func reloadData(data:[String]){
-        tabView?.collectionArray = data
-        tabView?.collectionView?.reloadData()
-        
-        let indexPath:IndexPath = IndexPath(row: 0, section: 0)
-        tabView?.collectionView?.selectItem(at:indexPath, animated: false, scrollPosition: .left)
-    }
-
-}
 
 
-
-extension LeagueTableHeaderView :ScrollTabViewDelegate {
-    func selectedItem(indexPath: IndexPath) {
-        
-        if let delegate = self.delegate {
-            delegate.selectedItem(indexPath: indexPath)
-            print("header view indexpath row\(indexPath.row)")
-            
-        }
-        
-        print("2 header view indexpath row\(indexPath.row)")
-    }
 }
 
 

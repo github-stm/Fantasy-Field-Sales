@@ -78,14 +78,19 @@ class Constants: NSObject {
     ]
 
     
-    
+    struct leagueTable {
+        static let headerHeight:CGFloat = 45
+        static let footerHeight:CGFloat = 75
+        static let rowHeight:CGFloat = 30
+
+    }
 
     struct dateFormat {
         static let monthYear = "MMMM yyyy"
         static let shortMonth = "MMM"
     }
     
-    
+
     struct menu {
         static let width:CGFloat = 200
         static let cellHeight:CGFloat = 30

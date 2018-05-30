@@ -20,9 +20,9 @@ class FFSTableDataSource: NSObject {
     var delegate: FFSTableDataSourceDelegate?
     fileprivate var footerType:FooterType = .NoFooter
     
-    fileprivate let rowHeight:CGFloat = 30
-    fileprivate let footerHeight:CGFloat = 75
-    fileprivate let headerHeight:CGFloat = 105
+//    fileprivate let rowHeight:CGFloat = 30
+//    fileprivate let footerHeight:CGFloat = 75
+//    fileprivate let headerHeight:CGFloat = 40
     
     init(footerType: FooterType) {
         self.footerType = footerType
@@ -127,7 +127,7 @@ extension FFSTableDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return rowHeight
+        return Constants.leagueTable.rowHeight
     }
     
 }
@@ -137,13 +137,13 @@ extension FFSTableDataSource: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = LeagueTableHeaderView()
         
-        headerView.delegate = self
-        headerView.reloadData(data: Constants.teamGroup)
+//        headerView.delegate = self
+//        headerView.reloadData(data: Constants.teamGroup)
         return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return headerHeight
+        return Constants.leagueTable.headerHeight
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -174,7 +174,7 @@ extension FFSTableDataSource: UITableViewDelegate {
         if footerType == .NoFooter {
             return 0
         } else {
-            return footerHeight
+            return Constants.leagueTable.footerHeight
         }
 
     }

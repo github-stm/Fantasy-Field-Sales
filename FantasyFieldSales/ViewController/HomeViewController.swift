@@ -16,6 +16,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var pageView: UIView?
     @IBOutlet weak var scrollView: UIScrollView?
     
+    @IBOutlet weak var titleView: TitleView?
+    @IBOutlet weak var tabView: ScrollTabView?
+    
+    var tabArray:[String]? = []
+    
     var dataSource = FFSTableDataSource(footerType: .ViewFullTable)
     var pageController = HomePageViewController()
     
@@ -28,6 +33,8 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        
+        // auto size a UIScrollView to fit the content
         var contentRect = CGRect.zero
         for view in (self.scrollView?.subviews)! {
             contentRect = contentRect.union(view.frame)
@@ -51,9 +58,16 @@ class HomeViewController: UIViewController {
         dataSource.delegate = self
         self.tableView?.delegate = self.dataSource
         self.tableView?.dataSource = self.dataSource
-     
+        
+        titleView?.titleLabel?.text = "LATEST TOP STATS"
+        
+        tabView?.delegate = self
+        tabView?.reloadData(data: Constants.teamGroup)
+
     }
 
+  
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -68,20 +82,20 @@ extension HomeViewController: FFSTableDataSourceDelegate {
         print("\(indexPath.row)")
     }
     
-     internal func moreButtonTapped(){
+    internal func moreButtonTapped(){
         performSegue(withIdentifier: "homeFullTable", sender: self)
     }
 }
 
-
-
-
 extension HomeViewController: HomePageViewControllerDelegate {
-    
     func homeNewsTapped() {
         performSegue(withIdentifier: "homeNews", sender: self)
     }
 }
-    
 
+extension HomeViewController :ScrollTabViewDelegate {
+    func selectedItem(indexPath: IndexPath) {
+        print("2 header view indexpath row\(indexPath.row)")
+    }
+}
 

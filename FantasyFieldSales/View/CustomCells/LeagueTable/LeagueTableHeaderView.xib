@@ -13,14 +13,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeagueTableHeaderView" customModule="FantasyFieldSales" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="DZp-Bk-N4a"/>
-                <outlet property="monthLabel" destination="ftj-QP-A98" id="bvo-U0-s09"/>
                 <outlet property="pointsHeaderLabel" destination="qhc-d7-rUY" id="81d-Dy-xcO"/>
                 <outlet property="positionHeaderLabel" destination="y0D-fV-VtK" id="fEg-Rt-DRB"/>
-                <outlet property="tabView" destination="i5h-10-I09" id="dZW-bI-Rg8"/>
                 <outlet property="tableHeaderView" destination="QT5-Vb-oBp" id="Mcb-rT-2ql"/>
                 <outlet property="teamHeaderLabel" destination="VeO-uh-HeA" id="l4a-XO-HUG"/>
-                <outlet property="titleLabel" destination="kSg-cc-qs5" id="VW0-Xg-JQg"/>
-                <outlet property="titleView" destination="VK7-cw-5jw" id="z9D-LO-CRo"/>
                 <outletCollection property="labels" destination="y0D-fV-VtK" collectionClass="NSMutableArray" id="RPy-oq-gHQ"/>
                 <outletCollection property="labels" destination="VeO-uh-HeA" collectionClass="NSMutableArray" id="rhW-7V-ukQ"/>
                 <outletCollection property="labels" destination="qhc-d7-rUY" collectionClass="NSMutableArray" id="oDi-dH-Hiv"/>
@@ -28,54 +24,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VK7-cw-5jw">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSg-cc-qs5">
-                            <rect key="frame" x="0.0" y="7" width="325" height="22"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="22" id="g0r-r0-1ks"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftj-QP-A98">
-                            <rect key="frame" x="325" y="0.0" width="50" height="35"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="YPC-by-aaL"/>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="fSd-ro-iOa"/>
-                                <constraint firstAttribute="width" constant="50" id="oDf-27-sZu"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="35" id="0Dg-Uq-jiR"/>
-                        <constraint firstItem="kSg-cc-qs5" firstAttribute="centerY" secondItem="VK7-cw-5jw" secondAttribute="centerY" id="61B-EO-OMf"/>
-                        <constraint firstAttribute="trailing" secondItem="ftj-QP-A98" secondAttribute="trailing" id="ABO-g5-yMz"/>
-                        <constraint firstAttribute="bottom" secondItem="ftj-QP-A98" secondAttribute="bottom" id="Ku3-Wl-uQZ"/>
-                        <constraint firstItem="kSg-cc-qs5" firstAttribute="leading" secondItem="VK7-cw-5jw" secondAttribute="leading" id="U5A-dT-U6j"/>
-                        <constraint firstItem="ftj-QP-A98" firstAttribute="leading" secondItem="kSg-cc-qs5" secondAttribute="trailing" id="aKv-Eb-ha8"/>
-                        <constraint firstItem="ftj-QP-A98" firstAttribute="top" secondItem="VK7-cw-5jw" secondAttribute="top" id="pq3-sG-zJ0"/>
-                        <constraint firstAttribute="trailing" secondItem="ftj-QP-A98" secondAttribute="trailing" id="xGm-xe-FjF"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5h-10-I09" customClass="ScrollTabView" customModule="FantasyFieldSales" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="35" width="375" height="40"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="5ej-C1-uNt"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-Vb-oBp">
-                    <rect key="frame" x="0.0" y="75" width="375" height="35"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0D-fV-VtK">
                             <rect key="frame" x="0.0" y="7.5" width="50" height="20.5"/>
@@ -109,7 +62,6 @@
                         <constraint firstItem="qhc-d7-rUY" firstAttribute="leading" secondItem="VeO-uh-HeA" secondAttribute="trailing" id="EKp-94-vGv"/>
                         <constraint firstItem="qhc-d7-rUY" firstAttribute="height" secondItem="y0D-fV-VtK" secondAttribute="height" id="MzV-Vv-TlL"/>
                         <constraint firstAttribute="trailing" secondItem="qhc-d7-rUY" secondAttribute="trailing" id="SVM-lu-HWj"/>
-                        <constraint firstAttribute="height" constant="35" id="U3C-bl-g5w"/>
                         <constraint firstItem="VeO-uh-HeA" firstAttribute="leading" secondItem="y0D-fV-VtK" secondAttribute="trailing" id="dAU-3a-18i"/>
                         <constraint firstItem="VeO-uh-HeA" firstAttribute="height" secondItem="y0D-fV-VtK" secondAttribute="height" id="eOY-59-Ske"/>
                         <constraint firstItem="VeO-uh-HeA" firstAttribute="centerY" secondItem="QT5-Vb-oBp" secondAttribute="centerY" id="tJa-uA-eab"/>
@@ -120,18 +72,13 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="QT5-Vb-oBp" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="87c-iZ-Gwl"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VK7-cw-5jw" secondAttribute="trailing" id="T6M-Af-H5U"/>
+                <constraint firstItem="QT5-Vb-oBp" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="LtJ-Ss-glD"/>
                 <constraint firstItem="QT5-Vb-oBp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="VTN-fD-dKz"/>
-                <constraint firstItem="i5h-10-I09" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YSs-23-uFZ"/>
-                <constraint firstItem="VK7-cw-5jw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YhU-gl-WHC"/>
-                <constraint firstItem="VK7-cw-5jw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="eK3-2x-xsP"/>
-                <constraint firstItem="i5h-10-I09" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="fED-FN-VQf"/>
-                <constraint firstItem="i5h-10-I09" firstAttribute="top" secondItem="VK7-cw-5jw" secondAttribute="bottom" id="mrm-S8-KqD"/>
-                <constraint firstItem="QT5-Vb-oBp" firstAttribute="top" secondItem="i5h-10-I09" secondAttribute="bottom" id="rFU-Kn-PYa"/>
+                <constraint firstItem="QT5-Vb-oBp" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="oe4-QH-laH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-5.5" y="-272.5"/>
+            <point key="canvasLocation" x="-5.5" y="-310.5"/>
         </view>
     </objects>
 </document>
