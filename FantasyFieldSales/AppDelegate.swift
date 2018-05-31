@@ -74,8 +74,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = false
 
         UIApplication.shared.statusBarStyle = .lightContent
+        UITabBar.appearance().isTranslucent = true
+        UITabBar.appearance().backgroundColor = ColorManager.TabBar.background
+        UITabBar.appearance().tintColor = ColorManager.TabBar.tint
 
-        listFonts()
+     //   listFonts()
         return true
     }
 

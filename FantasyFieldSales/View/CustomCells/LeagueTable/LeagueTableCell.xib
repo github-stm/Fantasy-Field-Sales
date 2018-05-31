@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,6 +24,7 @@
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gln-Wq-azc">
                         <rect key="frame" x="36" y="27" width="50" height="21"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="W9s-tp-JOz"/>
                             <constraint firstAttribute="height" constant="21" id="tXD-xt-h1K"/>
@@ -79,8 +80,16 @@
                             <constraint firstAttribute="height" constant="20" id="Egr-p7-EGf"/>
                         </constraints>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xxY-V7-eTm">
+                        <rect key="frame" x="46" y="22" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="NHQ-lP-tTQ"/>
+                            <constraint firstAttribute="width" constant="30" id="OPt-IP-IU1"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="xxY-V7-eTm" firstAttribute="centerY" secondItem="sta-yl-2Q5" secondAttribute="centerY" id="9FO-XU-3g8"/>
                     <constraint firstAttribute="bottom" secondItem="mp8-uB-tyl" secondAttribute="bottom" id="IRt-VP-ZWS"/>
                     <constraint firstItem="ho7-La-7wy" firstAttribute="leading" secondItem="gln-Wq-azc" secondAttribute="trailing" id="JRW-zL-4OA"/>
                     <constraint firstItem="6Gp-XO-Yv5" firstAttribute="top" secondItem="sta-yl-2Q5" secondAttribute="top" id="KWS-4N-hFx"/>
@@ -91,8 +100,10 @@
                     <constraint firstItem="mp8-uB-tyl" firstAttribute="leading" secondItem="sta-yl-2Q5" secondAttribute="leading" id="bgW-eZ-BTv"/>
                     <constraint firstAttribute="bottom" secondItem="6Gp-XO-Yv5" secondAttribute="bottom" id="hOn-dQ-kTh"/>
                     <constraint firstItem="bH0-5s-yJI" firstAttribute="centerY" secondItem="sta-yl-2Q5" secondAttribute="centerY" id="iqK-Pc-vCV"/>
+                    <constraint firstItem="ho7-La-7wy" firstAttribute="leading" secondItem="xxY-V7-eTm" secondAttribute="trailing" constant="10" id="l6v-Lh-ZSM"/>
                     <constraint firstItem="6Gp-XO-Yv5" firstAttribute="leading" secondItem="sta-yl-2Q5" secondAttribute="leading" id="lCX-xA-eBR"/>
                     <constraint firstItem="bH0-5s-yJI" firstAttribute="leading" secondItem="ho7-La-7wy" secondAttribute="trailing" id="lN9-5B-Khz"/>
+                    <constraint firstItem="xxY-V7-eTm" firstAttribute="leading" secondItem="TLq-As-5bo" secondAttribute="trailing" constant="18" id="nD0-n9-Vum"/>
                     <constraint firstItem="gln-Wq-azc" firstAttribute="centerY" secondItem="sta-yl-2Q5" secondAttribute="centerY" id="pUS-nk-aHm"/>
                     <constraint firstAttribute="trailing" secondItem="mp8-uB-tyl" secondAttribute="trailing" id="tyu-Jx-CzV"/>
                     <constraint firstAttribute="trailing" secondItem="6Gp-XO-Yv5" secondAttribute="trailing" id="w1E-PK-Auw"/>
@@ -100,8 +111,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="changeImageView" destination="TLq-As-5bo" id="iBD-Do-vvz"/>
                 <outlet property="mainTitleLabel" destination="LZS-oh-kzE" id="d5B-XN-9Yc"/>
                 <outlet property="pointsLabel" destination="bH0-5s-yJI" id="6i8-Xs-KwZ"/>
+                <outlet property="positionImageView" destination="xxY-V7-eTm" id="JCy-cO-Frs"/>
                 <outlet property="positionLabel" destination="gln-Wq-azc" id="Ao4-IZ-kZ9"/>
                 <outlet property="subBackgroundView" destination="6Gp-XO-Yv5" id="ukd-cb-XdU"/>
                 <outlet property="subtitleLabel" destination="hWL-gf-7kp" id="C6A-Er-bk1"/>

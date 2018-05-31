@@ -49,20 +49,17 @@ class MonthYearPickerView: UIView {
         initalizeSubviews()
         self.commonSetup()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initalizeSubviews()
         self.commonSetup()
     }
-    
-    
+
     //needed to set frame of xib  to correct size in swift 3
     override func layoutSubviews() {
         self.contentView?.frame = bounds
     }
-
-    
     
     func initalizeSubviews() {
         let subviewArray = Bundle.main.loadNibNamed("MonthYearPickerView", owner: self, options: nil)
@@ -107,7 +104,6 @@ class MonthYearPickerView: UIView {
             mth += 1
         }
         self.months = months
-        
         self.pickerView?.dataSource = self
         self.pickerView?.delegate = self
         
@@ -134,7 +130,7 @@ class MonthYearPickerView: UIView {
             delegate.cancelButtonTapped()
         }
     }
-    
+
 }
 
  // Mark: UIPicker Delegate

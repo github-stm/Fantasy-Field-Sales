@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YMM-IN-Aam">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YMM-IN-Aam">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -302,7 +302,7 @@
         <scene sceneID="I0C-xu-8Sz">
             <objects>
                 <tabBarController id="YMM-IN-Aam" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3pM-HR-MhK">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3pM-HR-MhK" customClass="MainTabBar" customModule="FantasyFieldSales" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -358,7 +358,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZPn-oJ-HBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-357.60000000000002" y="410.64467766116945"/>
+            <point key="canvasLocation" x="-425" y="547"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5Uz-U0-x6G">
@@ -411,7 +411,7 @@
         <scene sceneID="F4Q-7J-7UY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ihd-AC-p0v" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="Vd5-lf-0wu"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="Vd5-lf-0wu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tur-ez-wve">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -430,7 +430,7 @@
         <scene sceneID="Djv-Do-K4D">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Oe-9O-T7i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Team" id="k31-DD-syG"/>
+                    <tabBarItem key="tabBarItem" title="Team" image="team" id="k31-DD-syG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IFg-fJ-C4E">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -449,7 +449,7 @@
         <scene sceneID="qWi-bT-WFk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ycO-eE-xmw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stats" id="0tb-8Q-PHj"/>
+                    <tabBarItem key="tabBarItem" title="Stats" image="stats" id="0tb-8Q-PHj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CKd-Zz-Q4c">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -468,7 +468,7 @@
         <scene sceneID="5Lf-3N-KHX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZY8-x7-TcU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="More" id="ue0-DS-K9f"/>
+                    <tabBarItem key="tabBarItem" title="More" image="more" id="ue0-DS-K9f"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8RD-pv-Zsq">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -564,4 +564,10 @@
             <point key="canvasLocation" x="-1296.8" y="410.64467766116945"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home" width="16" height="16"/>
+        <image name="more" width="16" height="16"/>
+        <image name="stats" width="16" height="16"/>
+        <image name="team" width="16" height="16"/>
+    </resources>
 </document>

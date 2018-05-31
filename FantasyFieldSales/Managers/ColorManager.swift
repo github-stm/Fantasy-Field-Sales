@@ -33,6 +33,14 @@ class ColorManager: UIColor {
 
     }
     
+    
+    struct TabBar {
+        static let background = colorBlack
+        static let tint = colorWhite
+        
+        
+    }
+    
     struct Calendar  {
         static let buttonView = colorGold
         static let background = colorGold

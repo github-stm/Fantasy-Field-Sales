@@ -23,15 +23,12 @@ class FullTableViewController: UIViewController, UIPickerViewDelegate, CNContact
         NotificationCenter.default.addObserver(self, selector:#selector(FullTableViewController.dateSelected(_:)), name: NSNotification.Name(rawValue: Constants.Notification.dateSelectedNotification), object: nil)
     }
     
-    
     @objc func dateSelected(_ notification: Notification){
         if let info = notification.userInfo, let infoDescription = info["date"] as? Date {
             print(infoDescription)
         }
     }
-    
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
     }
@@ -55,12 +52,9 @@ class FullTableViewController: UIViewController, UIPickerViewDelegate, CNContact
 
     
     // A deinitializer is called immediately before a class instance is deallocated.
-    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
-    
 
 }
 

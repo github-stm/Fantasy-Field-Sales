@@ -82,7 +82,31 @@ class FFSTableDataSource: NSObject {
         let team = teamData[indexPath.row]
 
        // let team = array[indexPath.row]
-        cell.positionLabel?.text = String(team.position)
+        
+        
+        if indexPath.row < 3 {
+            var imageName = ""
+            switch indexPath.row {
+            case 0:
+                imageName = "first"
+            case 1:
+                imageName = "second"
+            default:
+                imageName = "third"
+            }
+            let image: UIImage = UIImage(named: imageName)!
+            cell.positionImageView?.image = image
+            cell.positionLabel?.isHidden = true
+            cell.positionImageView?.isHidden = false
+        } else {
+            cell.positionLabel?.isHidden = false
+            cell.positionImageView?.isHidden = true
+            cell.positionLabel?.text = String(team.position)
+        }
+
+        
+        
+        
         cell.mainTitleLabel?.text = team.name
         cell.subtitleLabel?.text = team.name
         cell.pointsLabel?.text = String(team.points)

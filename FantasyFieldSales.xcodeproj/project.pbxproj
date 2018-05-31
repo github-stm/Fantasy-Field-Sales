@@ -43,6 +43,7 @@
 		5A6B7A3E20AC734200E154EF /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B7A3D20AC734200E154EF /* MoreViewController.swift */; };
 		5A6B7A4620AC74A600E154EF /* MoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B7A4420AC74A600E154EF /* MoreCell.swift */; };
 		5A6B7A4720AC74A600E154EF /* MoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A6B7A4520AC74A600E154EF /* MoreCell.xib */; };
+		5A7249CA20C017CE0046DC46 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7249C920C017CE0046DC46 /* MainTabBar.swift */; };
 		5A7ABC9620AD7FB90011987B /* MoreCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7ABC9520AD7FB90011987B /* MoreCollectionViewLayout.swift */; };
 		5A7ABC9820AD92AE0011987B /* FFSMoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7ABC9720AD92AE0011987B /* FFSMoreDataSource.swift */; };
 		5A7ABC9C20ADBE610011987B /* ModalViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7ABC9B20ADBE610011987B /* ModalViewExtension.swift */; };
@@ -112,6 +113,7 @@
 		5A6B7A3D20AC734200E154EF /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		5A6B7A4420AC74A600E154EF /* MoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCell.swift; sourceTree = "<group>"; };
 		5A6B7A4520AC74A600E154EF /* MoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreCell.xib; sourceTree = "<group>"; };
+		5A7249C920C017CE0046DC46 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		5A7ABC9520AD7FB90011987B /* MoreCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCollectionViewLayout.swift; sourceTree = "<group>"; };
 		5A7ABC9720AD92AE0011987B /* FFSMoreDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSMoreDataSource.swift; sourceTree = "<group>"; };
 		5A7ABC9B20ADBE610011987B /* ModalViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewExtension.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				5AC86FAD20B410A000D3BA0B /* Calendar */,
 				5A7ABC9A20ADBDF30011987B /* Alert */,
 				5A26C7B220A34B2C00B5AB44 /* ParallaxHeaderView.swift */,
+				5A7249C920C017CE0046DC46 /* MainTabBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -542,7 +545,6 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Dip/Dip.framework",
-				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -553,7 +555,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dip.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -611,6 +612,7 @@
 				5AB4ED4620B30E6200608DA1 /* TeamData.swift in Sources */,
 				5AA1D13820B5ABB000B2B63E /* TabDialog.swift in Sources */,
 				5A5896CE20A1A28600D6822F /* Constants.swift in Sources */,
+				5A7249CA20C017CE0046DC46 /* MainTabBar.swift in Sources */,
 				5A4D10DA20AED8BD007B7879 /* MenuCell.swift in Sources */,
 				5AC86FAF20B410CB00D3BA0B /* CalendarBar.swift in Sources */,
 				5AC86FB320B41CC100D3BA0B /* TestViewController.swift in Sources */,

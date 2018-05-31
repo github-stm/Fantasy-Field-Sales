@@ -17,6 +17,10 @@ class LeagueTableCell: UITableViewCell {
     @IBOutlet weak var subtitleLabel: UILabel?
     @IBOutlet weak var pointsLabel: UILabel?
     
+    @IBOutlet weak var positionImageView: UIImageView?
+    @IBOutlet weak var changeImageView: UIImageView?
+    
+    
     @IBOutlet weak var subBackgroundView: UIView?
     
     
@@ -38,5 +42,7 @@ class LeagueTableCell: UITableViewCell {
         
         subBackgroundView?.backgroundColor = UIColor.clear
     }
-
+    
+    
+   
 }
