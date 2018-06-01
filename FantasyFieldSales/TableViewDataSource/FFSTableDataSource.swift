@@ -20,9 +20,8 @@ class FFSTableDataSource: NSObject {
     var delegate: FFSTableDataSourceDelegate?
     fileprivate var footerType:FooterType = .NoFooter
     
-//    fileprivate let rowHeight:CGFloat = 30
-//    fileprivate let footerHeight:CGFloat = 75
-//    fileprivate let headerHeight:CGFloat = 40
+    var selectedIndexPath:IndexPath?
+
     
     init(footerType: FooterType) {
         self.footerType = footerType
@@ -60,6 +59,7 @@ class FFSTableDataSource: NSObject {
         }
     }
     
+    
     fileprivate func registerCells(forTableView tableView: UITableView) {
 
         tableView.register(UINib(nibName: leagueTableCellIdentifier, bundle: nil), forCellReuseIdentifier: "LeagueTableCell")
@@ -69,6 +69,8 @@ class FFSTableDataSource: NSObject {
 
         registerCells(forTableView: tableView)
         let cell = tableView.dequeueReusableCell(withIdentifier: leagueTableCellIdentifier, for: indexPath) as! LeagueTableCell
+        
+        
         
         self.configureCell(cell, indexPath:indexPath)
         return cell
@@ -81,15 +83,12 @@ class FFSTableDataSource: NSObject {
         
         let team = teamData[indexPath.row]
 
-       // let team = array[indexPath.row]
-        
-        
-        if indexPath.row < 3 {
+        if team.position < 4 {
             var imageName = ""
-            switch indexPath.row {
-            case 0:
-                imageName = "first"
+            switch team.position {
             case 1:
+                imageName = "first"
+            case 2:
                 imageName = "second"
             default:
                 imageName = "third"
@@ -104,14 +103,16 @@ class FFSTableDataSource: NSObject {
             cell.positionLabel?.text = String(team.position)
         }
 
-        
-        
-        
         cell.mainTitleLabel?.text = team.name
         cell.subtitleLabel?.text = team.name
         cell.pointsLabel?.text = String(team.points)
     }
     
+    func deselectSelectedRow(tableView:UITableView){
+        if let selectedIndexPath = selectedIndexPath {
+            tableView.deselectRow(at: selectedIndexPath, animated: true)
+        }
+    }
 }
 
 
@@ -143,6 +144,7 @@ extension FFSTableDataSource: UITableViewDataSource {
         if footerType == .NoFooter {
             return teamData.count
         } else {
+           // tableView.allowsSelection = false
             return 3
         }
     }
@@ -155,12 +157,15 @@ extension FFSTableDataSource: UITableViewDataSource {
         return Constants.leagueTable.rowHeight
     }
     
+
+    
 }
 // UITableViewDelegate
 extension FFSTableDataSource: UITableViewDelegate {
     
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = LeagueTableHeaderView()
+        let headerView = LeagueTableHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 35))
         return headerView
     }
     
@@ -172,11 +177,13 @@ extension FFSTableDataSource: UITableViewDelegate {
         return UITableViewAutomaticDimension
     }
 
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
         if let delegate = self.delegate {
+            
             delegate.selectedItem(tableView: tableView, indexPath: indexPath)
         }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     

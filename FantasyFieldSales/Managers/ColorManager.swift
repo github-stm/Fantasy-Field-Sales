@@ -62,15 +62,18 @@ class ColorManager: UIColor {
         static let rowHeaderTitleBackground = colorBlack
         static let rowHeaderTitleText = colorWhite
         
-        static let rowText = colorBlack
+        static let rowText = colorDarkGrey
         static let rowBackgroundEven = colorLightGrey
         static let rowBackgroundOdd = colorWhite
+        
+        static let rowSelectedBackground = colorGold
+        static let rowSelectedText = colorWhite
+        
         
         static let moreButtonBackground =  colorWhite
         static let moreButtonText =  colorBlack
         static let moreBorder = colorBlack
-        
-        static let selectedBackground = colorGold
+       
 
     }
 

@@ -20,7 +20,11 @@ class ContentViewController: UIViewController {
         super.viewDidLoad()
 
         if let backgroundColor = bckgrdColor {
-            self.view.backgroundColor = backgroundColor
+          //  self.view.backgroundColor = backgroundColor
+            
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "image")!)
+            
+            
         }
         // Do any additional setup after loading the view.
     }

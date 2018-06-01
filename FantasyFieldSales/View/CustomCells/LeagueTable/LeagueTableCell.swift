@@ -23,22 +23,27 @@ class LeagueTableCell: UITableViewCell {
     
     @IBOutlet weak var subBackgroundView: UIView?
     
-    
-    override var isHighlighted: Bool {
-        didSet {
-            self.subBackgroundView?.backgroundColor = isHighlighted ? ColorManager.LeagueTable.selectedBackground : UIColor.clear
-        }
-    }
 
     override func awakeFromNib() {
     
+        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = ColorManager.LeagueTable.rowSelectedBackground
+        self.selectedBackgroundView = backgroundView
+        
+        
         let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
+        let boldFont = UIFont(name: Constants.font.boldFont, size:  Constants.fontSize.smallFontSize)
         
         for label: UILabel in labels {
             label.font = font
             label.textColor = ColorManager.LeagueTable.rowText
             label.textAlignment = .center
+            label.highlightedTextColor = ColorManager.LeagueTable.rowSelectedText
+            
         }
+        
+        mainTitleLabel?.font = boldFont
         
         subBackgroundView?.backgroundColor = UIColor.clear
     }

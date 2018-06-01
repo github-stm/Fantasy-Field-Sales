@@ -6,7 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,82 +20,78 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcm-8B-8ba">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GkJ-Da-ry0">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQF-sX-5Nl">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="287"/>
-                                                <color key="backgroundColor" red="0.30893903039999998" green="1" blue="0.42992554500000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DR-8u-1iI" customClass="TitleView" customModule="FantasyFieldSales" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="287" width="375" height="40"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="ymg-Fe-qwy"/>
-                                                </constraints>
-                                            </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jl3-TI-hmP">
-                                                <rect key="frame" x="0.0" y="372" width="375" height="202"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="sectionIndexBackgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="g9S-Gw-PzV"/>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Agq-u1-IvX"/>
-                                                </connections>
-                                            </tableView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnw-dX-rCd" customClass="ScrollTabView" customModule="FantasyFieldSales" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="327" width="375" height="45"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="Goh-xu-5av"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQF-sX-5Nl">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="246"/>
+                                        <color key="backgroundColor" red="0.30893903039999998" green="1" blue="0.42992554500000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="246" id="ETT-aP-yVP"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DR-8u-1iI" customClass="TitleView" customModule="FantasyFieldSales" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="246" width="375" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="7DR-8u-1iI" firstAttribute="top" secondItem="UQF-sX-5Nl" secondAttribute="bottom" id="4ad-0h-Ltt"/>
-                                            <constraint firstItem="jl3-TI-hmP" firstAttribute="top" secondItem="Pnw-dX-rCd" secondAttribute="bottom" id="5dG-kY-uys"/>
-                                            <constraint firstItem="Pnw-dX-rCd" firstAttribute="top" secondItem="7DR-8u-1iI" secondAttribute="bottom" id="Dfz-wP-8Ns"/>
-                                            <constraint firstAttribute="trailing" secondItem="7DR-8u-1iI" secondAttribute="trailing" id="Iy0-Nl-Vrx"/>
-                                            <constraint firstItem="UQF-sX-5Nl" firstAttribute="leading" secondItem="GkJ-Da-ry0" secondAttribute="leading" id="L09-1D-Cp3"/>
-                                            <constraint firstAttribute="trailing" secondItem="Pnw-dX-rCd" secondAttribute="trailing" id="Mf8-bT-QU9"/>
-                                            <constraint firstItem="UQF-sX-5Nl" firstAttribute="height" secondItem="GkJ-Da-ry0" secondAttribute="height" multiplier="0.5" id="YFh-ja-P0A"/>
-                                            <constraint firstItem="UQF-sX-5Nl" firstAttribute="top" secondItem="GkJ-Da-ry0" secondAttribute="top" id="dkd-v9-m4H"/>
-                                            <constraint firstAttribute="trailing" secondItem="jl3-TI-hmP" secondAttribute="trailing" id="gGN-Nr-oJa"/>
-                                            <constraint firstAttribute="trailing" secondItem="UQF-sX-5Nl" secondAttribute="trailing" id="iVj-UK-ysr"/>
-                                            <constraint firstItem="jl3-TI-hmP" firstAttribute="leading" secondItem="GkJ-Da-ry0" secondAttribute="leading" id="jWu-3V-MZf"/>
-                                            <constraint firstItem="Pnw-dX-rCd" firstAttribute="leading" secondItem="GkJ-Da-ry0" secondAttribute="leading" id="uoB-xx-Aem"/>
-                                            <constraint firstAttribute="bottom" secondItem="jl3-TI-hmP" secondAttribute="bottom" id="weW-9F-u7r"/>
-                                            <constraint firstItem="7DR-8u-1iI" firstAttribute="leading" secondItem="GkJ-Da-ry0" secondAttribute="leading" id="xH8-lr-A8Q"/>
+                                            <constraint firstAttribute="height" constant="40" id="ymg-Fe-qwy"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="jl3-TI-hmP">
+                                        <rect key="frame" x="0.0" y="331" width="375" height="202"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="202" id="J7c-yI-tXg"/>
+                                        </constraints>
+                                        <color key="sectionIndexBackgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="g9S-Gw-PzV"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Agq-u1-IvX"/>
+                                        </connections>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnw-dX-rCd" customClass="ScrollTabView" customModule="FantasyFieldSales" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="286" width="375" height="45"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="3b4-u4-Z2A"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="GkJ-Da-ry0" firstAttribute="width" secondItem="kcm-8B-8ba" secondAttribute="width" id="4Ue-tK-LgJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="GkJ-Da-ry0" secondAttribute="bottom" id="7Rp-Pl-HhF"/>
-                                    <constraint firstItem="GkJ-Da-ry0" firstAttribute="leading" secondItem="kcm-8B-8ba" secondAttribute="leading" id="EjJ-CL-52Y"/>
-                                    <constraint firstAttribute="trailing" secondItem="GkJ-Da-ry0" secondAttribute="trailing" id="gx3-RP-XGk"/>
-                                    <constraint firstItem="GkJ-Da-ry0" firstAttribute="top" secondItem="kcm-8B-8ba" secondAttribute="top" id="oix-oT-V9t"/>
-                                    <constraint firstItem="GkJ-Da-ry0" firstAttribute="height" secondItem="kcm-8B-8ba" secondAttribute="height" id="pIH-b8-dIU"/>
+                                    <constraint firstItem="jl3-TI-hmP" firstAttribute="leading" secondItem="kcm-8B-8ba" secondAttribute="leading" id="6eL-eP-M0w"/>
+                                    <constraint firstItem="UQF-sX-5Nl" firstAttribute="leading" secondItem="jl3-TI-hmP" secondAttribute="leading" id="CFQ-wH-raL"/>
+                                    <constraint firstItem="UQF-sX-5Nl" firstAttribute="trailing" secondItem="jl3-TI-hmP" secondAttribute="trailing" id="DNd-Rp-2JZ"/>
+                                    <constraint firstItem="UQF-sX-5Nl" firstAttribute="trailing" secondItem="7DR-8u-1iI" secondAttribute="trailing" id="HZX-SX-b3R"/>
+                                    <constraint firstAttribute="trailing" secondItem="jl3-TI-hmP" secondAttribute="trailing" id="M2I-tN-WUT"/>
+                                    <constraint firstAttribute="bottom" secondItem="jl3-TI-hmP" secondAttribute="bottom" id="OTW-rU-Mah"/>
+                                    <constraint firstItem="UQF-sX-5Nl" firstAttribute="centerX" secondItem="kcm-8B-8ba" secondAttribute="centerX" id="QzC-Cf-qeb"/>
+                                    <constraint firstItem="Pnw-dX-rCd" firstAttribute="top" secondItem="7DR-8u-1iI" secondAttribute="bottom" id="bVK-hX-akh"/>
+                                    <constraint firstItem="UQF-sX-5Nl" firstAttribute="leading" secondItem="kcm-8B-8ba" secondAttribute="leading" id="eI5-zn-e0k"/>
+                                    <constraint firstItem="jl3-TI-hmP" firstAttribute="top" secondItem="Pnw-dX-rCd" secondAttribute="bottom" id="mU8-mv-2PW"/>
+                                    <constraint firstItem="Pnw-dX-rCd" firstAttribute="leading" secondItem="kcm-8B-8ba" secondAttribute="leading" id="r0A-af-Bv7"/>
+                                    <constraint firstItem="UQF-sX-5Nl" firstAttribute="leading" secondItem="7DR-8u-1iI" secondAttribute="leading" id="rxq-g0-0gl"/>
+                                    <constraint firstItem="UQF-sX-5Nl" firstAttribute="top" secondItem="kcm-8B-8ba" secondAttribute="topMargin" constant="-8" id="sJQ-Ni-Xkr"/>
+                                    <constraint firstItem="7DR-8u-1iI" firstAttribute="top" secondItem="UQF-sX-5Nl" secondAttribute="bottom" id="vTD-BA-JSh"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pnw-dX-rCd" secondAttribute="trailing" id="zJs-2z-l6d"/>
+                                    <constraint firstAttribute="trailing" secondItem="UQF-sX-5Nl" secondAttribute="trailing" id="zfm-KZ-29S"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kcm-8B-8ba" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4vf-eB-k0P"/>
-                            <constraint firstItem="kcm-8B-8ba" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IFv-SZ-0oe"/>
-                            <constraint firstItem="kcm-8B-8ba" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="daS-LH-P8l"/>
-                            <constraint firstItem="kcm-8B-8ba" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="hae-sg-NXd"/>
+                            <constraint firstItem="kcm-8B-8ba" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7ql-zL-pib"/>
+                            <constraint firstAttribute="bottom" secondItem="kcm-8B-8ba" secondAttribute="bottom" id="8FD-Xj-P4C"/>
+                            <constraint firstItem="kcm-8B-8ba" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="F8A-qy-tmg"/>
+                            <constraint firstItem="kcm-8B-8ba" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dDo-8O-hUJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ew8-CJ-4R2"/>
                     <connections>
                         <outlet property="pageView" destination="UQF-sX-5Nl" id="BZm-2V-HTg"/>
+                        <outlet property="pageViewHeight" destination="ETT-aP-yVP" id="3mc-A6-Wl1"/>
                         <outlet property="scrollView" destination="kcm-8B-8ba" id="euB-Bf-RuJ"/>
                         <outlet property="tabView" destination="Pnw-dX-rCd" id="N1X-bY-SOn"/>
+                        <outlet property="tableHeight" destination="J7c-yI-tXg" id="bf1-ad-QO4"/>
                         <outlet property="tableView" destination="jl3-TI-hmP" id="rQc-ll-7Vt"/>
                         <outlet property="titleView" destination="7DR-8u-1iI" id="QSk-KH-OSJ"/>
                         <segue destination="1UP-i1-CwY" kind="show" identifier="homeFullTable" id="RIZ-Y0-5iT"/>
