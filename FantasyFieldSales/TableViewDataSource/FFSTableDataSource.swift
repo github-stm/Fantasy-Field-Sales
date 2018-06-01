@@ -144,7 +144,7 @@ extension FFSTableDataSource: UITableViewDataSource {
         if footerType == .NoFooter {
             return teamData.count
         } else {
-           // tableView.allowsSelection = false
+            tableView.allowsSelection = false
             return 3
         }
     }
