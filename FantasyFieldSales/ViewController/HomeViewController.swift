@@ -72,7 +72,7 @@ class HomeViewController: UIViewController {
         self.tableView?.delegate = self.dataSource
         self.tableView?.dataSource = self.dataSource
         
-        titleView?.titleLabel?.text = "LATEST TOP STATS"
+        titleView?.titleLabel?.text = Constants.text.stats.uppercased()
         
         tabView?.delegate = self
         scrollView?.delegate = self

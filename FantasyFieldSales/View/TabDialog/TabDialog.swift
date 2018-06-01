@@ -68,7 +68,7 @@ class TabDialog: UIView {
         buttonSelected(index: 0)
 
         titleLabel?.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel?.text = Constants.string.newsHeader
+        titleLabel?.text = Constants.text.newsHeader
         titleLabel?.lineBreakMode = .byWordWrapping
         titleLabel?.numberOfLines = 0
         titleLabel?.font = boldFont
@@ -76,7 +76,7 @@ class TabDialog: UIView {
         titleLabel?.sizeToFit()
         
         infoLabel?.translatesAutoresizingMaskIntoConstraints = false
-        infoLabel?.text = Constants.string.newsBody
+        infoLabel?.text = Constants.text.newsBody
         infoLabel?.lineBreakMode = .byWordWrapping
         infoLabel?.numberOfLines = 0
         infoLabel?.font = font

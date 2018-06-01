@@ -20,11 +20,15 @@ class FFSMoreDataSource: NSObject {
 
     fileprivate var array = Constants.teamGroup
     var delegate: FFSMoreDataSourceDelegate?
-
+    
+    // ------------------------------------------------------------------------------------------------------------
+    
     fileprivate func registerCells(forCollectionView collectionView: UICollectionView) {
         collectionView.register(UINib(nibName: "MoreCell", bundle: nil), forCellWithReuseIdentifier: "MoreCell")
 
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     fileprivate func loadCell(atIndexPath indexPath: IndexPath, forCollectionView collectionView: UICollectionView) -> UICollectionViewCell {
         
@@ -34,6 +38,7 @@ class FFSMoreDataSource: NSObject {
         return cell
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
     fileprivate func configureCell(_ cell:MoreCell,  indexPath: IndexPath)
     {
@@ -45,6 +50,8 @@ class FFSMoreDataSource: NSObject {
     
 }
 
+
+// ------------------------------------------------------------------------------------------------------------
 
 extension FFSMoreDataSource : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

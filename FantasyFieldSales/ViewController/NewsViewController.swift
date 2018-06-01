@@ -33,7 +33,7 @@ class NewsViewController: UIViewController {
         headerLabel?.font = headerFont
         headerLabel?.textColor = ColorManager.white
         headerLabel?.textAlignment = .left
-        headerLabel?.text = Constants.string.newsHeader
+        headerLabel?.text = Constants.text.newsHeader
         headerLabel?.numberOfLines = 0
         headerLabel?.lineBreakMode = .byWordWrapping
         
@@ -43,12 +43,12 @@ class NewsViewController: UIViewController {
         bodyLabel?.font = bodyFont
         bodyLabel?.textColor = ColorManager.TableTitle.text
         bodyLabel?.textAlignment = .left
-        bodyLabel?.text = Constants.string.newsHeader
+        bodyLabel?.text = Constants.text.newsHeader
         bodyLabel?.numberOfLines = 0
         bodyLabel?.lineBreakMode = .byWordWrapping
         
         
-        bodyLabel?.text = Constants.string.newsBody
+        bodyLabel?.text = Constants.text.newsBody
 
     }
 

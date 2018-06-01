@@ -77,6 +77,14 @@ class ColorManager: UIColor {
 
     }
 
+    struct Chart {
+        static let background = colorGrey
+        static let fill = colorGold
+        static let text = colorWhite
+        
+    }
+    
+    
     struct TabButtons {
         static let selectedBackground = colorBlack
         static let unselectedBackground = colorWhite

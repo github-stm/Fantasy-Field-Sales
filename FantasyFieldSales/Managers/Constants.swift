@@ -61,7 +61,24 @@ class Constants: NSObject {
    
     ]
 
-   
+    static let chartData = [(x: 1, y1: 50, y2: 60)
+        ,(x: 1, y1: 70, y2: 50)
+        ,(x: 2, y1: 20, y2: 40)
+        ,(x: 3, y1: 30, y2: 60)
+        ,(x: 4, y1: 50, y2: 90)
+        ,(x: 5, y1: 10, y2: 70)
+        ,(x: 6, y1: 60, y2: 40)
+        ,(x: 7, y1: 50, y2: 90)
+        ,(x: 8, y1: 90, y2: 40)
+        ,(x: 9, y1: 150, y2: 50)
+        ,(x: 10, y1: 80, y2: 40)
+        ,(x: 11, y1: 70, y2: 90)
+        ,(x: 12, y1: 50, y2: 60)
+        
+    ]
+    
+    // ------------------------------------------------------------------------------------------------------------
+    
     static let distributionExecutive = [(name: "Vacant", region: "Aberdeen Dundee")
         ,(name: "Vacant", region: "Oxford Reading")
         ,(name: "Francis Cronin", region: "Plymouth/Exeter")
@@ -78,18 +95,20 @@ class Constants: NSObject {
     ]
 
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     struct Notification
     {
         static let dateSelectedNotification = "DateSelectedNotification"
-
-        
     }
-    
-    
+
+    // ------------------------------------------------------------------------------------------------------------
     
     struct CallToActionButton {
         static let borderWidth:CGFloat = 2
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     struct leagueTable {
         static let headerHeight:CGFloat = 45
@@ -97,11 +116,15 @@ class Constants: NSObject {
         static let rowHeight:CGFloat = 75
 
     }
-
+    
+    // ------------------------------------------------------------------------------------------------------------
+    
     struct dateFormat {
         static let monthYear = "MMMM yyyy"
         static let shortMonth = "MMM"
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
 
     struct menu {
@@ -125,12 +148,16 @@ class Constants: NSObject {
     
     struct fontSize {
         static let largeFontSize:CGFloat = 22
-        static let mediumFontSize:CGFloat = 17
-        static let smallFontSize:CGFloat = 13
+        static let mediumFontSize:CGFloat = 18
+        static let smallFontSize:CGFloat = 15
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
-    struct string {
+    struct text {
+        
+        static let stats = "Latest Top Stats Leagues"
+        
         static let newsHeader = "WHSmith 'sorry' for Pinderfields Hospital £7.99 toothpaste"
         static let newsBody2 = "WHSmith has admitted it made more than £700 by selling single tubes of toothpaste for £7.99 in a hospital. \n The Pinderfields Hospital branch in Wakefield was caught selling Colgate, normally priced at £2.49, by a visitor."
         

@@ -20,47 +20,68 @@ private class CubicLineSampleFillFormatter: IFillFormatter {
 class ChartViewController: UIViewController {
     
     @IBOutlet weak var chartView: LineChartView!
-    /*
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
+    var dataSource = FFSTableDataSource()
+    
+    @IBOutlet weak var tableView: UITableView?
+    
+    @IBOutlet weak var tabView: ScrollTabView?
+    @IBOutlet weak var tableHeight: NSLayoutConstraint!
+    
+    var chartData = Constants.chartData
+    
+    var lineChartEntry = [ChartDataEntry]()
+    var lineChartEntry2 = [ChartDataEntry]()
+    var allLineChartDataSets: [LineChartDataSet] = [LineChartDataSet]()
+    
+    
+    
+    // ------------------------------------------------------------------------------------------------------------
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
         
-        setChart(dataPoints: months, values: unitsSold)
-
+        NotificationCenter.default.addObserver(self, selector:#selector(FullTableViewController.dateSelected(_:)), name: NSNotification.Name(rawValue: Constants.Notification.dateSelectedNotification), object: nil)
     }
     
-    func setChart(dataPoints: [String], values: [Double]) {
-        
-        var dataEntries: [ChartDataEntry] = []
-        
-        for i in 0..<dataPoints.count {
-            
-            let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
-            
-            // let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
-            dataEntries.append(dataEntry)
+    @objc func dateSelected(_ notification: Notification){
+        if let info = notification.userInfo, let infoDescription = info["date"] as? Date {
+            print(infoDescription)
         }
-        
-      
-        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "Units Sold")
-        let lineChartData = LineChartData(dataSets: [lineChartDataSet])
-
-        lineChartView.data = lineChartData
-   
     }
- */
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+
+        
+
+        
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        self.title = "Cubic Line Chart"
-
-      //  chartView.delegate = self
         
+        dataSource.delegate = self
+        self.tableView?.delegate = self.dataSource
+        self.tableView?.dataSource = self.dataSource
+        
+        self.title =  Constants.text.stats.uppercased()
+        
+        tabView?.delegate = self
+
+        //Set table height to cover entire view
+        //if navigation bar is not translucent, reduce navigation bar height from view height
+        tableHeight.constant = Constants.leagueTable.rowHeight + Constants.leagueTable.headerHeight
+        self.tableView?.isScrollEnabled = false
+
+        tabView?.reloadData(data: Constants.teamGroup)
+
         chartView.setViewPortOffsets(left: 0, top: 20, right: 0, bottom: 0)
-        chartView.backgroundColor = UIColor(red: 104/255, green: 241/255, blue: 175/255, alpha: 1)
+        chartView.backgroundColor = ColorManager.Chart.background
         
         chartView.dragEnabled = true
         chartView.setScaleEnabled(true)
@@ -70,11 +91,15 @@ class ChartViewController: UIViewController {
         chartView.xAxis.enabled = false
         
         let yAxis = chartView.leftAxis
-        yAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size:12)!
+        let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
+        
+        yAxis.labelFont = font!
         yAxis.setLabelCount(6, force: false)
-        yAxis.labelTextColor = .white
+        yAxis.labelTextColor = ColorManager.Chart.text
         yAxis.labelPosition = .insideChart
-        yAxis.axisLineColor = .white
+        yAxis.axisLineColor = ColorManager.Chart.text
+        
+   
         
         chartView.rightAxis.enabled = false
         chartView.legend.enabled = false
@@ -93,26 +118,73 @@ class ChartViewController: UIViewController {
 
     
     func setDataCount(_ count: Int, range: UInt32) {
-        let yVals1 = (0..<count).map { (i) -> ChartDataEntry in
+        let yVals11 = (0..<count).map { (i) -> ChartDataEntry in
             let mult = range + 1
             let val = Double(arc4random_uniform(mult) + 20)
             return ChartDataEntry(x: Double(i), y: val)
         }
+        // https://stackoverflow.com/questions/32428637/multiple-datasets-with-different-number-of-points-on-one-chart-ios-charts
         
-        let set1 = LineChartDataSet(values: yVals1, label: "DataSet 1")
+        
+        //print(yVals11)
+        
+//
+//
+//        let yVals1 = (0..<chartData.count).map { (i) -> ChartDataEntry in
+//
+//            let mult = chartData[i]
+//           // let mult = range + 1
+//            let val = Double(arc4random_uniform(UInt32(mult.y1)))
+//            return ChartDataEntry(x: Double(mult.x), y: val)
+//        }
+        
+        
+        for i in 0..<chartData.count {
+            let data = chartData[i]
+            let value = ChartDataEntry(x: Double(data.x), y: Double(data.y1))
+            lineChartEntry.append(value)
+        }
+        
+        let lineChartDataSet1: LineChartDataSet = LineChartDataSet(values: lineChartEntry, label: "Temperature")
+        allLineChartDataSets.append(lineChartDataSet1)
+        
+        
+        
+        for i in 0..<chartData.count {
+            let data = chartData[i]
+            let value = ChartDataEntry(x: Double(data.x), y: Double(data.y2))
+            lineChartEntry2.append(value)
+        }
+        
+        let lineChartDataSet2: LineChartDataSet = LineChartDataSet(values: lineChartEntry2, label: "Test")
+        allLineChartDataSets.append(lineChartDataSet2)
+        
+        /*
+        let allDataPoints: [Double] = chartData.map{Double($0.x)}
+        
+        let lineChartData = LineChartData(xVals: allDataPoints, dataSets: allLineChartDataSets)
+        
+        testLineChartView.data = lineChartData
+        
+        */
+        
+        print(lineChartEntry)
+     //   let set1 = LineChartDataSet(values: yVals1, label: "DataSet 1")
+        let set1 = LineChartDataSet(values: lineChartEntry, label: "DataSet 1")
         set1.mode = .cubicBezier
         set1.drawCirclesEnabled = false
         set1.lineWidth = 1.8
         set1.circleRadius = 4
         set1.setCircleColor(.white)
-        set1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
-        set1.fillColor = .white
+        set1.highlightColor = UIColor.red
+        set1.fillColor = ColorManager.Chart.fill
         set1.fillAlpha = 1
         set1.drawHorizontalHighlightIndicatorEnabled = false
         set1.fillFormatter = CubicLineSampleFillFormatter()
         
         let data = LineChartData(dataSet: set1)
         data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 9)!)
+        data.setValueTextColor(ColorManager.Chart.text)
         data.setDrawValues(false)
         
         chartView.data = data
@@ -158,3 +230,20 @@ class ChartViewController: UIViewController {
     */
   
 }
+extension ChartViewController: FFSTableDataSourceDelegate {
+    
+    func selectedItem(tableView: UITableView,  indexPath: IndexPath) {
+        print("\(indexPath.row)")
+        
+       
+       
+    }
+}
+
+extension ChartViewController :ScrollTabViewDelegate {
+    func selectedItem(indexPath: IndexPath) {
+        print("2 header view indexpath row\(indexPath.row)")
+    }
+}
+
+

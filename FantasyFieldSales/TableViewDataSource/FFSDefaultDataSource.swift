@@ -15,7 +15,7 @@ import RealmSwift
 
 }
 
-
+// ------------------------------------------------------------------------------------------------------------
 
 class FFSDefaultDataSource: NSObject {
     fileprivate let cellIdentifier = "DefaultCell"
@@ -24,10 +24,14 @@ class FFSDefaultDataSource: NSObject {
     var delegate: FFSDefaultDataSourceDelegate?
     fileprivate var dataArray = Constants.distributionExecutive
 
-
+    
+    // ------------------------------------------------------------------------------------------------------------
+    
     fileprivate func registerCells(forTableView tableView: UITableView) {
         tableView.register(UINib(nibName: "DefaultCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     fileprivate func loadCell(atIndexPath indexPath: IndexPath, forTableView tableView: UITableView) -> UITableViewCell {
         
@@ -37,6 +41,8 @@ class FFSDefaultDataSource: NSObject {
         self.configureCell(cell, indexPath:indexPath)
         return cell
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     fileprivate func configureCell(_ cell:DefaultCell,  indexPath: IndexPath)
     {
@@ -52,24 +58,36 @@ class FFSDefaultDataSource: NSObject {
     
 }
 
+// ------------------------------------------------------------------------------------------------------------
+
 extension FFSDefaultDataSource: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return self.loadCell(atIndexPath: indexPath, forTableView: tableView)
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return rowHeight
     }
     
 }
+
+
+// ------------------------------------------------------------------------------------------------------------
 
 // UITableViewDelegate
 extension FFSDefaultDataSource: UITableViewDelegate {

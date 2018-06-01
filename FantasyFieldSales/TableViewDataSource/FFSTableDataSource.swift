@@ -22,6 +22,8 @@ class FFSTableDataSource: NSObject {
     
     var selectedIndexPath:IndexPath?
 
+    var numberRows = 0
+    // ------------------------------------------------------------------------------------------------------------
     
     init(footerType: FooterType) {
         self.footerType = footerType
@@ -30,11 +32,14 @@ class FFSTableDataSource: NSObject {
         self.populateDefaultCategories()
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     convenience override init() {
         self.init(footerType:.NoFooter) // calls above default value
         populateDefaultCategories()
     }
 
+    // ------------------------------------------------------------------------------------------------------------
     
     func populateDefaultCategories() {
         
@@ -59,22 +64,25 @@ class FFSTableDataSource: NSObject {
         }
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
     fileprivate func registerCells(forTableView tableView: UITableView) {
 
         tableView.register(UINib(nibName: leagueTableCellIdentifier, bundle: nil), forCellReuseIdentifier: "LeagueTableCell")
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     fileprivate func loadCell(atIndexPath indexPath: IndexPath, forTableView tableView: UITableView) -> UITableViewCell {
 
         registerCells(forTableView: tableView)
         let cell = tableView.dequeueReusableCell(withIdentifier: leagueTableCellIdentifier, for: indexPath) as! LeagueTableCell
-        
-        
-        
+
         self.configureCell(cell, indexPath:indexPath)
         return cell
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     fileprivate func configureCell(_ cell:LeagueTableCell,  indexPath: IndexPath)
     {
@@ -108,6 +116,8 @@ class FFSTableDataSource: NSObject {
         cell.pointsLabel?.text = String(team.points)
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     func deselectSelectedRow(tableView:UITableView){
         if let selectedIndexPath = selectedIndexPath {
             tableView.deselectRow(at: selectedIndexPath, animated: true)
@@ -115,6 +125,7 @@ class FFSTableDataSource: NSObject {
     }
 }
 
+// ------------------------------------------------------------------------------------------------------------
 
 extension FFSTableDataSource: LeagueTableMoreFooterViewDelegate {
     
@@ -127,6 +138,8 @@ extension FFSTableDataSource: LeagueTableMoreFooterViewDelegate {
     }
 }
 
+// ------------------------------------------------------------------------------------------------------------
+
 extension FFSTableDataSource: LeagueTableHeaderViewDelegate {
     func selectedItem(indexPath: IndexPath){
           print("FFSTableDataSource indexpath row\(indexPath.row)")
@@ -134,11 +147,14 @@ extension FFSTableDataSource: LeagueTableHeaderViewDelegate {
 
 }
 
+// ------------------------------------------------------------------------------------------------------------
+
 extension FFSTableDataSource: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if footerType == .NoFooter {
@@ -149,9 +165,13 @@ extension FFSTableDataSource: UITableViewDataSource {
         }
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return self.loadCell(atIndexPath: indexPath, forTableView: tableView)
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.leagueTable.rowHeight
@@ -169,14 +189,20 @@ extension FFSTableDataSource: UITableViewDelegate {
         return headerView
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return Constants.leagueTable.headerHeight
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-
+    
+    // ------------------------------------------------------------------------------------------------------------
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)  {
         if let delegate = self.delegate {
             
@@ -186,6 +212,7 @@ extension FFSTableDataSource: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
@@ -197,7 +224,9 @@ extension FFSTableDataSource: UITableViewDelegate {
             return footerView
         }
     }
-
+    
+    // ------------------------------------------------------------------------------------------------------------
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         if footerType == .NoFooter {

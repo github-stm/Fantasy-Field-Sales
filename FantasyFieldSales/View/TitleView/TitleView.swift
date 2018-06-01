@@ -21,11 +21,15 @@ class TitleView: UIView {
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var rightLabel: UILabel?
 
+    // ------------------------------------------------------------------------------------------------------------
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initalizeSubviews()
         commonInit()
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,19 +37,21 @@ class TitleView: UIView {
         commonInit()
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
     //needed to set frame of xib  to correct size in swift 3
     override func layoutSubviews() {
         self.contentView?.frame = bounds
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
     func initalizeSubviews() {
         let subviewArray = Bundle.main.loadNibNamed("TitleView", owner: self, options: nil)
         self.addSubview(subviewArray!.first as! UIView)
     }
     
-    
+    // ------------------------------------------------------------------------------------------------------------
     
     func commonInit(){
         let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)

@@ -36,6 +36,13 @@
                                             <constraint firstAttribute="height" constant="40" id="ymg-Fe-qwy"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnw-dX-rCd" customClass="ScrollTabView" customModule="FantasyFieldSales" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="286" width="375" height="45"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="3b4-u4-Z2A"/>
+                                        </constraints>
+                                    </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="jl3-TI-hmP">
                                         <rect key="frame" x="0.0" y="331" width="375" height="202"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -48,13 +55,6 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="Agq-u1-IvX"/>
                                         </connections>
                                     </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnw-dX-rCd" customClass="ScrollTabView" customModule="FantasyFieldSales" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="286" width="375" height="45"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="3b4-u4-Z2A"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="jl3-TI-hmP" firstAttribute="leading" secondItem="kcm-8B-8ba" secondAttribute="leading" id="6eL-eP-M0w"/>
@@ -270,24 +270,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXD-ov-QKg" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="307" width="375" height="360"/>
+                                <rect key="frame" x="0.0" y="346" width="375" height="321"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdQ-X1-x3d" customClass="CalendarBar" customModule="FantasyFieldSales" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="35"/>
+                                <color key="backgroundColor" red="0.30893903039999998" green="1" blue="0.42992554500000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="360" id="SET-fp-QPk"/>
+                                    <constraint firstAttribute="height" constant="35" id="i5C-xo-zof"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="b0K-pc-MzP">
+                                <rect key="frame" x="0.0" y="144" width="375" height="202"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="202" id="TcV-Xl-xDD"/>
+                                </constraints>
+                                <color key="sectionIndexBackgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ac-7Z-n04" customClass="ScrollTabView" customModule="FantasyFieldSales" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="99" width="375" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.27580053249999997" blue="0.29602499310000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="LzH-L7-45t"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cXD-ov-QKg" firstAttribute="trailing" secondItem="uCr-0j-z90" secondAttribute="trailing" id="HlP-mV-La7"/>
-                            <constraint firstItem="cXD-ov-QKg" firstAttribute="bottom" secondItem="uCr-0j-z90" secondAttribute="bottom" id="Yw1-zY-mGD"/>
-                            <constraint firstItem="cXD-ov-QKg" firstAttribute="leading" secondItem="uCr-0j-z90" secondAttribute="leading" id="h3i-4w-i2Q"/>
+                            <constraint firstItem="b0K-pc-MzP" firstAttribute="leading" secondItem="uCr-0j-z90" secondAttribute="leading" id="2rt-3B-Xrd"/>
+                            <constraint firstItem="3ac-7Z-n04" firstAttribute="top" secondItem="gdQ-X1-x3d" secondAttribute="bottom" id="44V-Cx-V62"/>
+                            <constraint firstItem="3ac-7Z-n04" firstAttribute="trailing" secondItem="uCr-0j-z90" secondAttribute="trailing" id="BGs-s3-aYF"/>
+                            <constraint firstItem="cXD-ov-QKg" firstAttribute="top" secondItem="b0K-pc-MzP" secondAttribute="bottom" id="H38-Ea-XuT"/>
+                            <constraint firstItem="cXD-ov-QKg" firstAttribute="bottom" secondItem="uCr-0j-z90" secondAttribute="bottom" id="M9t-Sd-KNH"/>
+                            <constraint firstItem="gdQ-X1-x3d" firstAttribute="leading" secondItem="uCr-0j-z90" secondAttribute="leading" id="N5A-bJ-0t1"/>
+                            <constraint firstItem="3ac-7Z-n04" firstAttribute="leading" secondItem="uCr-0j-z90" secondAttribute="leading" id="RCG-tt-3YG"/>
+                            <constraint firstItem="gdQ-X1-x3d" firstAttribute="top" secondItem="uCr-0j-z90" secondAttribute="top" id="W2t-w9-5Ar"/>
+                            <constraint firstItem="b0K-pc-MzP" firstAttribute="top" secondItem="3ac-7Z-n04" secondAttribute="bottom" id="avM-3a-hlX"/>
+                            <constraint firstItem="gdQ-X1-x3d" firstAttribute="trailing" secondItem="uCr-0j-z90" secondAttribute="trailing" id="nmh-6f-78N"/>
+                            <constraint firstItem="b0K-pc-MzP" firstAttribute="trailing" secondItem="uCr-0j-z90" secondAttribute="trailing" id="uuh-db-AqP"/>
+                            <constraint firstItem="cXD-ov-QKg" firstAttribute="leading" secondItem="uCr-0j-z90" secondAttribute="leading" id="vxk-dL-Wu4"/>
+                            <constraint firstItem="cXD-ov-QKg" firstAttribute="trailing" secondItem="uCr-0j-z90" secondAttribute="trailing" id="w73-uF-Ae5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uCr-0j-z90"/>
                     </view>
                     <navigationItem key="navigationItem" id="oO5-wf-u9O"/>
                     <connections>
                         <outlet property="chartView" destination="cXD-ov-QKg" id="yhF-hI-NwQ"/>
+                        <outlet property="tabView" destination="3ac-7Z-n04" id="cmT-9W-q5h"/>
+                        <outlet property="tableHeight" destination="TcV-Xl-xDD" id="LFR-6K-U0G"/>
+                        <outlet property="tableView" destination="b0K-pc-MzP" id="KZi-fv-0Nz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsr-9u-whV" userLabel="First Responder" sceneMemberID="firstResponder"/>
