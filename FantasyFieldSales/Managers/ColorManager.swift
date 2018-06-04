@@ -80,7 +80,12 @@ class ColorManager: UIColor {
     struct Chart {
         static let background = colorGrey
         static let fill = colorGold
-        static let text = colorWhite
+        static let text = colorBlack
+        static let line = colorBlack
+        
+        static let avgFill = colorBlack
+        static let avgText = colorWhite
+        static let avgLine = colorGold
         
     }
     

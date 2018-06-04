@@ -28,12 +28,15 @@ class ChartViewController: UIViewController {
     @IBOutlet weak var tabView: ScrollTabView?
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
     
+    let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize) ?? UIFont.systemFont(ofSize: 15, weight: .light)
+    
     var chartData = Constants.chartData
     
     var lineChartEntry = [ChartDataEntry]()
     var lineChartEntry2 = [ChartDataEntry]()
     var allLineChartDataSets: [LineChartDataSet] = [LineChartDataSet]()
     
+    var shouldHideData = false
     
     
     // ------------------------------------------------------------------------------------------------------------
@@ -53,14 +56,7 @@ class ChartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
     }
-    
 
-        
-
-        
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,163 +76,164 @@ class ChartViewController: UIViewController {
 
         tabView?.reloadData(data: Constants.teamGroup)
 
-        chartView.setViewPortOffsets(left: 0, top: 20, right: 0, bottom: 0)
+        setUpChart()
+ 
+        
+    }
+    
+
+     func updateChartData() {
+        if self.shouldHideData {
+            chartView.data = nil
+            return
+        }
+        
+        //self.setDataCount(Int(sliderX.value) + 1, range: UInt32(sliderY.value))
+    }
+    
+    
+    func setUpChart(){
+        chartView.setViewPortOffsets(left: 0, top: 20, right: 0, bottom: 50)
         chartView.backgroundColor = ColorManager.Chart.background
         
         chartView.dragEnabled = true
         chartView.setScaleEnabled(true)
         chartView.pinchZoomEnabled = false
         chartView.maxHighlightDistance = 300
-        
-        chartView.xAxis.enabled = false
-        
-        let yAxis = chartView.leftAxis
-        let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
-        
-        yAxis.labelFont = font!
-        yAxis.setLabelCount(6, force: false)
-        yAxis.labelTextColor = ColorManager.Chart.text
-        yAxis.labelPosition = .insideChart
-        yAxis.axisLineColor = ColorManager.Chart.text
-        
-   
-        
         chartView.rightAxis.enabled = false
-        chartView.legend.enabled = false
+        chartView.legend.enabled = true
         
-        self.setDataCount(Int(45), range: UInt32(100))
+        setupYAxis()
+        setupXAxis()
+        setChartData()
+        
+        
+//        let l = chartView.legend
+//        l.horizontalAlignment = .left
+//        l.verticalAlignment = .bottom
+//        l.orientation = .horizontal
+//        l.drawInside = false
+//        l.form = .circle
+//        l.formSize = 9
+//        l.font = UIFont(name: "HelveticaNeue-Light", size: 11)!
+//        l.xEntrySpace = 4
 
-        chartView.animate(xAxisDuration: 2, yAxisDuration: 2)
         
+        let marker = XYMarkerView(color: UIColor(white: 180/250, alpha: 1),
+                                  font: .systemFont(ofSize: 12),
+                                  textColor: .white,
+                                  insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8),
+                                  xAxisValueFormatter: chartView.xAxis.valueFormatter!)
+        marker.chartView = chartView
+        marker.minimumSize = CGSize(width: 80, height: 40)
+        chartView.marker = marker
+
+        
+        
+        chartView.animate(xAxisDuration: 2, yAxisDuration: 2)
         for set in chartView.data!.dataSets as! [LineChartDataSet] {
             set.drawFilledEnabled = !set.drawFilledEnabled
         }
         chartView.setNeedsDisplay()
-        
     }
     
-
     
-    func setDataCount(_ count: Int, range: UInt32) {
-        let yVals11 = (0..<count).map { (i) -> ChartDataEntry in
-            let mult = range + 1
-            let val = Double(arc4random_uniform(mult) + 20)
-            return ChartDataEntry(x: Double(i), y: val)
-        }
-        // https://stackoverflow.com/questions/32428637/multiple-datasets-with-different-number-of-points-on-one-chart-ios-charts
+    func setupXAxis(){
         
+        //set Up xAxis
+        let xAxis = chartView.xAxis
+        xAxis.enabled = true
+        xAxis.labelPosition = .bottomInside
+        xAxis.axisMinimum = 0
+        xAxis.granularity = 1
         
-        //print(yVals11)
+        xAxis.labelFont = font
+        // xAxis.setLabelCount(6, force: true)
+        xAxis.labelTextColor = ColorManager.Chart.text
+        xAxis.labelPosition = .bottomInside
+        xAxis.axisLineColor = ColorManager.Chart.text
+        xAxis.labelPosition = XAxis.LabelPosition.bottom
+    }
+    
+    
+    func setupYAxis(){
+        let yAxis = chartView.leftAxis
+
+        yAxis.labelFont = font
+        yAxis.labelTextColor = ColorManager.Chart.text
+        yAxis.labelPosition = .insideChart
+        yAxis.axisLineColor = ColorManager.Chart.text
+    }
+    
+    func getLineChartDataSet(values: [ChartDataEntry], lineColor:UIColor, fillColor:UIColor, fillalpha: CGFloat, label:String) -> LineChartDataSet{
+
+        let lineChartDataSet: LineChartDataSet = LineChartDataSet(values: values, label: label)
         
-//
-//
-//        let yVals1 = (0..<chartData.count).map { (i) -> ChartDataEntry in
-//
-//            let mult = chartData[i]
-//           // let mult = range + 1
-//            let val = Double(arc4random_uniform(UInt32(mult.y1)))
-//            return ChartDataEntry(x: Double(mult.x), y: val)
-//        }
+        lineChartDataSet.lineWidth = 2
+        lineChartDataSet.setColor(lineColor)
+        lineChartDataSet.mode = .cubicBezier
+        lineChartDataSet.drawCirclesEnabled = false
+        lineChartDataSet.fillColor = fillColor
+        lineChartDataSet.fillAlpha = fillalpha
+        lineChartDataSet.drawHorizontalHighlightIndicatorEnabled = false
+        lineChartDataSet.fillFormatter = CubicLineSampleFillFormatter()
         
+        return lineChartDataSet
+    }
+    
+    func getLineEntry() -> [ChartDataEntry]{
         
+        var chartDataEntry: [ChartDataEntry] = []
         for i in 0..<chartData.count {
             let data = chartData[i]
             let value = ChartDataEntry(x: Double(data.x), y: Double(data.y1))
-            lineChartEntry.append(value)
+            chartDataEntry.append(value)
         }
         
-        let lineChartDataSet1: LineChartDataSet = LineChartDataSet(values: lineChartEntry, label: "Temperature")
-        allLineChartDataSets.append(lineChartDataSet1)
-        
-        
-        
+        return chartDataEntry
+    }
+
+    func getAverageLineEntry() -> [ChartDataEntry]{
+        var chartDataEntry: [ChartDataEntry] = []
         for i in 0..<chartData.count {
             let data = chartData[i]
             let value = ChartDataEntry(x: Double(data.x), y: Double(data.y2))
-            lineChartEntry2.append(value)
+            chartDataEntry.append(value)
         }
         
-        let lineChartDataSet2: LineChartDataSet = LineChartDataSet(values: lineChartEntry2, label: "Test")
-        allLineChartDataSets.append(lineChartDataSet2)
-        
-        /*
-        let allDataPoints: [Double] = chartData.map{Double($0.x)}
-        
-        let lineChartData = LineChartData(xVals: allDataPoints, dataSets: allLineChartDataSets)
-        
-        testLineChartView.data = lineChartData
-        
-        */
-        
-        print(lineChartEntry)
-     //   let set1 = LineChartDataSet(values: yVals1, label: "DataSet 1")
-        let set1 = LineChartDataSet(values: lineChartEntry, label: "DataSet 1")
-        set1.mode = .cubicBezier
-        set1.drawCirclesEnabled = false
-        set1.lineWidth = 1.8
-        set1.circleRadius = 4
-        set1.setCircleColor(.white)
-        set1.highlightColor = UIColor.red
-        set1.fillColor = ColorManager.Chart.fill
-        set1.fillAlpha = 1
-        set1.drawHorizontalHighlightIndicatorEnabled = false
-        set1.fillFormatter = CubicLineSampleFillFormatter()
-        
-        let data = LineChartData(dataSet: set1)
-        data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 9)!)
-        data.setValueTextColor(ColorManager.Chart.text)
-        data.setDrawValues(false)
-        
-        chartView.data = data
+        return chartDataEntry
     }
     
-    /*
-    override func optionTapped(_ option: Option) {
-        switch option {
-        case .toggleFilled:
-            for set in chartView.data!.dataSets as! [LineChartDataSet] {
-                set.drawFilledEnabled = !set.drawFilledEnabled
-            }
-            chartView.setNeedsDisplay()
-            
-        case .toggleCircles:
-            for set in chartView.data!.dataSets as! [LineChartDataSet] {
-                set.drawCirclesEnabled = !set.drawCirclesEnabled
-            }
-            chartView.setNeedsDisplay()
-            
-        case .toggleCubic:
-            for set in chartView.data!.dataSets as! [LineChartDataSet] {
-                set.mode = (set.mode == .cubicBezier) ? .linear : .cubicBezier
-            }
-            chartView.setNeedsDisplay()
-            
-        case .toggleStepped:
-            for set in chartView.data!.dataSets as! [LineChartDataSet] {
-                set.mode = (set.mode == .stepped) ? .linear : .stepped
-            }
-            chartView.setNeedsDisplay()
-            
-        case .toggleHorizontalCubic:
-            for set in chartView.data!.dataSets as! [LineChartDataSet] {
-                set.mode = (set.mode == .cubicBezier) ? .horizontalBezier : .cubicBezier
-            }
-            chartView.setNeedsDisplay()
-            
-        default:
-            super.handleOption(option, forChartView: chartView)
-        }
+    func setChartDataSet() {
+
+        let lineDataSet = getLineChartDataSet(values: getLineEntry(), lineColor: ColorManager.Chart.line, fillColor:ColorManager.Chart.fill, fillalpha: 0.7, label:"Temp")
+        allLineChartDataSets.append(lineDataSet)
+        
+
+        let lineDataSet2 = getLineChartDataSet(values: getAverageLineEntry(), lineColor: ColorManager.Chart.avgLine, fillColor:ColorManager.Chart.avgFill, fillalpha: 0.7, label:"Test")
+        allLineChartDataSets.append(lineDataSet2)
+
     }
-    */
-  
+    
+    
+    func setChartData() {
+
+       setChartDataSet()
+
+        let data = LineChartData(dataSets: allLineChartDataSets)
+        data.setValueFont(font)
+        chartView.data = data
+
+    }
+    
+
 }
+
+
 extension ChartViewController: FFSTableDataSourceDelegate {
     
     func selectedItem(tableView: UITableView,  indexPath: IndexPath) {
         print("\(indexPath.row)")
-        
-       
-       
     }
 }
 
@@ -245,5 +242,8 @@ extension ChartViewController :ScrollTabViewDelegate {
         print("2 header view indexpath row\(indexPath.row)")
     }
 }
+
+
+
 
 

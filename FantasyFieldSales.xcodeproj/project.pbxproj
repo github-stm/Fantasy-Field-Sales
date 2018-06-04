@@ -56,6 +56,8 @@
 		5AA1D13A20B5ABC200B2B63E /* TabDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AA1D13920B5ABC200B2B63E /* TabDialog.xib */; };
 		5AA1D13C20B5B29200B2B63E /* UIViewGestureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1D13B20B5B29200B2B63E /* UIViewGestureExtensions.swift */; };
 		5AA1D13E20B5BFB700B2B63E /* TabDialogAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA1D13D20B5BFB700B2B63E /* TabDialogAlert.swift */; };
+		5AB2DA5920C5A0C900A76709 /* XYMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2DA5820C5A0C900A76709 /* XYMarkerView.swift */; };
+		5AB2DA5B20C5A0F200A76709 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2DA5A20C5A0F200A76709 /* BalloonMarker.swift */; };
 		5AB4ED4620B30E6200608DA1 /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB4ED4520B30E6200608DA1 /* TeamData.swift */; };
 		5AC7D2BE20B6B78B00124A5D /* FFSDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC7D2BD20B6B78B00124A5D /* FFSDefaultDataSource.swift */; };
 		5AC7D2C420B6BF7B00124A5D /* DefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC7D2C220B6BF7B00124A5D /* DefaultCell.swift */; };
@@ -126,6 +128,8 @@
 		5AA1D13920B5ABC200B2B63E /* TabDialog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabDialog.xib; sourceTree = "<group>"; };
 		5AA1D13B20B5B29200B2B63E /* UIViewGestureExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewGestureExtensions.swift; sourceTree = "<group>"; };
 		5AA1D13D20B5BFB700B2B63E /* TabDialogAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDialogAlert.swift; sourceTree = "<group>"; };
+		5AB2DA5820C5A0C900A76709 /* XYMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYMarkerView.swift; sourceTree = "<group>"; };
+		5AB2DA5A20C5A0F200A76709 /* BalloonMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
 		5AB4ED4520B30E6200608DA1 /* TeamData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
 		5AC7D2BD20B6B78B00124A5D /* FFSDefaultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSDefaultDataSource.swift; sourceTree = "<group>"; };
 		5AC7D2C220B6BF7B00124A5D /* DefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCell.swift; sourceTree = "<group>"; };
@@ -321,6 +325,15 @@
 			path = TabDialog;
 			sourceTree = "<group>";
 		};
+		5AB2DA5720C5A0A900A76709 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				5AB2DA5820C5A0C900A76709 /* XYMarkerView.swift */,
+				5AB2DA5A20C5A0F200A76709 /* BalloonMarker.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
 		5AB4ED4320B30D8700608DA1 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +395,7 @@
 		5AC86FB620B4310100D3BA0B /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				5AB2DA5720C5A0A900A76709 /* Chart */,
 				5A60235520BD8457006230A2 /* DatePicker */,
 				5AC86FB720B4312100D3BA0B /* MonthYearPickerView.swift */,
 				5A2C6E7D20BD919E00FE3595 /* MonthYearPickerView.xib */,
@@ -582,6 +596,7 @@
 				5A7ABC9C20ADBE610011987B /* ModalViewExtension.swift in Sources */,
 				5A6B7A3C20AC449000E154EF /* ContactsViewController.swift in Sources */,
 				5A5896D120A1AE7A00D6822F /* LeagueTableCell.swift in Sources */,
+				5AB2DA5920C5A0C900A76709 /* XYMarkerView.swift in Sources */,
 				5A7ABC9E20ADBF210011987B /* CustomAlert.swift in Sources */,
 				5A7FD4C520B472A500A7D64E /* StringExtension.swift in Sources */,
 				5A2C716D20A98E7900CD26F0 /* FFSTableDataSource.swift in Sources */,
@@ -597,6 +612,7 @@
 				5A5896CC20A1A24700D6822F /* UIColorExtension.swift in Sources */,
 				5A7ABC9620AD7FB90011987B /* MoreCollectionViewLayout.swift in Sources */,
 				5A5896AD20A19AB100D6822F /* AppDelegate.swift in Sources */,
+				5AB2DA5B20C5A0F200A76709 /* BalloonMarker.swift in Sources */,
 				5AE1556720AB01F400D25C07 /* ScrollTabCell.swift in Sources */,
 				5A4D10DD20AEDDD8007B7879 /* MenuAlert.swift in Sources */,
 				5A7ABC9820AD92AE0011987B /* FFSMoreDataSource.swift in Sources */,
@@ -765,6 +781,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 376PTV42SM;
 				INFOPLIST_FILE = FantasyFieldSales/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -784,6 +801,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 376PTV42SM;
 				INFOPLIST_FILE = FantasyFieldSales/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
