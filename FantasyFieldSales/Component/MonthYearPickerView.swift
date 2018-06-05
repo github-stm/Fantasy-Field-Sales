@@ -41,6 +41,7 @@ class MonthYearPickerView: UIView {
         self.init(frame: frame)
         self.startMonth = startMonth
         self.startYear = startYear
+        selectedRowPicker()
     }
     
     
@@ -109,10 +110,21 @@ class MonthYearPickerView: UIView {
         
         month = NSCalendar(identifier: NSCalendar.Identifier.gregorian)!.component(.month, from: NSDate() as Date)
         year = NSCalendar(identifier: NSCalendar.Identifier.gregorian)!.component(.year, from: NSDate() as Date)
-        pickerView?.selectRow(month! - 1, inComponent: 0, animated: false)
 
     }
     
+    
+    func selectedRowPicker(){
+        if let month = startMonth, let year = startYear {
+            pickerView?.selectRow(month - 1, inComponent: 0, animated: false)
+            let currentYear = NSCalendar(identifier: NSCalendar.Identifier.gregorian)!.component(.year, from: NSDate() as Date)
+            
+            pickerView?.selectRow(abs(currentYear - year), inComponent: 1, animated: false)
+        }  else {
+            pickerView?.selectRow(month! - 1, inComponent: 0, animated: false)
+        }
+        
+    }
     @IBAction func okButtonTapped(_ sender: AnyObject)
     {
         if let delegate = self.delegatePickerView {

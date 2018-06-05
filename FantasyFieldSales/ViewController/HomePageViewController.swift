@@ -10,7 +10,7 @@ import UIKit
 
 protocol HomePageViewControllerDelegate {
 
-    func homeNewsTapped()
+    func homeNewsTapped(currentPage:Int)
   
 }
 
@@ -53,7 +53,7 @@ class HomePageViewController: UIPageViewController {
         self.delegate = self
         self.dataSource = self
 
-        if Constants.backgroundColorContent.count > 0 {
+        if Constants.backgroundImageContent.count > 0 {
             contentController = getContentViewController(withIndex: 0)
             contentControllers = [contentController] as? [ContentViewController]
             
@@ -75,8 +75,8 @@ class HomePageViewController: UIPageViewController {
     
     func configurePageControl() {
         self.pageControl = UIPageControl(frame: CGRect(x: 0,y: 50, width: UIScreen.main.bounds.width, height: 50))
-        self.pageControl.numberOfPages = Constants.backgroundColorContent.count
-        self.pageControl.currentPage = 0
+        self.pageControl.numberOfPages = Constants.backgroundImageContent.count
+        self.pageControl.currentPage = self.currentPage
         self.pageControl.tintColor = .black
         self.pageControl.pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.3)
         self.pageControl.currentPageIndicatorTintColor = UIColor.white
@@ -96,7 +96,7 @@ class HomePageViewController: UIPageViewController {
         
         
         if let delegate = self.delegateHomePageViewController {
-            delegate.homeNewsTapped()
+            delegate.homeNewsTapped(currentPage:self.pageControl.currentPage)
             
         }
         
@@ -113,7 +113,8 @@ class HomePageViewController: UIPageViewController {
             transitionInProgress = true
             self.setViewControllers([nextViewController], direction: .forward, animated: true, completion: {(_ finished: Bool) -> Void in
                 self.transitionInProgress = false
-                self.pageControl.currentPage = currentViewController.itemIndex + 1
+                self.pageControl.currentPage = currentViewController.itemIndex
+                self.currentPage = self.pageControl.currentPage
             })
         }
     }
@@ -126,7 +127,7 @@ class HomePageViewController: UIPageViewController {
         let contentVC =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
         
             contentVC.itemIndex = index
-            contentVC.bckgrdColor = Constants.backgroundColorContent[index]
+            contentVC.backgroundImage = Constants.backgroundImageContent[index]
             return contentVC
     }
 
@@ -148,7 +149,7 @@ extension HomePageViewController: UIGestureRecognizerDelegate {
 extension HomePageViewController: UIPageViewControllerDelegate {
 
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return Constants.backgroundColorContent.count
+        return Constants.backgroundImageContent.count
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -182,7 +183,7 @@ extension HomePageViewController: UIPageViewControllerDataSource {
         
         let contentVC = viewController as! ContentViewController
         
-        if contentVC.itemIndex + 1 < Constants.backgroundColorContent.count {
+        if contentVC.itemIndex + 1 < Constants.backgroundImageContent.count {
             return getContentViewController(withIndex: contentVC.itemIndex + 1)
         }
         
@@ -193,7 +194,7 @@ extension HomePageViewController: UIPageViewControllerDataSource {
     
    
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return Constants.backgroundColorContent.count
+        return Constants.backgroundImageContent.count
     }
     
 

@@ -51,7 +51,19 @@ class CalendarBar: UIView {
     
     // function which is triggered when handleTap is called
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        let alert = MonthYearAlert(startMonth: 12, startYear: 2017)
+        
+        let date = dateLabel?.text?.stringToDate(format: Constants.dateFormat.monthYear)
+        
+        
+        //Now asking the calendar what month are we in today’s date:
+        //Here I’m creating the calendar instance that we will operate with:
+        
+        let calendar = NSCalendar.init(calendarIdentifier: NSCalendar.Identifier.gregorian)
+        let currentMonth = (calendar?.component(NSCalendar.Unit.month, from: date!))!
+        let currentYear = (calendar?.component(NSCalendar.Unit.year, from: date!))!
+        print(currentMonth)
+        
+        let alert = MonthYearAlert(startMonth: currentMonth, startYear: currentYear)
         alert.show(animated: true)
         
     }
@@ -63,7 +75,7 @@ class CalendarBar: UIView {
         dropdownImageView?.contentMode = .center
         
         let spacing:CGFloat = 3
-        dropdownImageView?.image = UIImage(named: "arrow")?.imageWithInsets(insets: UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing))
+        dropdownImageView?.image = UIImage(named: "drop down arrow")?.imageWithInsets(insets: UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing))
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
 

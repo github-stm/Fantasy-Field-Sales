@@ -23,6 +23,10 @@ class HomeViewController: UIViewController {
 
     var tabArray:[String]? = []
     
+    var newsImageName = ""
+    
+    var currentPage = 0
+    
     var dataSource = FFSTableDataSource(footerType: .ViewFullTable)
     var pageController = HomePageViewController()
     
@@ -41,8 +45,7 @@ class HomeViewController: UIViewController {
    
     
     override func viewDidLoad() {
-        
-        
+
         super.viewDidLoad()
         if let frame = pageView?.frame {
             pageController.view.frame = frame
@@ -73,6 +76,15 @@ class HomeViewController: UIViewController {
     }
 
   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "homeNews" {
+            if let vc = segue.destination as? NewsViewController {
+               // print(brandName)
+                vc.newsImageName = self.newsImageName
+            }
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -113,7 +125,8 @@ extension HomeViewController: FFSTableDataSourceDelegate {
 }
 
 extension HomeViewController: HomePageViewControllerDelegate {
-    func homeNewsTapped() {
+    func homeNewsTapped(currentPage:Int) {
+        newsImageName = Constants.backgroundImageContent[currentPage]
         performSegue(withIdentifier: "homeNews", sender: self)
     }
 }

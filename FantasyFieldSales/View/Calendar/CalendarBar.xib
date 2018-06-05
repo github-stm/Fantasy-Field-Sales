@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,21 +25,20 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqQ-yc-XXQ">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2K-gg-RjC">
-                            <rect key="frame" x="137" y="7" width="101" height="21"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="j2K-gg-RjC">
+                            <rect key="frame" x="152" y="7" width="71" height="21"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kH-6C-qns">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kH-6C-qns">
+                                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="6Og-en-iNF"/>
-                                        <constraint firstAttribute="width" constant="80" id="EzX-DX-apk"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-lB-u8M">
-                                    <rect key="frame" x="80" y="0.0" width="21" height="21"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop down arrow" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-lB-u8M">
+                                    <rect key="frame" x="50" y="0.0" width="21" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="21" id="rqY-cq-vdh"/>
                                         <constraint firstAttribute="height" constant="21" id="t1Q-I6-HOs"/>
@@ -68,6 +67,6 @@
         </view>
     </objects>
     <resources>
-        <image name="arrow" width="19" height="15"/>
+        <image name="drop down arrow" width="9" height="6"/>
     </resources>
 </document>

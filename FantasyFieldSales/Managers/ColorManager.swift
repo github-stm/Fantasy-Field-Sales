@@ -43,8 +43,8 @@ class ColorManager: UIColor {
     
     struct Calendar  {
         static let buttonView = colorGold
-        static let background = colorGold
-        static let text = colorWhite
+        static let background = colorWhite
+        static let text = colorGold
     }
     
     struct CallToActionButton {

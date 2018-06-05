@@ -8,6 +8,8 @@
 
 import UIKit
 import Charts
+import RealmSwift
+
 
 private class CubicLineSampleFillFormatter: IFillFormatter {
     func getFillLinePosition(dataSet: ILineChartDataSet, dataProvider: LineChartDataProvider) -> CGFloat {
@@ -23,6 +25,10 @@ class ChartViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView?
     @IBOutlet weak var tabView: ScrollTabView?
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
+    @IBOutlet weak var calendarBar: CalendarBar?
+    
+    fileprivate let realm = try! Realm()
+    var selectedItem:TeamData?
     
     let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize) ?? UIFont.systemFont(ofSize: 15, weight: .light)
     
@@ -45,6 +51,7 @@ class ChartViewController: UIViewController {
     
     @objc func dateSelected(_ notification: Notification){
         if let info = notification.userInfo, let infoDescription = info["date"] as? Date {
+             calendarBar?.dateLabel?.text =  infoDescription.getMonthName()
             print(infoDescription)
         }
     }
@@ -61,8 +68,14 @@ class ChartViewController: UIViewController {
         self.tableView?.delegate = self.dataSource
         self.tableView?.dataSource = self.dataSource
         
-        self.title =  Constants.text.stats.uppercased()
         
+        if let selected = selectedItem {
+            let predicate = NSPredicate(format: "id == %d", selected.id)
+            dataSource.teamData = self.realm.objects(TeamData.self).filter(predicate)
+            self.title =  selected.name
+            
+        }
+
         tabView?.delegate = self
 
         //Set table height to cover entire view
@@ -70,6 +83,10 @@ class ChartViewController: UIViewController {
         tableHeight.constant = Constants.leagueTable.rowHeight + Constants.leagueTable.headerHeight
         self.tableView?.isScrollEnabled = false
 
+        
+   
+        
+        
         tabView?.reloadData(data: Constants.teamGroup)
 
         setUpChart()

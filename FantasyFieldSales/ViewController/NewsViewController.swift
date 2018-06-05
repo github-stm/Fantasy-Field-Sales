@@ -17,6 +17,16 @@ class NewsViewController: UIViewController {
     @IBOutlet weak var bodyView: UIView?
     @IBOutlet weak var bodyLabel: UILabel?
     
+    var newsImageName = ""
+    
+    override func viewDidDisappear(_ animated: Bool) {
+//        let contentVC =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+//
+//        contentVC.itemIndex = index
+//        contentVC.backgroundImage = Constants.backgroundImageContent[index]
+//        return contentVC
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
@@ -29,6 +39,10 @@ class NewsViewController: UIViewController {
         let bodyFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.mediumFontSize)
         
         headerView?.backgroundColor = ColorManager.TableTitle.background
+        
+        if let backgroundImage = UIImage(named: newsImageName) {
+            headerImageView?.image =  backgroundImage
+        }
      
         headerLabel?.font = headerFont
         headerLabel?.textColor = ColorManager.white

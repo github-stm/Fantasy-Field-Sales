@@ -32,32 +32,32 @@ class Constants: NSObject {
     
 
     
-    static let backgroundColorContent = [ UIColor.red, UIColor.green]
+    static let backgroundImageContent = [ "image", "Best Regional image"]
   
     
     static let teamGroup = ["City", "Regional", "Quality", "Test", "Test2", "Test3"]
     // ------------------------------------------------------------------------------------------------------------
     
-    static let teams = [(pos: 1, team: "London North", points: 120)
-        ,(pos: 2, team: "London South", points: 100)
-        ,(pos: 3, team: "South Coast", points: 90)
-        ,(pos: 4, team: "London North", points: 120)
-        ,(pos: 5, team: "London South", points: 100)
-        ,(pos: 6, team: "South Coast", points: 90)
-        ,(pos: 7, team: "London North", points: 120)
-        ,(pos: 8, team: "London South", points: 100)
-        ,(pos: 9, team: "South Coast", points: 90)
-        ,(pos: 10, team: "London North", points: 120)
-        ,(pos: 11, team: "London South", points: 100)
-        ,(pos: 12, team: "South Coast", points: 90)
-        ,(pos: 13, team: "South Coast", points: 90)
-        ,(pos: 14, team: "London North", points: 120)
-        ,(pos: 15, team: "London South", points: 100)
-        ,(pos: 16, team: "South Coast", points: 90)
-        ,(pos: 17, team: "London North", points: 120)
-        ,(pos: 18, team: "London South", points: 100)
-        ,(pos: 19, team: "South Coast", points: 90)
-        ,(pos: 20, team: "London North", points: 120)
+    static let teams = [(pos: 1, team: "London North", points: 120, image: "")
+        ,(pos: 2, team: "London South", points: 100, image: "up")
+        ,(pos: 3, team: "South Coast", points: 90, image: "")
+        ,(pos: 4, team: "London North", points: 120, image: "down")
+        ,(pos: 5, team: "London South", points: 100, image: "")
+        ,(pos: 6, team: "South Coast", points: 90, image: "")
+        ,(pos: 7, team: "London North", points: 120, image: "down")
+        ,(pos: 8, team: "London South", points: 100, image: "up")
+        ,(pos: 9, team: "South Coast", points: 90, image: "")
+        ,(pos: 10, team: "London North", points: 120, image: "")
+        ,(pos: 11, team: "London South", points: 100, image: "")
+        ,(pos: 12, team: "South Coast", points: 90, image: "down")
+        ,(pos: 13, team: "South Coast", points: 90, image: "down")
+        ,(pos: 14, team: "London North", points: 120, image: "")
+        ,(pos: 15, team: "London South", points: 100, image: "")
+        ,(pos: 16, team: "South Coast", points: 90, image: "up")
+        ,(pos: 17, team: "London North", points: 120, image: "")
+        ,(pos: 18, team: "London South", points: 100, image: "")
+        ,(pos: 19, team: "South Coast", points: 90, image: "")
+        ,(pos: 20, team: "London North", points: 120, image: "")
    
     ]
 

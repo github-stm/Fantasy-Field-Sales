@@ -14,7 +14,7 @@ class FFSTableDataSource: NSObject {
     let leagueTableCellIdentifier = "LeagueTableCell"
     
     fileprivate let realm = try! Realm()
-    fileprivate lazy var teamData: Results<TeamData> = { self.realm.objects(TeamData.self) }()
+    lazy var teamData: Results<TeamData> = { self.realm.objects(TeamData.self) }()
     
 
     var delegate: FFSTableDataSourceDelegate?
@@ -55,6 +55,7 @@ class FFSTableDataSource: NSObject {
                     newTeamData.id = teamData.pos
                     newTeamData.points = teamData.points
                     newTeamData.position = teamData.pos
+                    newTeamData.image = teamData.image
                     self.realm.add(newTeamData)
                   
                 }
@@ -101,8 +102,10 @@ class FFSTableDataSource: NSObject {
             default:
                 imageName = "third"
             }
-            let image: UIImage = UIImage(named: imageName)!
-            cell.positionImageView?.image = image
+            
+            if let image = UIImage(named: imageName) {
+                cell.positionImageView?.image = image
+            }
             cell.positionLabel?.isHidden = true
             cell.positionImageView?.isHidden = false
         } else {
@@ -114,6 +117,13 @@ class FFSTableDataSource: NSObject {
         cell.mainTitleLabel?.text = team.name
         cell.subtitleLabel?.text = team.name
         cell.pointsLabel?.text = String(team.points)
+
+        
+        if team.image.count > 0 {
+            let spacing:CGFloat = 3
+            cell.changeImageView?.image = UIImage(named: team.image)?.imageWithInsets(insets: UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing))
+        
+        }
     }
     
     // ------------------------------------------------------------------------------------------------------------

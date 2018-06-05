@@ -238,6 +238,7 @@
                         <viewLayoutGuide key="safeArea" id="vXs-i9-hA2"/>
                     </view>
                     <connections>
+                        <outlet property="calendarBar" destination="f8o-sr-Hla" id="kzQ-lN-Rhy"/>
                         <outlet property="tableView" destination="bot-0G-mJP" id="Lw7-Gp-dbN"/>
                     </connections>
                 </viewController>
@@ -316,6 +317,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="oO5-wf-u9O"/>
                     <connections>
+                        <outlet property="calendarBar" destination="gdQ-X1-x3d" id="6aa-qb-Nle"/>
                         <outlet property="chartView" destination="cXD-ov-QKg" id="yhF-hI-NwQ"/>
                         <outlet property="tabView" destination="3ac-7Z-n04" id="cmT-9W-q5h"/>
                         <outlet property="tableHeight" destination="TcV-Xl-xDD" id="LFR-6K-U0G"/>
