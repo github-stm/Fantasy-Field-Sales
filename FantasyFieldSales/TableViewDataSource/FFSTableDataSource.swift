@@ -176,10 +176,9 @@ extension FFSTableDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.leagueTable.rowHeight
     }
-    
-
-    
+  
 }
+
 // UITableViewDelegate
 extension FFSTableDataSource: UITableViewDelegate {
     

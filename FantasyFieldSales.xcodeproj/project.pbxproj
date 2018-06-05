@@ -13,7 +13,6 @@
 		5A0A11B820A2FDD100A0E887 /* FullTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0A11B720A2FDD100A0E887 /* FullTableViewController.swift */; };
 		5A0A11BA20A300B700A0E887 /* LeagueTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A0A11B920A300B700A0E887 /* LeagueTableCell.xib */; };
 		5A0A11C220A31A5A00A0E887 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0A11C120A31A5A00A0E887 /* DateExtension.swift */; };
-		5A26C7B320A34B2C00B5AB44 /* ParallaxHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26C7B220A34B2C00B5AB44 /* ParallaxHeaderView.swift */; };
 		5A26C7B520A3619500B5AB44 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A26C7B420A3619500B5AB44 /* ContentViewController.swift */; };
 		5A2C6E7E20BD919E00FE3595 /* MonthYearPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A2C6E7D20BD919E00FE3595 /* MonthYearPickerView.xib */; };
 		5A2C6E8120BDADCE00FE3595 /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A2C6E8020BDADCE00FE3595 /* TitleView.xib */; };
@@ -83,7 +82,6 @@
 		5A0A11B720A2FDD100A0E887 /* FullTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullTableViewController.swift; sourceTree = "<group>"; };
 		5A0A11B920A300B700A0E887 /* LeagueTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueTableCell.xib; sourceTree = "<group>"; };
 		5A0A11C120A31A5A00A0E887 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		5A26C7B220A34B2C00B5AB44 /* ParallaxHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderView.swift; sourceTree = "<group>"; };
 		5A26C7B420A3619500B5AB44 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		5A2C6E7D20BD919E00FE3595 /* MonthYearPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthYearPickerView.xib; sourceTree = "<group>"; };
 		5A2C6E8020BDADCE00FE3595 /* TitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
@@ -197,13 +195,13 @@
 		5A5896AB20A19AB100D6822F /* FantasyFieldSales */ = {
 			isa = PBXGroup;
 			children = (
-				5AC86FB620B4310100D3BA0B /* Component */,
-				5AB4ED4320B30D8700608DA1 /* Realm */,
 				5A5896AC20A19AB100D6822F /* AppDelegate.swift */,
 				5A5896B020A19AB100D6822F /* Main.storyboard */,
 				5A5896B320A19AB300D6822F /* Assets.xcassets */,
 				5A5896B820A19AB300D6822F /* Info.plist */,
 				5A5896B520A19AB300D6822F /* LaunchScreen.storyboard */,
+				5AC86FB620B4310100D3BA0B /* Component */,
+				5AB4ED4320B30D8700608DA1 /* Realm */,
 				5A5896C520A1A19000D6822F /* Managers */,
 				5AE1557D20AB381D00D25C07 /* SupportingFiles */,
 				5A7ABC9420AD7F7E0011987B /* Layout */,
@@ -267,7 +265,6 @@
 				5AA1D13620B5AB0300B2B63E /* TabDialog */,
 				5AC86FAD20B410A000D3BA0B /* Calendar */,
 				5A7ABC9A20ADBDF30011987B /* Alert */,
-				5A26C7B220A34B2C00B5AB44 /* ParallaxHeaderView.swift */,
 				5A7249C920C017CE0046DC46 /* MainTabBar.swift */,
 			);
 			path = View;
@@ -607,7 +604,6 @@
 				5AA1D13C20B5B29200B2B63E /* UIViewGestureExtensions.swift in Sources */,
 				5A5896DB20A1DE1F00D6822F /* HomePageViewController.swift in Sources */,
 				5A5896CA20A1A22200D6822F /* UIImageExtension.swift in Sources */,
-				5A26C7B320A34B2C00B5AB44 /* ParallaxHeaderView.swift in Sources */,
 				5A69B30920A5A156003CBB04 /* UIViewExtension.swift in Sources */,
 				5A5896CC20A1A24700D6822F /* UIColorExtension.swift in Sources */,
 				5A7ABC9620AD7FB90011987B /* MoreCollectionViewLayout.swift in Sources */,

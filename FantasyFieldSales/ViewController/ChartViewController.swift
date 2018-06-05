@@ -20,18 +20,14 @@ private class CubicLineSampleFillFormatter: IFillFormatter {
 class ChartViewController: UIViewController {
     
     @IBOutlet weak var chartView: LineChartView!
-
-    var dataSource = FFSTableDataSource()
-    
     @IBOutlet weak var tableView: UITableView?
-    
     @IBOutlet weak var tabView: ScrollTabView?
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
     
     let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize) ?? UIFont.systemFont(ofSize: 15, weight: .light)
     
     var chartData = Constants.chartData
-    
+    var dataSource = FFSTableDataSource()
     var lineChartEntry = [ChartDataEntry]()
     var lineChartEntry2 = [ChartDataEntry]()
     var allLineChartDataSets: [LineChartDataSet] = [LineChartDataSet]()
@@ -99,7 +95,7 @@ class ChartViewController: UIViewController {
         chartView.dragEnabled = true
         chartView.setScaleEnabled(true)
         chartView.pinchZoomEnabled = false
-        chartView.maxHighlightDistance = 300
+       // chartView.maxHighlightDistance = 300
         chartView.rightAxis.enabled = false
         chartView.legend.enabled = true
         
@@ -108,19 +104,8 @@ class ChartViewController: UIViewController {
         setChartData()
         
         
-//        let l = chartView.legend
-//        l.horizontalAlignment = .left
-//        l.verticalAlignment = .bottom
-//        l.orientation = .horizontal
-//        l.drawInside = false
-//        l.form = .circle
-//        l.formSize = 9
-//        l.font = UIFont(name: "HelveticaNeue-Light", size: 11)!
-//        l.xEntrySpace = 4
-
-        
         let marker = XYMarkerView(color: UIColor(white: 180/250, alpha: 1),
-                                  font: .systemFont(ofSize: 12),
+                                  font: .systemFont(ofSize: 14),
                                   textColor: .white,
                                   insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8),
                                   xAxisValueFormatter: chartView.xAxis.valueFormatter!)
@@ -129,11 +114,11 @@ class ChartViewController: UIViewController {
         chartView.marker = marker
 
         
-        
         chartView.animate(xAxisDuration: 2, yAxisDuration: 2)
         for set in chartView.data!.dataSets as! [LineChartDataSet] {
             set.drawFilledEnabled = !set.drawFilledEnabled
         }
+ 
         chartView.setNeedsDisplay()
     }
     
@@ -177,6 +162,7 @@ class ChartViewController: UIViewController {
         lineChartDataSet.fillAlpha = fillalpha
         lineChartDataSet.drawHorizontalHighlightIndicatorEnabled = false
         lineChartDataSet.fillFormatter = CubicLineSampleFillFormatter()
+        lineChartDataSet.drawValuesEnabled = false
         
         return lineChartDataSet
     }
@@ -206,11 +192,11 @@ class ChartViewController: UIViewController {
     
     func setChartDataSet() {
 
-        let lineDataSet = getLineChartDataSet(values: getLineEntry(), lineColor: ColorManager.Chart.line, fillColor:ColorManager.Chart.fill, fillalpha: 0.7, label:"Temp")
+        let lineDataSet = getLineChartDataSet(values: getLineEntry(), lineColor: ColorManager.Chart.line, fillColor:ColorManager.Chart.fill, fillalpha: 0.7, label:"Team")
         allLineChartDataSets.append(lineDataSet)
         
 
-        let lineDataSet2 = getLineChartDataSet(values: getAverageLineEntry(), lineColor: ColorManager.Chart.avgLine, fillColor:ColorManager.Chart.avgFill, fillalpha: 0.7, label:"Test")
+        let lineDataSet2 = getLineChartDataSet(values: getAverageLineEntry(), lineColor: ColorManager.Chart.avgLine, fillColor:ColorManager.Chart.avgFill, fillalpha: 0.7, label:"Average")
         allLineChartDataSets.append(lineDataSet2)
 
     }
@@ -218,8 +204,7 @@ class ChartViewController: UIViewController {
     
     func setChartData() {
 
-       setChartDataSet()
-
+        setChartDataSet()
         let data = LineChartData(dataSets: allLineChartDataSets)
         data.setValueFont(font)
         chartView.data = data

@@ -37,23 +37,7 @@ class HomeViewController: UIViewController {
         
     }
     
-    func addParallaxToView(vw: UIView) {
-        let amount = 246
-        
-        let horizontal = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
-        horizontal.minimumRelativeValue = -amount
-        horizontal.maximumRelativeValue = amount
-        
-        let vertical = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
-        vertical.minimumRelativeValue = -amount
-        vertical.maximumRelativeValue = amount
-        
-        let group = UIMotionEffectGroup()
-        group.motionEffects = [horizontal, vertical]
-        vw.addMotionEffect(group)
-        
-    }
-    
+
    
     
     override func viewDidLoad() {
@@ -85,10 +69,6 @@ class HomeViewController: UIViewController {
         self.tableView?.bounces = true
 
         tabView?.reloadData(data: Constants.teamGroup)
-        
-        addParallaxToView(vw: pageView!)
-//        let parallaxViewFrame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 246)
-//        self.pageView = ParallaxHeaderView(frame: parallaxViewFrame)
 
     }
 
@@ -108,7 +88,7 @@ extension HomeViewController: UIScrollViewDelegate {
 
         // Make the scroll of a TableView inside ScrollView behave naturally
         if let scrollView = self.scrollView, let tableView = self.tableView {  //height of all views above tableview
-            tableView.isScrollEnabled = scrollView.contentOffset.y >= CGFloat(tableView.frame.origin.y)
+           /// tableView.isScrollEnabled = scrollView.contentOffset.y >= CGFloat(tableView.frame.origin.y)
         }
         
         if scrollView == self.tableView, let tableView = self.tableView  {
