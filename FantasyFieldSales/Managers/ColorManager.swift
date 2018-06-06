@@ -77,6 +77,9 @@ class ColorManager: UIColor {
         static let moreButtonBackground =  colorWhite
         static let moreButtonText =  colorBlack
         static let moreBorder = colorBlack
+        
+        
+         static let footerBackground = colorWhite
        
 
     }
@@ -110,6 +113,16 @@ class ColorManager: UIColor {
         static let monthText = colorWhite
     }
     
+    
+    struct News {
+        static let headerBackground = colorBlack
+        static let headerText = colorWhite
+        
+        static let bodyBackground = colorGold
+        static let bodyText = colorBlack
+    }
+    
+    
     struct TabDialog {
         
         static let background = colorMidGrey
@@ -132,6 +145,15 @@ class ColorManager: UIColor {
         static let text = colorWhite
         
         
+    }
+    
+    
+    struct More {
+        static let topBackground = colorGold
+        static let topText = colorBlack
+        
+        static let bottomBackground = colorWhite
+        static let bottomText = colorGold
     }
 
 }

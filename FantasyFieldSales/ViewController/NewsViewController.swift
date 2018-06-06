@@ -19,33 +19,31 @@ class NewsViewController: UIViewController {
     
     var newsImageName = ""
     
-    override func viewDidDisappear(_ animated: Bool) {
-//        let contentVC =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//
-//        contentVC.itemIndex = index
-//        contentVC.backgroundImage = Constants.backgroundImageContent[index]
-//        return contentVC
-    }
-    
+    // ------------------------------------------------------------------------------------------------------------
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let headerFont = UIFont(name: Constants.font.boldFont, size:  Constants.fontSize.largeFontSize)
-        let bodyFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.mediumFontSize)
+        let headerFont = UIFont(name: Constants.font.boldFont, size:  Constants.fontSize.mediumFontSize)
+        let bodyFont = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
         
-        headerView?.backgroundColor = ColorManager.TableTitle.background
+        headerView?.backgroundColor = ColorManager.News.headerBackground
+        bodyView?.backgroundColor = ColorManager.News.bodyBackground
         
         if let backgroundImage = UIImage(named: newsImageName) {
             headerImageView?.image =  backgroundImage
         }
      
+        
+        
         headerLabel?.font = headerFont
-        headerLabel?.textColor = ColorManager.white
+        headerLabel?.textColor = ColorManager.News.headerText
         headerLabel?.textAlignment = .left
         headerLabel?.text = Constants.text.newsHeader
         headerLabel?.numberOfLines = 0
@@ -55,17 +53,17 @@ class NewsViewController: UIViewController {
 
         bodyView?.backgroundColor = ColorManager.white
         bodyLabel?.font = bodyFont
-        bodyLabel?.textColor = ColorManager.TableTitle.text
+        bodyLabel?.textColor = ColorManager.News.bodyText
         bodyLabel?.textAlignment = .left
-        bodyLabel?.text = Constants.text.newsHeader
+        bodyLabel?.text = Constants.text.newsBody
         bodyLabel?.numberOfLines = 0
         bodyLabel?.lineBreakMode = .byWordWrapping
-        
-        
-        bodyLabel?.text = Constants.text.newsBody
+
 
     }
 
+    // ------------------------------------------------------------------------------------------------------------
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

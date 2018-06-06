@@ -28,31 +28,39 @@ class HomePageViewController: UIPageViewController {
     var contentController:ContentViewController?
     var contentControllers: [ContentViewController]?
     
-
+    // ------------------------------------------------------------------------------------------------------------
+    
     override var shouldAutorotate: Bool {
         return true
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     override init(transitionStyle style: UIPageViewControllerTransitionStyle, navigationOrientation: UIPageViewControllerNavigationOrientation, options: [String : Any]?) {
         // Default PageViewController transitionStyle to Scroll mode.
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: options)
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
     override func viewWillAppear(_ animated: Bool) {
          setPageViewController(animated: false)
     }
     
+    // ------------------------------------------------------------------------------------------------------------
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,10 +76,14 @@ class HomePageViewController: UIPageViewController {
         self.view.addGestureRecognizer(tap)
         
     }
-
+    
+    // ------------------------------------------------------------------------------------------------------------
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     func configurePageControl() {
         self.pageControl = UIPageControl(frame: CGRect(x: 0,y: 50, width: UIScreen.main.bounds.width, height: 50))
@@ -91,6 +103,7 @@ class HomePageViewController: UIPageViewController {
         }
     }
 
+    // ------------------------------------------------------------------------------------------------------------
     
     func setPageViewController(animated:Bool){
         if Constants.backgroundImageContent.count > 0 {
@@ -101,6 +114,8 @@ class HomePageViewController: UIPageViewController {
         }
         
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         
@@ -129,8 +144,7 @@ class HomePageViewController: UIPageViewController {
         }
     }
     
-   
-    
+    // ------------------------------------------------------------------------------------------------------------
     
     func getContentViewController(withIndex index:Int) -> ContentViewController? {
      
@@ -143,6 +157,7 @@ class HomePageViewController: UIPageViewController {
 }
 
 
+// ------------------------------------------------------------------------------------------------------------
 
 extension HomePageViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
@@ -154,12 +169,15 @@ extension HomePageViewController: UIGestureRecognizerDelegate {
     }
 }
 
+// ------------------------------------------------------------------------------------------------------------
 
 extension HomePageViewController: UIPageViewControllerDelegate {
 
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return Constants.backgroundImageContent.count
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if let viewController = pageViewController.viewControllers?.first as? ContentViewController {
@@ -170,6 +188,7 @@ extension HomePageViewController: UIPageViewControllerDelegate {
    
 }
 
+// ------------------------------------------------------------------------------------------------------------
 
 // MARK: UIPageViewControllerDataSource
 
@@ -185,6 +204,7 @@ extension HomePageViewController: UIPageViewControllerDataSource {
         return nil
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerAfter viewController: UIViewController) -> UIViewController? {
@@ -197,7 +217,8 @@ extension HomePageViewController: UIPageViewControllerDataSource {
         
     }
     
-   
+    // ------------------------------------------------------------------------------------------------------------
+    
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
         return Constants.backgroundImageContent.count
     }

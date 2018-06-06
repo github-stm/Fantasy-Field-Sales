@@ -12,10 +12,6 @@ import UIKit
 
 extension MonthYearAlert: MonthYearPickerViewDelegate {
     
-//    func selectedRow(row:Int, rowTitle:String) {
-//        print("row \(row)  title \(rowTitle)")
-//        // rowTitle.stringToDate(format: Constants.dateFormat.monthYear))!)
-//    }
 
     func okButtonTapped() {
        didTappedOnBackgroundView()

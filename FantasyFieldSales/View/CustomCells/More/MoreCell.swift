@@ -35,16 +35,20 @@ class MoreCell: UICollectionViewCell {
         
         for label: UILabel in labels {
             label.font = font
-            label.textColor = ColorManager.LeagueTable.rowText
+            label.textColor = ColorManager.More.bottomText
             label.textAlignment = .center
             label.backgroundColor = UIColor.clear
             label.isUserInteractionEnabled = false
         }
         
-        topView?.backgroundColor = UIColor.red
+        topView?.backgroundColor = ColorManager.More.topBackground
         topView?.isUserInteractionEnabled = false
-        bottomView?.backgroundColor = UIColor.blue
+        bottomView?.backgroundColor = ColorManager.More.bottomBackground
         bottomView?.isUserInteractionEnabled = false
+        
+        self.layer.borderWidth = 2
+        self.layer.borderColor =  UIColor.black.cgColor
+        self.layer.cornerRadius = 5
 
         
     }

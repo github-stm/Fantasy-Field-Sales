@@ -61,8 +61,7 @@ class CalendarBar: UIView {
         let calendar = NSCalendar.init(calendarIdentifier: NSCalendar.Identifier.gregorian)
         let currentMonth = (calendar?.component(NSCalendar.Unit.month, from: date!))!
         let currentYear = (calendar?.component(NSCalendar.Unit.year, from: date!))!
-        print(currentMonth)
-        
+
         let alert = MonthYearAlert(startMonth: currentMonth, startYear: currentYear)
         alert.show(animated: true)
         

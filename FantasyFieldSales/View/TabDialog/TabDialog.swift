@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol TabDialogDelegate {
+    func closeButtonTapped()
+}
+
 class TabDialog: UIView {
 
+    var delegate: TabDialogDelegate?
+    
     @IBOutlet var buttons: [UIButton]!
     
     @IBOutlet weak var aButton: UIButton?
@@ -24,6 +30,13 @@ class TabDialog: UIView {
        buttonSelected(index: sender.tag)
     }
 
+    @IBAction func closeButtonTapped(_ sender: UIButton) {
+        if let delegate = delegate {
+            delegate.closeButtonTapped()
+        }
+    }
+
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initalizeSubviews()

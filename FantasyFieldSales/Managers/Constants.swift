@@ -35,29 +35,29 @@ class Constants: NSObject {
     static let backgroundImageContent = [ "image", "Best Regional image"]
   
     
-    static let teamGroup = ["City", "Regional", "Quality", "Test", "Test2", "Test3"]
+    static let teamGroup = ["City", "Regional", "Quality", "Collage", "Vacancy"]
     // ------------------------------------------------------------------------------------------------------------
     
-    static let teams = [(pos: 1, team: "London North", points: 120, image: "")
-        ,(pos: 2, team: "London South", points: 100, image: "up")
-        ,(pos: 3, team: "South Coast", points: 90, image: "")
-        ,(pos: 4, team: "London North", points: 120, image: "down")
-        ,(pos: 5, team: "London South", points: 100, image: "")
-        ,(pos: 6, team: "South Coast", points: 90, image: "")
-        ,(pos: 7, team: "London North", points: 120, image: "down")
-        ,(pos: 8, team: "London South", points: 100, image: "up")
-        ,(pos: 9, team: "South Coast", points: 90, image: "")
-        ,(pos: 10, team: "London North", points: 120, image: "")
-        ,(pos: 11, team: "London South", points: 100, image: "")
-        ,(pos: 12, team: "South Coast", points: 90, image: "down")
-        ,(pos: 13, team: "South Coast", points: 90, image: "down")
-        ,(pos: 14, team: "London North", points: 120, image: "")
-        ,(pos: 15, team: "London South", points: 100, image: "")
-        ,(pos: 16, team: "South Coast", points: 90, image: "up")
-        ,(pos: 17, team: "London North", points: 120, image: "")
-        ,(pos: 18, team: "London South", points: 100, image: "")
-        ,(pos: 19, team: "South Coast", points: 90, image: "")
-        ,(pos: 20, team: "London North", points: 120, image: "")
+    static let teams = [(pos: 1, team: "London North", points: 150, image: "")
+        ,(pos: 2, team: "Glassgow", points: 140, image: "up")
+        ,(pos: 3, team: "Edinburgh", points: 127, image: "")
+        ,(pos: 4, team: "Bristol", points: 120, image: "down")
+        ,(pos: 5, team: "Cardiff & Swansea", points: 115, image: "")
+        ,(pos: 6, team: "Brighton", points: 98, image: "")
+        ,(pos: 7, team: "South West London", points: 97, image: "down")
+        ,(pos: 8, team: "Nottingham", points: 83, image: "up")
+        ,(pos: 9, team: "Leicester", points: 80, image: "")
+        ,(pos: 10, team: "Liverpool", points: 75, image: "")
+        ,(pos: 11, team: "Mancheastor", points: 74, image: "")
+        ,(pos: 12, team: "Devon", points: 67, image: "down")
+        ,(pos: 13, team: "South Coast", points: 65, image: "down")
+        ,(pos: 14, team: "Hull", points: 44, image: "")
+        ,(pos: 15, team: "Bournemouth", points: 42, image: "")
+        ,(pos: 16, team: "Newcastle", points: 31, image: "up")
+        ,(pos: 17, team: "South Wales", points: 29, image: "")
+        ,(pos: 18, team: "London South", points: 25, image: "")
+        ,(pos: 19, team: "South Coast", points: 20, image: "")
+        ,(pos: 20, team: "Birmingham", points: 17, image: "")
    
     ]
 
@@ -97,14 +97,14 @@ class Constants: NSObject {
     
     // ------------------------------------------------------------------------------------------------------------
     
-    struct Notification
+    struct notification
     {
         static let dateSelectedNotification = "DateSelectedNotification"
     }
 
     // ------------------------------------------------------------------------------------------------------------
     
-    struct CallToActionButton {
+    struct callToActionButton {
         static let borderWidth:CGFloat = 2
     }
     

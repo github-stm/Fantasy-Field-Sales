@@ -130,7 +130,7 @@ class MonthYearPickerView: UIView {
         if let delegate = self.delegatePickerView {
             if let year = self.year, let month = self.month, let date = Calendar.current.date(from: DateComponents(year: year, month: month, day: 15)) {
                  delegate.okButtonTapped()
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.Notification.dateSelectedNotification), object: nil, userInfo: ["date": date])
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.notification.dateSelectedNotification), object: nil, userInfo: ["date": date])
             }
         }
     }

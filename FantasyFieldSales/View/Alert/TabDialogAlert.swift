@@ -14,16 +14,21 @@ class TabDialogAlert: UIView, Modal {
     var dialogView = UIView()
     var tabDialog: TabDialog?
 
+    // ------------------------------------------------------------------------------------------------------------
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         initialize()
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     func initialize(){
 
@@ -35,19 +40,24 @@ class TabDialogAlert: UIView, Modal {
 
         //Need to set initial width so the calculation for dialog height is accurate
         tabDialog = TabDialog(frame:CGRect(x: 0, y: 0, width: width, height: 150))
+        tabDialog?.delegate = self
+        
+        var height:CGFloat = 200
+        if let tabDialog = tabDialog, let button = tabDialog.aButton,  let titleLabel = tabDialog.titleLabel, let infoLabel = tabDialog.infoLabel {
+            
+            height = (subViewPadding * 2) + button.frame.size.height + titleLabel.frame.size.height + infoLabel.frame.size.height + 24.0
+            
+            tabDialog.frame.size = CGSize(width: width, height: height)
+            
+        }
 
-        let height: CGFloat = (subViewPadding * 2) + (tabDialog!.aButton?.frame.size.height)! + (tabDialog!.titleLabel?.frame.size.height)! + (tabDialog!.infoLabel?.frame.size.height)! + 24.0
-
-        tabDialog?.frame.size = CGSize(width: width, height: height)
 
         dialogView.clipsToBounds = true
         
         backgroundView.frame = frame
         backgroundView.backgroundColor = UIColor.black
         backgroundView.alpha = 0.6
-//        backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedOnBackgroundView)))
-//
-        
+
         backgroundView.addTapGestureRecognizer {
             self.dismiss(animated: true)
         }
@@ -59,12 +69,20 @@ class TabDialogAlert: UIView, Modal {
         dialogView.frame.size = CGSize(width: width , height: height)
         dialogView.backgroundColor = UIColor.white
         dialogView.layer.cornerRadius = 6
-        print(dialogView.frame)
         addSubview(dialogView)
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     @objc func didTappedOnBackgroundView(){
         dismiss(animated: true)
     }
 
+}
+
+
+extension TabDialogAlert: TabDialogDelegate {
+    func closeButtonTapped() {
+        dismiss(animated: true)
+    }
 }

@@ -34,12 +34,10 @@ class MoreViewController: UIViewController {
         self.collectionView?.delegate = self.dataSource
         self.collectionView?.dataSource = self.dataSource
         
-       // self.collectionView?.register(UINib(nibName: "MoreCell", bundle: nil), forCellWithReuseIdentifier: "MoreCell")
+        self.collectionView?.register(UINib(nibName: "MoreCell", bundle: nil), forCellWithReuseIdentifier: "MoreCell")
         collectionView?.backgroundColor = UIColor.clear
         
- 
-        
-        let alert = CustomAlert(title: "Hello there!! 👋🏻👋🏻", image: UIImage(named: "starOn")!)
+        let alert = TabDialogAlert()
         alert.show(animated: true)
 
     }

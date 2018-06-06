@@ -14,16 +14,20 @@ class ContentViewController: UIViewController {
     var backgroundImage = ""
     var itemIndex:Int = 0
     
-
+    @IBOutlet weak var imageView: UIImageView?
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let backgroundImage = UIImage(named: backgroundImage) {
-            self.view.backgroundColor =  UIColor(patternImage: backgroundImage)
+            imageView?.image =  backgroundImage
         }
 
     }
 
+    // ------------------------------------------------------------------------------------------------------------
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

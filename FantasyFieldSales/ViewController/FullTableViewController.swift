@@ -25,8 +25,10 @@ class FullTableViewController: UIViewController, UIPickerViewDelegate, CNContact
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
 
-        NotificationCenter.default.addObserver(self, selector:#selector(FullTableViewController.dateSelected(_:)), name: NSNotification.Name(rawValue: Constants.Notification.dateSelectedNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(FullTableViewController.dateSelected(_:)), name: NSNotification.Name(rawValue: Constants.notification.dateSelectedNotification), object: nil)
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     @objc func dateSelected(_ notification: Notification){
         if let info = notification.userInfo, let infoDescription = info["date"] as? Date {
@@ -35,9 +37,13 @@ class FullTableViewController: UIViewController, UIPickerViewDelegate, CNContact
         }
     }
 
+    // ------------------------------------------------------------------------------------------------------------
+    
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +59,14 @@ class FullTableViewController: UIViewController, UIPickerViewDelegate, CNContact
  
     }
 
+    // ------------------------------------------------------------------------------------------------------------
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    // ------------------------------------------------------------------------------------------------------------
     
     // A deinitializer is called immediately before a class instance is deallocated.
     deinit {
@@ -67,6 +76,7 @@ class FullTableViewController: UIViewController, UIPickerViewDelegate, CNContact
 
 }
 
+// ------------------------------------------------------------------------------------------------------------
 
 extension FullTableViewController: FFSTableDataSourceDelegate {
     
@@ -82,6 +92,10 @@ extension FullTableViewController: FFSTableDataSourceDelegate {
             let chartViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChartViewController") as! ChartViewController
             chartViewController.selectedItem = selectedItem
             self.navigationController?.pushViewController(chartViewController, animated: true)
+        
+            let backItem = UIBarButtonItem()
+            backItem.title = "Back"
+            navigationItem.backBarButtonItem = backItem
         
 //        } else {
 //            let contactPickerViewController = CNContactPickerViewController()

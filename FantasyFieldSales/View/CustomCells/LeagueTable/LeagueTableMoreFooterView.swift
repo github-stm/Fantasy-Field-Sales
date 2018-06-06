@@ -48,6 +48,7 @@ class LeagueTableMoreFooterView: UIView {
     
     func commonInit(){
 
+        self.backgroundColor = ColorManager.LeagueTable.footerBackground
         contentView?.backgroundColor = UIColor.clear
         
         let font = UIFont(name: Constants.font.regularFont, size:  Constants.fontSize.smallFontSize)
@@ -64,6 +65,8 @@ class LeagueTableMoreFooterView: UIView {
         moreButton?.setBackgroundImage(backgroundImage, for: .normal)
         backgroundImage = UIImage().imageWithColor(ColorManager.LeagueTable.moreButtonBackground)
         moreButton?.setBackgroundImage(backgroundImage, for: .selected)
+        
+        
         
     }
 

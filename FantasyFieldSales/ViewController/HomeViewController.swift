@@ -28,7 +28,8 @@ class HomeViewController: UIViewController {
     var pageController = HomePageViewController()
     
     
-
+    // ------------------------------------------------------------------------------------------------------------
+    
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
 //        let alert = MenuAlert(menuPosition: .Right)
@@ -36,41 +37,38 @@ class HomeViewController: UIViewController {
         
     }
     
-
-   
+    // ------------------------------------------------------------------------------------------------------------
     
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        
+        titleView?.titleLabel?.text = Constants.text.stats.uppercased()
+        setUpPageView()
+
+        dataSource.delegate = self
+        self.tableView?.delegate = self.dataSource
+        self.tableView?.dataSource = self.dataSource
+        tabView?.delegate = self
+        scrollView?.delegate = self
+
+        customizeAppearance()
+
+    }
+
+    // ------------------------------------------------------------------------------------------------------------
+    
+    func setUpPageView(){
         if let frame = pageView?.frame {
             pageController.view.frame = frame
             pageController.delegateHomePageViewController = self
             pageView?.addSubview(pageController.view)
             pageController.didMove(toParentViewController: self)
         }
-
-        
-        dataSource.delegate = self
-        self.tableView?.delegate = self.dataSource
-        self.tableView?.dataSource = self.dataSource
-        
-        titleView?.titleLabel?.text = Constants.text.stats.uppercased()
-        
-        tabView?.delegate = self
-        scrollView?.delegate = self
-        //Set table height to cover entire view
-        //if navigation bar is not translucent, reduce navigation bar height from view height
-        tableHeight.constant = (3  * Constants.leagueTable.rowHeight) + Constants.leagueTable.headerHeight + Constants.leagueTable.footerHeight
-        self.tableView?.isScrollEnabled = false
-        //no need to write following if checked in storyboard
-        self.scrollView?.bounces = false
-        self.tableView?.bounces = true
-
-        tabView?.reloadData(data: Constants.teamGroup)
-
     }
-
   
+    // ------------------------------------------------------------------------------------------------------------
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "homeNews" {
             if let vc = segue.destination as? NewsViewController {
@@ -80,14 +78,30 @@ class HomeViewController: UIViewController {
         }
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    // ------------------------------------------------------------------------------------------------------------
+    
+    func customizeAppearance(){
+        tableHeight.constant = (3  * Constants.leagueTable.rowHeight) + Constants.leagueTable.headerHeight + Constants.leagueTable.footerHeight
+        self.tableView?.isScrollEnabled = false
+        self.scrollView?.bounces = false
+        self.tableView?.bounces = true
+        tabView?.reloadData(data: Constants.teamGroup)
+        
+        let logo = UIImage(named: "JW gold")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+    }
     
 }
+
+// ------------------------------------------------------------------------------------------------------------
 
 extension HomeViewController: UIScrollViewDelegate {
 
@@ -107,6 +121,7 @@ extension HomeViewController: UIScrollViewDelegate {
 }
 
 
+// ------------------------------------------------------------------------------------------------------------
 
 extension HomeViewController: FFSTableDataSourceDelegate {
     
@@ -114,10 +129,14 @@ extension HomeViewController: FFSTableDataSourceDelegate {
         print("\(indexPath.row)")
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     internal func moreButtonTapped(){
         performSegue(withIdentifier: "homeFullTable", sender: self)
     }
 }
+
+// ------------------------------------------------------------------------------------------------------------
 
 extension HomeViewController: HomePageViewControllerDelegate {
     func homeNewsTapped(currentPage:Int) {
@@ -125,6 +144,8 @@ extension HomeViewController: HomePageViewControllerDelegate {
         performSegue(withIdentifier: "homeNews", sender: self)
     }
 }
+
+// ------------------------------------------------------------------------------------------------------------
 
 extension HomeViewController :ScrollTabViewDelegate {
     func selectedItem(indexPath: IndexPath) {

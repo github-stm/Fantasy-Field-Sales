@@ -18,6 +18,8 @@ private class CubicLineSampleFillFormatter: IFillFormatter {
 }
 
 
+// ------------------------------------------------------------------------------------------------------------
+
 
 class ChartViewController: UIViewController {
     
@@ -46,8 +48,10 @@ class ChartViewController: UIViewController {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         
-        NotificationCenter.default.addObserver(self, selector:#selector(FullTableViewController.dateSelected(_:)), name: NSNotification.Name(rawValue: Constants.Notification.dateSelectedNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(FullTableViewController.dateSelected(_:)), name: NSNotification.Name(rawValue: Constants.notification.dateSelectedNotification), object: nil)
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     @objc func dateSelected(_ notification: Notification){
         if let info = notification.userInfo, let infoDescription = info["date"] as? Date {
@@ -56,14 +60,18 @@ class ChartViewController: UIViewController {
         }
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         dataSource.delegate = self
         self.tableView?.delegate = self.dataSource
         self.tableView?.dataSource = self.dataSource
@@ -78,23 +86,16 @@ class ChartViewController: UIViewController {
 
         tabView?.delegate = self
 
-        //Set table height to cover entire view
-        //if navigation bar is not translucent, reduce navigation bar height from view height
         tableHeight.constant = Constants.leagueTable.rowHeight + Constants.leagueTable.headerHeight
         self.tableView?.isScrollEnabled = false
 
-        
-   
-        
-        
         tabView?.reloadData(data: Constants.teamGroup)
-
         setUpChart()
- 
-        
+
     }
     
-
+    // ------------------------------------------------------------------------------------------------------------
+    
      func updateChartData() {
         if self.shouldHideData {
             chartView.data = nil
@@ -104,6 +105,7 @@ class ChartViewController: UIViewController {
         //self.setDataCount(Int(sliderX.value) + 1, range: UInt32(sliderY.value))
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
     func setUpChart(){
         chartView.setViewPortOffsets(left: 0, top: 20, right: 0, bottom: 50)
@@ -112,7 +114,6 @@ class ChartViewController: UIViewController {
         chartView.dragEnabled = true
         chartView.setScaleEnabled(true)
         chartView.pinchZoomEnabled = false
-       // chartView.maxHighlightDistance = 300
         chartView.rightAxis.enabled = false
         chartView.legend.enabled = true
         
@@ -139,6 +140,7 @@ class ChartViewController: UIViewController {
         chartView.setNeedsDisplay()
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
     func setupXAxis(){
         
@@ -157,6 +159,7 @@ class ChartViewController: UIViewController {
         xAxis.labelPosition = XAxis.LabelPosition.bottom
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
     func setupYAxis(){
         let yAxis = chartView.leftAxis
@@ -166,6 +169,8 @@ class ChartViewController: UIViewController {
         yAxis.labelPosition = .insideChart
         yAxis.axisLineColor = ColorManager.Chart.text
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     func getLineChartDataSet(values: [ChartDataEntry], lineColor:UIColor, fillColor:UIColor, fillalpha: CGFloat, label:String) -> LineChartDataSet{
 
@@ -184,6 +189,8 @@ class ChartViewController: UIViewController {
         return lineChartDataSet
     }
     
+    // ------------------------------------------------------------------------------------------------------------
+    
     func getLineEntry() -> [ChartDataEntry]{
         
         var chartDataEntry: [ChartDataEntry] = []
@@ -196,6 +203,8 @@ class ChartViewController: UIViewController {
         return chartDataEntry
     }
 
+    // ------------------------------------------------------------------------------------------------------------
+    
     func getAverageLineEntry() -> [ChartDataEntry]{
         var chartDataEntry: [ChartDataEntry] = []
         for i in 0..<chartData.count {
@@ -206,6 +215,8 @@ class ChartViewController: UIViewController {
         
         return chartDataEntry
     }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     func setChartDataSet() {
 
@@ -218,19 +229,18 @@ class ChartViewController: UIViewController {
 
     }
     
+    // ------------------------------------------------------------------------------------------------------------
     
     func setChartData() {
-
         setChartDataSet()
         let data = LineChartData(dataSets: allLineChartDataSets)
         data.setValueFont(font)
         chartView.data = data
-
     }
     
-
 }
 
+// ------------------------------------------------------------------------------------------------------------
 
 extension ChartViewController: FFSTableDataSourceDelegate {
     
@@ -238,6 +248,8 @@ extension ChartViewController: FFSTableDataSourceDelegate {
         print("\(indexPath.row)")
     }
 }
+
+// ------------------------------------------------------------------------------------------------------------
 
 extension ChartViewController :ScrollTabViewDelegate {
     func selectedItem(indexPath: IndexPath) {

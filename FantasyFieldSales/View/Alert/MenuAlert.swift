@@ -64,7 +64,7 @@ class MenuAlert: UIView, Modal {
         dialogView.frame.size = CGSize(width: Constants.menu.width, height: tableHeight)
         dialogView.backgroundColor = UIColor.white
         dialogView.layer.cornerRadius = 6
-        print(dialogView.frame)
+
         addSubview(dialogView)
     }
     
