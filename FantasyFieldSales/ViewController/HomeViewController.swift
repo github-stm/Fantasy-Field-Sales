@@ -28,6 +28,9 @@ class HomeViewController: UIViewController {
     var pageController = HomePageViewController()
     
     
+    lazy  var hostService: HostService  = IoC.resolve()
+    fileprivate var hosts = [Host]()
+
     // ------------------------------------------------------------------------------------------------------------
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,8 +56,24 @@ class HomeViewController: UIViewController {
         scrollView?.delegate = self
 
         customizeAppearance()
-
+        
+        //test webapi for test url
+      //  hostService.getAllHosts(completion: hostsCompletion)
     }
+    
+
+    
+    fileprivate func hostsCompletion(_ hosts: [Host], _ error: Error?) {
+        if let error = error { fatalError(error.localizedDescription) }
+        self.hosts = hosts
+        
+        for host in hosts{
+            print(host.name)
+        }
+ 
+    }
+
+
 
     // ------------------------------------------------------------------------------------------------------------
     
@@ -82,7 +101,6 @@ class HomeViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // ------------------------------------------------------------------------------------------------------------

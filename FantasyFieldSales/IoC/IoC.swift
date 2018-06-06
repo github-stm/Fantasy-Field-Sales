@@ -22,7 +22,7 @@ public final class IoC {
         _container = container
     }
     
-    public static func resolve<T>() -> T {
+    public static func resolve<T>() -> T { 
         return _container.resolve()
     }
     
