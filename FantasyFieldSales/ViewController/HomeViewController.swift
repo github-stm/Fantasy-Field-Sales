@@ -22,18 +22,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var pageViewHeight: NSLayoutConstraint!
 
     var tabArray:[String]? = []
-    
     var newsImageName = ""
-    
     var currentPage = 0
-    
     var dataSource = FFSTableDataSource(footerType: .ViewFullTable)
     var pageController = HomePageViewController()
     
     
-//    The solution to simultaneously handling the scroll view and the table view revolves around the UIScrollViewDelegate. Therefore, have your view controller conform to that protocol:
 
-    
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
 //        let alert = MenuAlert(menuPosition: .Right)
@@ -133,7 +128,7 @@ extension HomeViewController: HomePageViewControllerDelegate {
 
 extension HomeViewController :ScrollTabViewDelegate {
     func selectedItem(indexPath: IndexPath) {
-        print("2 header view indexpath row\(indexPath.row)")
+        print("header view indexpath row\(indexPath.row)")
     }
 }
 

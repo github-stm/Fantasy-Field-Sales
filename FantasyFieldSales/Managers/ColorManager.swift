@@ -33,6 +33,10 @@ class ColorManager: UIColor {
 
     }
     
+    struct Page {
+        static let current = colorGold
+        static let tint = colorWhite
+    }
     
     struct TabBar {
         static let background = colorBlack

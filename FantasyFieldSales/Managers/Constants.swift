@@ -158,10 +158,15 @@ class Constants: NSObject {
         
         static let stats = "Latest Top Stats Leagues"
         
-        static let newsHeader = "WHSmith 'sorry' for Pinderfields Hospital £7.99 toothpaste"
-        static let newsBody2 = "WHSmith has admitted it made more than £700 by selling single tubes of toothpaste for £7.99 in a hospital. \n The Pinderfields Hospital branch in Wakefield was caught selling Colgate, normally priced at £2.49, by a visitor."
+        static let newsHeader = "Diageo launches and prices four-tranche $2 billion fixed and floating rate USD denominated bonds"
         
-        static let newsBody = "WHSmith has admitted it made more than £700 by selling single tubes of toothpaste for £7.99 in a hospital. \n The Pinderfields Hospital branch in Wakefield was caught selling Colgate, normally priced at £2.49, by a visitor. \n The retailer blamed a pricing error and said proceeds from the sales would be donated to St George's Crypt in Leeds. \n In 2015, WHSmith was accused of exploiting hospital customers after the BBC found it was charging less on the high street. \n The retailer said 89 tubes of toothpaste had been sold in the Pinderfields shop while they were priced at £7.99."
+        static let newsBody = "Diageo, a global leader in beverage alcohol, yesterday launched and priced an SEC-registered $2 billion bond transaction consisting of $500 million floating rate notes due May 2020; $500 million 3.000% notes due May 2020; $500 million 3.500% notes due September 2023; and $500 million 3.875% notes due May 2028.  The issuer of the bonds is Diageo Capital plc, with payment of principal and interest fully and unconditionally guaranteed by Diageo plc."
+        
+        static let newsHeader2 = "Diageo gives consumers a first-person perspective of binge drinking tragedies in groundbreaking virtual reality series"
+        
+        static let newsBody2 = "NORWALK, Conn. (April 24, 2018) – Diageo, a global leader in beverage alcohol, today introduced a new virtual reality (VR) experience that will immerse consumers in a first-person, interactive story about the dangers of binge drinking. Diageo is committed to encourage consumers to drink better, not more, and to reduce harmful drinking. “Decisions: Party’s Over” seeks to reduce binge drinking through innovative technology."
+        
+        
         
     }
    

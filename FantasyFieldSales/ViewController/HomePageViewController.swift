@@ -47,19 +47,19 @@ class HomePageViewController: UIPageViewController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+         setPageViewController(animated: false)
+    }
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.delegate = self
         self.dataSource = self
 
-        if Constants.backgroundImageContent.count > 0 {
-            contentController = getContentViewController(withIndex: 0)
-            contentControllers = [contentController] as? [ContentViewController]
-            
-            setViewControllers(contentControllers, direction: .forward, animated: true, completion: nil)
-        }
-        
+        setPageViewController(animated: true)
         configurePageControl()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
@@ -76,10 +76,9 @@ class HomePageViewController: UIPageViewController {
     func configurePageControl() {
         self.pageControl = UIPageControl(frame: CGRect(x: 0,y: 50, width: UIScreen.main.bounds.width, height: 50))
         self.pageControl.numberOfPages = Constants.backgroundImageContent.count
-        self.pageControl.currentPage = self.currentPage
         self.pageControl.tintColor = .black
-        self.pageControl.pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.3)
-        self.pageControl.currentPageIndicatorTintColor = UIColor.white
+        self.pageControl.pageIndicatorTintColor = ColorManager.Page.tint
+        self.pageControl.currentPageIndicatorTintColor = ColorManager.Page.current
         self.view.addSubview(pageControl)
         
         self.pageControl.translatesAutoresizingMaskIntoConstraints = false
@@ -92,6 +91,17 @@ class HomePageViewController: UIPageViewController {
         }
     }
 
+    
+    func setPageViewController(animated:Bool){
+        if Constants.backgroundImageContent.count > 0 {
+            contentController = getContentViewController(withIndex: currentPage)
+            contentControllers = [contentController] as? [ContentViewController]
+            
+            setViewControllers(contentControllers, direction: .forward, animated: animated, completion: nil)
+        }
+        
+    }
+    
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         
         
@@ -114,7 +124,7 @@ class HomePageViewController: UIPageViewController {
             self.setViewControllers([nextViewController], direction: .forward, animated: true, completion: {(_ finished: Bool) -> Void in
                 self.transitionInProgress = false
                 self.pageControl.currentPage = currentViewController.itemIndex
-                self.currentPage = self.pageControl.currentPage
+                //self.currentPage = self.pageControl.currentPage
             })
         }
     }
@@ -125,7 +135,6 @@ class HomePageViewController: UIPageViewController {
     func getContentViewController(withIndex index:Int) -> ContentViewController? {
      
         let contentVC =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
-        
             contentVC.itemIndex = index
             contentVC.backgroundImage = Constants.backgroundImageContent[index]
             return contentVC
@@ -155,6 +164,7 @@ extension HomePageViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if let viewController = pageViewController.viewControllers?.first as? ContentViewController {
             self.pageControl.currentPage = viewController.itemIndex
+            self.currentPage = self.pageControl.currentPage
         }
     }
    
@@ -169,7 +179,6 @@ extension HomePageViewController: UIPageViewControllerDataSource {
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         let contentVC = viewController as! ContentViewController
-        
         if contentVC.itemIndex > 0 {
             return getContentViewController(withIndex: contentVC.itemIndex - 1)
         }
@@ -180,14 +189,10 @@ extension HomePageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        
         let contentVC = viewController as! ContentViewController
-        
         if contentVC.itemIndex + 1 < Constants.backgroundImageContent.count {
             return getContentViewController(withIndex: contentVC.itemIndex + 1)
         }
-        
-        
         return nil
         
     }
